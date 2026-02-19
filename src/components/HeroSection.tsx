@@ -24,7 +24,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-ocean-light mb-6"
         >
-          Palermo · Puerto Norte · Buenos Aires
+          Espacio Náutico Buenos Aires · Palermo
         </motion.p>
 
         <motion.h1

@@ -40,7 +40,7 @@ const Navbar = () => {
               scrolled ? "text-foreground" : "text-primary-foreground"
             }`}
           >
-            Puerto Norte Sailing
+            Espacio Náutico Buenos Aires
           </span>
         </a>
 

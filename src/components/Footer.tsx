@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <Anchor className="w-5 h-5 text-accent" />
             <span className="font-display text-lg font-bold text-primary-foreground">
-              Puerto Norte Sailing
+              Espacio Náutico Buenos Aires
             </span>
           </div>
 
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           <p className="font-body text-xs text-primary-foreground/40">
-            © 2025 Puerto Norte Sailing. Palermo, Buenos Aires.
+            © 2025 Espacio Náutico Buenos Aires. Palermo, Buenos Aires.
           </p>
         </div>
       </div>
