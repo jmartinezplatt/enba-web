@@ -24,7 +24,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-ocean-light mb-6"
         >
-          Espacio Náutico Buenos Aires · Palermo
+          Espacio Náutico Buenos Aires · Puerto Norte
         </motion.p>
 
         <motion.h1
@@ -54,13 +54,13 @@ const HeroSection = () => {
         >
           <a
             href="#travesias"
-            className="bg-accent text-accent-foreground px-8 py-4 rounded-md font-body font-semibold text-base tracking-wide uppercase transition-all hover:opacity-90"
+            className="bg-accent text-accent-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:opacity-90"
           >
             Ver Travesías
           </a>
           <a
             href="#contacto"
-            className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-md font-body font-semibold text-base tracking-wide uppercase transition-all hover:bg-primary-foreground/10"
+            className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-primary-foreground/10"
           >
             Contactanos
           </a>
