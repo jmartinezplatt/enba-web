@@ -22,7 +22,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-ocean-light mb-6"
+          className="font-condensed text-xs md:text-sm uppercase tracking-[0.3em] text-ocean-light mb-6 font-light"
         >
           Espacio Náutico Buenos Aires · Puerto Norte
         </motion.p>
@@ -31,10 +31,10 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-tight mb-6 uppercase tracking-wide"
         >
           Navegá el<br />
-          <span className="italic">Río de la Plata</span>
+          <span className="italic normal-case">Río de la Plata</span>
         </motion.h1>
 
         <motion.p
