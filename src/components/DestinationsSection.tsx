@@ -30,14 +30,14 @@ const DestinationsSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">
+          <p className="font-condensed text-xs uppercase tracking-[0.3em] text-accent font-light mb-4">
             Destinos
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-4 uppercase tracking-wide">
             ¿A dónde querés navegar?
           </h2>
           <p className="font-body text-base text-muted-foreground max-w-xl mx-auto">
-            Salimos desde Puerto Norte, Palermo. Todos los destinos con precio diferencial según distancia y duración.
+            Salimos desde Puerto Norte, Buenos Aires. Todos los destinos con precio diferencial según distancia y duración.
           </p>
         </motion.div>
 
@@ -60,7 +60,7 @@ const DestinationsSection = () => {
                 <MapPin className="w-4 h-4 text-accent" />
                 <span className="font-body text-sm text-muted-foreground">Destino más solicitado</span>
               </div>
-              <h3 className="font-display text-2xl font-bold text-foreground">Colonia del Sacramento</h3>
+              <h3 className="font-heading text-2xl font-bold text-foreground uppercase tracking-wide">Colonia del Sacramento</h3>
               <p className="font-body text-sm text-muted-foreground mt-2">
                 Cruzá el Río de la Plata en velero hasta el encanto colonial de Colonia. Navegación de ida y vuelta con pernocte opcional a bordo.
               </p>
