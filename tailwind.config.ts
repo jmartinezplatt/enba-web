@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        body: ['"Source Sans 3"', 'sans-serif'],
+        display: ['"Teko"', '"Bebas Neue"', 'sans-serif'],
+        body: ['"Outfit"', 'sans-serif'],
+        subtitle: ['"Barlow Condensed"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
