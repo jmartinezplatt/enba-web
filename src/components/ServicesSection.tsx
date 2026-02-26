@@ -84,7 +84,7 @@ const ServiceCard = ({
           <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
             <service.icon className="w-5 h-5 text-accent" />
           </div>
-          <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+          <p className="font-condensed text-xs uppercase tracking-[0.2em] text-muted-foreground font-light">
             {service.id === "travesias"
               ? "Navegación Tarifada"
               : service.id === "escuela"
@@ -95,7 +95,7 @@ const ServiceCard = ({
           </p>
         </div>
 
-        <h3 className="font-display text-3xl lg:text-4xl font-bold text-foreground">
+        <h3 className="font-heading text-3xl lg:text-4xl font-bold text-foreground uppercase tracking-wide">
           {service.title}
         </h3>
 
