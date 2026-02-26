@@ -26,10 +26,10 @@ const BookingSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="font-body text-xs uppercase tracking-[0.3em] text-ocean-light font-semibold mb-4">
+          <p className="font-condensed text-xs uppercase tracking-[0.3em] text-primary-foreground/70 font-light mb-4">
             Reservas
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-4 uppercase tracking-wide">
             Reservá tu experiencia
           </h2>
           <p className="font-body text-base text-primary-foreground/70 max-w-lg mx-auto">
