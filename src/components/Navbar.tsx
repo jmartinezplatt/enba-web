@@ -58,7 +58,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center group">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center group"
+        >
           <img src={scrolled ? logoLight : logoDark} alt="Espacio Náutico BsAs" className="h-10 w-auto" />
         </a>
 
