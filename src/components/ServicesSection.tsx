@@ -17,9 +17,9 @@ const services = [
     icon: Compass,
     title: "Travesías & Paseos",
     description:
-      "Partiendo desde Buenos Aires navegá al destino que siempre quisiste en Argentina o en Uruguay, tambien Brasil! Aventuras de uno o varios dias. Confort y seguridad siempre a bordo.",
+      "Partiendo desde Buenos Aires navegá a tu destino soñado dentro de Argentina, Uruguay o Brasil. Planes de todo el dia, aventuras de una o varias noches. Confort, diversion y seguridad siempre a bordo.",
     images: [travesiaVelero, travesiaCrew, travesiaSunset, travesia04, travesia05, travesiaDelta],
-    features: ["Destinos nacionales e internacionales", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
+    features: ["Destinos nacionales e internacionales (PDE, MDQ, DELTA y muchos mas..)", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
   {
     id: "escuela",
