@@ -43,7 +43,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Travesías en velero a Uruguay y el Delta. Escuela náutica. Compra-venta de veleros. Servicios náuticos integrales.
+          Travesías en velero por Argentina y por Uruguay, escapate al Delta. Escuela náutica para Timonel o Patron. Comprá-vendé tu barco con nosotros. Usa nuestros Servicios náuticos integrales y asegura tu tranquilidad.
         </motion.p>
 
         <motion.div
