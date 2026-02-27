@@ -19,7 +19,7 @@ const services = [
     description:
       "Partiendo desde Buenos Aires navegá a Colonia del Sacramento, Carmelo, Montevideo, Punta del Este, Mar del Plata, Isla Martín García, arroyos e islas del Delta y muchos destinos mas. Aventuras de todo el dia o de varias noches a bordo con todo el confort y seguridad.",
     images: [travesiaVelero, travesiaCrew, travesiaSunset, travesia04, travesia05, travesiaDelta],
-    features: ["Destinos nacionales e internacionales", "3 veleros modernos y equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
+    features: ["Destinos nacionales e internacionales", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
   {
     id: "escuela",
