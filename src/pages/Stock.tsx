@@ -37,7 +37,6 @@ const veleros: Velero[] = [
     destacado: true,
     estado: "Excelente",
     descripcion: "Velero clásico ideal para navegación costera y travesías cortas. Equipado con velas nuevas y electrónica actualizada.",
-    imagePosition: "center 70%",
   },
   {
     id: "2",
