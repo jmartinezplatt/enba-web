@@ -11,6 +11,8 @@ import travesiaDelta from "@/assets/travesia-delta.jpg";
 import nauticalSchool from "@/assets/nautical-school.jpg";
 import yachtBroker from "@/assets/yacht-broker.jpg";
 import boatService from "@/assets/boat-service.jpg";
+import travesiaPuerto from "@/assets/travesia-puerto.jpg";
+import travesiaNavegando from "@/assets/travesia-navegando.jpg";
 
 const services = [
   {
@@ -26,6 +28,8 @@ const services = [
       { src: travesia04, position: "center 60%" },
       { src: travesia05, position: "center" },
       { src: travesiaDelta, position: "center 70%" },
+      { src: travesiaPuerto, position: "center" },
+      { src: travesiaNavegando, position: "center 40%" },
     ],
     features: ["Destinos nacionales e internacionales (PDE, MDQ, DELTA y muchos mas..)", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
