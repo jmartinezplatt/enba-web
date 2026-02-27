@@ -26,7 +26,7 @@ const services = [
     icon: GraduationCap,
     title: "Escuela Náutica",
     description:
-      "Cursos habilitados de Timonel y Patrón con preparación y examen oficial en PNA incluidos. Clínicas y entrenamientos de 1 a 8 horas para quienes ya tienen carnet habilitante y quieran mejorar habilidades o sumar horas barco.",
+      "Cursos habilitados de Timonel y Patrón con examen oficial en PNA y carnet incluidos. Clínicas y entrenamientos de 1 a 8 horas para quienes ya tienen carnet habilitante y quieran mejorar habilidades o sumar horas barco.",
     images: [nauticalSchool],
     features: ["Cursos de 3-4 meses, frecuencia semanal", "Preparación para examen oficial", "Clínicas de perfeccionamiento", "Cupos limitados — 3 cursos por año"],
   },
