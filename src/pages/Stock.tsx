@@ -20,6 +20,7 @@ interface Velero {
   destacado?: boolean;
   estado: string;
   descripcion: string;
+  imagePosition?: string;
 }
 
 const veleros: Velero[] = [
@@ -36,6 +37,7 @@ const veleros: Velero[] = [
     destacado: true,
     estado: "Excelente",
     descripcion: "Velero clásico ideal para navegación costera y travesías cortas. Equipado con velas nuevas y electrónica actualizada.",
+    imagePosition: "center 70%",
   },
   {
     id: "2",
@@ -92,6 +94,7 @@ const VeleroCard = ({ velero, index }: { velero: Velero; index: number }) => (
         src={velero.imagen}
         alt={`${velero.nombre} - ${velero.modelo}`}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        style={velero.imagePosition ? { objectPosition: velero.imagePosition } : undefined}
         loading="lazy"
       />
       {velero.destacado && (
