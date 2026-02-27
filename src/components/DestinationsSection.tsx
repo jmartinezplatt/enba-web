@@ -21,7 +21,7 @@ const DestinationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="destinos" className="py-24 lg:py-32 bg-secondary/50">
+    <section id="destinos" className="snap-section py-24 lg:py-32 bg-secondary/50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

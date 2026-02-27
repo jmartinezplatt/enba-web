@@ -2,7 +2,7 @@ import logoClaro from "@/assets/ENBA-horizontal-claro.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-navy text-primary-foreground/70 py-12">
+    <footer className="snap-section-auto bg-navy text-primary-foreground/70 py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
