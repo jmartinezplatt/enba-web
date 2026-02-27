@@ -157,10 +157,10 @@ const ServiceCard = ({
           </Link>
         ) : (
           <a
-            href="#booking"
+            href={service.id === "travesias" ? "#destinos" : "#booking"}
             className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
           >
-            Consultar
+            {service.id === "travesias" ? "Ver Destinos" : "Consultar"}
           </a>
         )}
       </div>
