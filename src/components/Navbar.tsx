@@ -41,6 +41,14 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector(item.href);
+                if (target) {
+                  const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
+              }}
               className={`font-body text-sm font-medium tracking-wide uppercase transition-colors hover:text-accent ${
                 scrolled ? "text-muted-foreground" : "text-primary-foreground/80"
               }`}
@@ -81,7 +89,15 @@ const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }
+                  }}
                   className="font-body text-base font-medium text-foreground hover:text-accent transition-colors"
                 >
                   {item.label}
