@@ -19,7 +19,14 @@ const services = [
     title: "Travesías & Paseos",
     description:
       "Partiendo desde Buenos Aires navegá a tu destino soñado dentro de Argentina, Uruguay o Brasil. Planes de todo el dia, aventuras de una o varias noches. Confort, diversion y seguridad siempre a bordo.",
-    images: [travesiaVelero, travesiaCrew, travesiaSunset, travesia04, travesia05, travesiaDelta],
+    images: [
+      { src: travesiaVelero, position: "center" },
+      { src: travesiaCrew, position: "center" },
+      { src: travesiaSunset, position: "center" },
+      { src: travesia04, position: "center 60%" },
+      { src: travesia05, position: "center" },
+      { src: travesiaDelta, position: "center 70%" },
+    ],
     features: ["Destinos nacionales e internacionales (PDE, MDQ, DELTA y muchos mas..)", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
   {
@@ -28,7 +35,7 @@ const services = [
     title: "Escuela Náutica",
     description:
       "Cursos habilitados de Timonel y Patrón con examen oficial en PNA y carnet incluidos. Clínicas y entrenamientos de 1 a 8 horas para quienes ya tienen carnet habilitante y quieran mejorar habilidades o sumar horas barco.",
-    images: [nauticalSchool],
+    images: [{ src: nauticalSchool, position: "center" }],
     features: ["Cursos de 3-4 meses, frecuencia semanal", "Preparación para examen oficial", "Clínicas de perfeccionamiento", "Cupos limitados"],
   },
   {
@@ -37,7 +44,7 @@ const services = [
     title: "Compra & Venta de Veleros",
     description:
       "Compramos tu velero directamente — dinero en el acto. Vendemos con stock propio, veleros verificados y listos. También ofrecemos alquiler por hora, día o semana.",
-    images: [yachtBroker],
+    images: [{ src: yachtBroker, position: "center" }],
     features: ["Compra directa — pago inmediato", "Stock propio verificado", "Alquiler por hora, día o semana", "Inspección y check completo"],
   },
   {
@@ -46,7 +53,7 @@ const services = [
     title: "Servicios Náuticos",
     description:
       "Servicio integral para tu embarcación. Desde limpieza y mantenimiento de jarcia y cabullería hasta reparación y service de motores fuera de borda.",
-    images: [boatService],
+    images: [{ src: boatService, position: "center" }],
     features: ["Limpieza y mantenimiento general", "Service de motores fuera de borda", "Jarcia y cabullería", "Reparaciones y diagnóstico"],
   },
 ];
@@ -88,9 +95,10 @@ const ServiceCard = ({
         <AnimatePresence mode="sync">
           <motion.img
             key={currentImage}
-            src={service.images[currentImage]}
+            src={service.images[currentImage].src}
             alt={`${service.title} - ${currentImage + 1}`}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: service.images[currentImage].position }}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
