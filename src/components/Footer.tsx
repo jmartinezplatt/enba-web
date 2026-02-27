@@ -1,4 +1,4 @@
-import { Anchor } from "lucide-react";
+import logoClaro from "@/assets/ENBA-horizontal-claro.svg";
 
 const Footer = () => {
   return (
@@ -6,10 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <Anchor className="w-5 h-5 text-accent" />
-            <span className="font-display text-lg font-bold text-primary-foreground">
-              Espacio Náutico Buenos Aires
-            </span>
+            <img src={logoClaro} alt="Espacio Náutico Buenos Aires" className="h-8" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
