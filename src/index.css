@@ -17,7 +17,9 @@ section[id], div[id] {
   main {
     scroll-snap-type: y proximity;
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100vh;
+    height: 100dvh;
   }
 
   .snap-section {
@@ -26,11 +28,16 @@ section[id], div[id] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
   }
 
   .snap-section-auto {
     scroll-snap-align: start;
     min-height: auto;
+  }
+
+  body, html {
+    overflow-x: hidden;
   }
 }
 

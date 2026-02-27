@@ -17,25 +17,43 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const getScrollContainer = () => document.querySelector('main') || window;
+    const handleScroll = () => {
+      const container = document.querySelector('main');
+      const scrollTop = container ? container.scrollTop : window.scrollY;
+      setScrolled(scrollTop > 50);
+    };
+    const container = getScrollContainer();
+    container.addEventListener("scroll", handleScroll);
+    // Also listen on window for desktop
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const doScroll = () => {
-      const target = document.querySelector(href);
-      if (target) {
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const mainEl = document.querySelector('main');
+    const isMobileSnap = mainEl && window.innerWidth <= 768;
+
+    if (isMobileSnap) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      const doScroll = () => {
         const top = target.getBoundingClientRect().top + window.scrollY - 90;
         window.scrollTo({ top, behavior: "smooth" });
+      };
+      if (!scrolled) {
+        window.scrollTo({ top: 51 });
+        requestAnimationFrame(() => requestAnimationFrame(doScroll));
+      } else {
+        doScroll();
       }
-    };
-    if (!scrolled) {
-      window.scrollTo({ top: 51 });
-      requestAnimationFrame(() => requestAnimationFrame(doScroll));
-    } else {
-      doScroll();
     }
   }, [scrolled]);
 
@@ -110,7 +128,7 @@ const Navbar = () => {
               ))}
               <a
                 href="#booking"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => { setIsOpen(false); handleNavClick(e, "#booking"); }}
                 className="bg-accent text-accent-foreground px-5 py-2.5 rounded-md font-body text-sm font-semibold tracking-wide uppercase text-center transition-all hover:opacity-90 mt-2"
               >
                 Reservar
