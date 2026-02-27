@@ -1,8 +1,11 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Compass, Ship, GraduationCap, Wrench } from "lucide-react";
-import sailingDeck from "@/assets/sailing-deck.jpg";
-import sailingCrew from "@/assets/sailing-crew.jpg";
+import travesiaSunset from "@/assets/travesia-sunset.jpg";
+import travesiaCrew from "@/assets/travesia-crew.jpg";
+import travesiaVelero from "@/assets/travesia-velero.jpg";
+import travesia04 from "@/assets/travesia-04.jpg";
+import travesia05 from "@/assets/travesia-05.jpg";
 import nauticalSchool from "@/assets/nautical-school.jpg";
 import yachtBroker from "@/assets/yacht-broker.jpg";
 import boatService from "@/assets/boat-service.jpg";
@@ -14,7 +17,7 @@ const services = [
     title: "Travesías & Paseos",
     description:
       "Navegaciones desde Buenos Aires a Colonia del Sacramento, Carmelo, Montevideo, Punta del Este, Mar del Plata, Isla Martín García y el Delta. Mínimo una noche a bordo con todo el confort.",
-    images: [sailingDeck, sailingCrew],
+    images: [travesiaVelero, travesiaCrew, travesiaSunset, travesia04, travesia05],
     features: ["Destinos nacionales e internacionales", "3 veleros modernos y equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
   {
