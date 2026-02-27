@@ -17,20 +17,12 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const getScrollContainer = () => document.querySelector('main') || window;
     const handleScroll = () => {
-      const container = document.querySelector('main');
-      const scrollTop = container ? container.scrollTop : window.scrollY;
-      setScrolled(scrollTop > 50);
+      setScrolled(window.scrollY > 50);
     };
-    const container = getScrollContainer();
-    container.addEventListener("scroll", handleScroll);
-    // Also listen on window for desktop
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      container.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
