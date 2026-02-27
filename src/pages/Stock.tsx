@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Ruler, Calendar, Anchor, Users } from "lucide-react";
 import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
-import yachtBroker from "@/assets/yacht-broker.jpg";
+import velero1 from "@/assets/velero-1.jpg";
+import velero2 from "@/assets/velero-2.jpg";
+import velero3 from "@/assets/velero-3.jpg";
+import velero4 from "@/assets/velero-4.jpg";
 
 interface Velero {
   id: string;
@@ -29,7 +32,7 @@ const veleros: Velero[] = [
     capacidad: 6,
     motor: "Fuera de borda 9.9 HP",
     precio: "USD 18.000",
-    imagen: yachtBroker,
+    imagen: velero1,
     destacado: true,
     estado: "Excelente",
     descripcion: "Velero clásico ideal para navegación costera y travesías cortas. Equipado con velas nuevas y electrónica actualizada.",
@@ -43,7 +46,7 @@ const veleros: Velero[] = [
     capacidad: 4,
     motor: "Fuera de borda 6 HP",
     precio: "USD 12.500",
-    imagen: yachtBroker,
+    imagen: velero2,
     estado: "Muy bueno",
     descripcion: "Compacto y marinero. Ideal para iniciarse en la navegación a vela con cabina habitable para dos personas.",
   },
@@ -56,7 +59,7 @@ const veleros: Velero[] = [
     capacidad: 8,
     motor: "Intraborda Yanmar 27 HP",
     precio: "USD 35.000",
-    imagen: yachtBroker,
+    imagen: velero3,
     estado: "Excelente",
     descripcion: "Espacioso crucero con cocina completa, baño y dos camarotes. Listo para travesías largas con total confort.",
   },
@@ -69,7 +72,7 @@ const veleros: Velero[] = [
     capacidad: 5,
     motor: "Fuera de borda 8 HP",
     precio: "USD 9.800",
-    imagen: yachtBroker,
+    imagen: velero4,
     estado: "Bueno — navegando",
     descripcion: "Velero sólido y confiable, ideal para paseos en el Delta y Río de la Plata. Precio de oportunidad.",
   },
