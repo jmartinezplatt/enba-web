@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Anchor } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/ENBA-horizontal-oscuro.svg";
 
 const navItems = [
   { label: "Travesías", href: "#travesias" },
@@ -29,19 +30,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
-          <Anchor
-            className={`w-7 h-7 transition-colors ${
-              scrolled ? "text-primary" : "text-primary-foreground"
-            }`}
-          />
-          <span
-            className={`font-display text-xl font-bold tracking-wide transition-colors ${
-              scrolled ? "text-foreground" : "text-primary-foreground"
-            }`}
-          >
-            Espacio Náutico Buenos Aires
-          </span>
+        <a href="#" className="flex items-center group">
+          <img src={logo} alt="Espacio Náutico BsAs" className="h-10 w-auto" />
         </a>
 
         {/* Desktop */}
