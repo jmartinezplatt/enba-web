@@ -17,7 +17,7 @@ const BookingSection = () => {
   const [selectedType, setSelectedType] = useState<BookingType>("travesia");
 
   return (
-    <section id="booking" className="py-24 lg:py-32 bg-background text-foreground">
+    <section id="booking" className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
