@@ -13,7 +13,7 @@ const destinations = [
   { name: "Riachuelo", country: "Uruguay", duration: "2 noches", icon: "🇺🇾", popular: false },
   { name: "Isla Martín García", country: "Argentina", duration: "1 noche", icon: "🇦🇷", popular: true },
   { name: "Mar del Plata", country: "Argentina", duration: "3-4 noches", icon: "🇦🇷", popular: false },
-  { name: "Islas y Arroyos del Paraná", country: "Argentina", duration: "1 noche", icon: "🇦🇷", popular: true },
+  { name: "Islas y Arroyos del Delta", country: "Argentina", duration: "1 noche", icon: "🇦🇷", popular: true },
 ];
 
 const DestinationsSection = () => {
