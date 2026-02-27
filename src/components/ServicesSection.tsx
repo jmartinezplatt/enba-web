@@ -1,5 +1,6 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Compass, Ship, GraduationCap, Wrench } from "lucide-react";
 import travesiaSunset from "@/assets/travesia-sunset.jpg";
 import travesiaCrew from "@/assets/travesia-crew.jpg";
@@ -148,12 +149,12 @@ const ServiceCard = ({
         </ul>
 
         {service.id === "broker" ? (
-          <a
-            href="/stock"
+          <Link
+            to="/stock"
             className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
           >
             Ver Stock
-          </a>
+          </Link>
         ) : (
           <a
             href="#booking"
