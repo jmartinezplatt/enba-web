@@ -84,7 +84,7 @@ const ServiceCard = ({
       } gap-8 lg:gap-16 items-center`}
     >
       {/* Image */}
-      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg relative h-[300px] lg:h-[420px]">
+      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg relative aspect-[4/3]">
         <AnimatePresence mode="sync">
           <motion.img
             key={currentImage}
