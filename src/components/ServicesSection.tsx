@@ -84,13 +84,13 @@ const ServiceCard = ({
       } gap-8 lg:gap-16 items-center`}
     >
       {/* Image */}
-      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg relative bg-muted/30">
+      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg relative aspect-[3/2]">
         <AnimatePresence mode="sync">
           <motion.img
             key={currentImage}
             src={service.images[currentImage]}
             alt={`${service.title} - ${currentImage + 1}`}
-            className="w-full h-auto rounded-lg"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
