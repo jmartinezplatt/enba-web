@@ -173,7 +173,9 @@ const ServicesSection = () => {
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 space-y-24 lg:space-y-32">
         {services.map((service, index) => (
-          <ServiceCard key={service.id} service={service} index={index} />
+          <div key={service.id} className="snap-section">
+            <ServiceCard service={service} index={index} />
+          </div>
         ))}
       </div>
     </section>

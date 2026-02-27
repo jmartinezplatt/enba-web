@@ -7,7 +7,7 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contacto" className="py-24 lg:py-32 bg-background">
+    <section id="contacto" className="snap-section py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
