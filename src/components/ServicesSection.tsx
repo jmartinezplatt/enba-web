@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { Compass, Ship, GraduationCap, Wrench } from "lucide-react";
 import sailingDeck from "@/assets/sailing-deck.jpg";
+import sailingCrew from "@/assets/sailing-crew.jpg";
 import nauticalSchool from "@/assets/nautical-school.jpg";
 import yachtBroker from "@/assets/yacht-broker.jpg";
 import boatService from "@/assets/boat-service.jpg";
@@ -14,7 +14,7 @@ const services = [
     title: "Travesías & Paseos",
     description:
       "Navegaciones desde Buenos Aires a Colonia del Sacramento, Carmelo, Montevideo, Punta del Este, Mar del Plata, Isla Martín García y el Delta. Mínimo una noche a bordo con todo el confort.",
-    image: sailingDeck,
+    images: [sailingDeck, sailingCrew],
     features: ["Destinos nacionales e internacionales", "3 veleros modernos y equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
   },
   {
@@ -23,7 +23,7 @@ const services = [
     title: "Escuela Náutica",
     description:
       "Cursos de Timonel y Patrón con preparación para examen oficial. Clínicas y entrenamientos de 1 a 5 horas para quienes ya tienen carnet habilitante.",
-    image: nauticalSchool,
+    images: [nauticalSchool],
     features: ["Cursos de 3-4 meses, frecuencia semanal", "Preparación para examen oficial", "Clínicas de perfeccionamiento", "Cupos limitados — 3 cursos por año"],
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: "Compra & Venta de Veleros",
     description:
       "Compramos tu velero directamente — dinero en el acto. Vendemos con stock propio, veleros verificados y listos. También ofrecemos alquiler por hora, día o semana.",
-    image: yachtBroker,
+    images: [yachtBroker],
     features: ["Compra directa — pago inmediato", "Stock propio verificado", "Alquiler por hora, día o semana", "Inspección y check completo"],
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Servicios Náuticos",
     description:
       "Servicio integral para tu embarcación. Desde limpieza y mantenimiento de jarcia y cabullería hasta reparación y service de motores fuera de borda.",
-    image: boatService,
+    images: [boatService],
     features: ["Limpieza y mantenimiento general", "Service de motores fuera de borda", "Jarcia y cabullería", "Reparaciones y diagnóstico"],
   },
 ];
@@ -56,6 +56,16 @@ const ServiceCard = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const isEven = index % 2 === 0;
+  const hasSlideshow = service.images.length > 1;
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    if (!hasSlideshow) return;
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % service.images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [hasSlideshow, service.images.length]);
 
   return (
     <motion.div
@@ -69,13 +79,34 @@ const ServiceCard = ({
       } gap-8 lg:gap-16 items-center`}
     >
       {/* Image */}
-      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-[300px] lg:h-[420px] object-cover transition-transform duration-700 hover:scale-105"
-          loading="lazy"
-        />
+      <div className="w-full lg:w-1/2 overflow-hidden rounded-lg relative h-[300px] lg:h-[420px]">
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={currentImage}
+            src={service.images[currentImage]}
+            alt={`${service.title} - ${currentImage + 1}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            loading="lazy"
+          />
+        </AnimatePresence>
+        {hasSlideshow && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {service.images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentImage(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === currentImage ? "bg-white scale-125" : "bg-white/50"
+                }`}
+                aria-label={`Imagen ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Content */}
