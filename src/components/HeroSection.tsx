@@ -22,7 +22,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-condensed text-xs md:text-sm uppercase tracking-[0.3em] text-ocean-light mb-6 font-light drop-shadow-lg"
+          className="font-condensed text-xs md:text-sm uppercase tracking-[0.3em] text-white mb-6 font-light drop-shadow-lg"
         >
           Espacio Náutico Buenos Aires · Puerto Norte
         </motion.p>
@@ -31,7 +31,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl"
+          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl"
         >
           Navegá el<br />
           <span className="italic normal-case">Río de la Plata</span>
@@ -41,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
+          className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
         >
           Travesías en velero por Argentina y por Uruguay, escapate al Delta. Escuela náutica para Timonel o Patron. Comprá-vendé tu barco con nosotros. Usa nuestros Servicios náuticos integrales y asegura tu tranquilidad.
         </motion.p>
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </a>
           <a
             href="#contacto"
-            className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-primary-foreground/10"
+            className="border border-primary-foreground/30 text-white px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-primary-foreground/10"
           >
             Contactanos
           </a>
