@@ -19,6 +19,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isDestinos = location.pathname === '/destinos';
+  const isStock = location.pathname === '/stock';
 
   // On non-home pages, always show the "scrolled" navbar style for readability
   const showScrolledStyle = scrolled || !isHome;
@@ -64,7 +65,7 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
-            const isActive = item.label === "Travesías" && isDestinos;
+            const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock);
             return (
               <a
                 key={item.label}
@@ -116,7 +117,7 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => {
-                const isActive = item.label === "Travesías" && isDestinos;
+                const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock);
                 return (
                   <a
                     key={item.label}
