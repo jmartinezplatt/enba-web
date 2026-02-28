@@ -69,7 +69,7 @@ const BookingSection = () => {
               const formData = new FormData(e.currentTarget);
               const data = Object.fromEntries(formData);
               const message = `Hola! Quiero consultar por: ${bookingTypes.find(t => t.value === selectedType)?.label}. Nombre: ${data.name}. Email: ${data.email}. Personas: ${data.people}. Fecha tentativa: ${data.date}. Mensaje: ${data.message || 'Sin mensaje adicional'}`;
-              window.open(`https://wa.me/5491100000000?text=${encodeURIComponent(message)}`, '_blank');
+              window.open(`https://wa.me/5491149915143?text=${encodeURIComponent(message)}`, '_blank');
             }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
