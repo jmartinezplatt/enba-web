@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Ruler, Calendar, Anchor, Users } from "lucide-react";
-import heroImage from "@/assets/yacht-broker.jpg";
+import heroBroker from "@/assets/hero-broker.jpg";
 import velero1 from "@/assets/velero-1.jpg";
 import velero2 from "@/assets/velero-2.jpg";
 import velero3 from "@/assets/velero-3.jpg";
@@ -161,17 +161,15 @@ const Stock = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src={heroImage}
-            alt="Veleros en venta - Broker Náutico"
+            src={heroBroker}
+            alt="Marina con veleros"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-hero-overlay" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

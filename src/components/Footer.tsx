@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoClaro from "@/assets/ENBA-horizontal-claro.svg";
 
 const Footer = () => {
@@ -5,9 +6,9 @@ const Footer = () => {
     <footer className="snap-section-auto bg-navy text-primary-foreground/70 py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <a href="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logoClaro} alt="Espacio Náutico Buenos Aires" className="h-8" />
-          </a>
+          </Link>
 
           <div className="flex flex-wrap justify-center gap-6">
             <a href="/destinos" className="font-body text-sm hover:text-accent transition-colors">Travesías</a>
