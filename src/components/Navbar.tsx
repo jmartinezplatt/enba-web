@@ -6,11 +6,11 @@ import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
 import logoLight from "@/assets/ENBA-horizontal-claro.svg";
 
 const navItems = [
-  { label: "Travesías", href: "#travesias" },
-  { label: "Escuela", href: "#escuela" },
-  { label: "Broker", href: "#broker" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Travesías", href: "/#travesias" },
+  { label: "Escuela", href: "/#escuela" },
+  { label: "Broker", href: "/#broker" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const Navbar = () => {
@@ -66,11 +66,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          href="/"
           className="flex items-center group"
         >
           <img src={scrolled ? logoLight : logoDark} alt="Espacio Náutico BsAs" className="h-10 w-auto" />
@@ -91,7 +87,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#booking"
+            href="/#booking"
             className="bg-accent text-accent-foreground px-5 py-2.5 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
           >
             Reservar
@@ -133,8 +129,8 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#booking"
-                onClick={(e) => { setIsOpen(false); handleNavClick(e, "#booking"); }}
+                href="/#booking"
+                onClick={(e) => { setIsOpen(false); handleNavClick(e, "/#booking"); }}
                 className="bg-accent text-accent-foreground px-5 py-2.5 rounded-md font-body text-sm font-semibold tracking-wide uppercase text-center transition-all hover:opacity-90 mt-2"
               >
                 Reservar
