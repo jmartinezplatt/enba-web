@@ -182,8 +182,6 @@ const ServiceCard = ({
             Consultar
           </a>
         )}
-```
-        )}
       </div>
     </motion.div>
   );
