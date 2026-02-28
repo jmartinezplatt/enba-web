@@ -263,10 +263,10 @@ const Destinos = () => {
                 Destinos Náuticos
               </p>
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-2xl">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
               ¿A dónde querés navegar?
             </h1>
-            <p className="font-body text-lg text-white leading-relaxed drop-shadow-lg">
+            <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
               Salimos desde la Ciudad Autonoma de Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
             </p>
           </motion.div>
