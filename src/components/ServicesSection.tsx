@@ -45,11 +45,11 @@ const services = [
   {
     id: "broker",
     icon: Ship,
-    title: "Compra & Venta de Veleros",
+    title: "Compra, Venta & Alquiler de Veleros",
     description:
-      "Compramos tu velero directamente — dinero en el acto. Vendemos con stock propio, veleros verificados y listos. También ofrecemos alquiler por hora, día o semana.",
+      "¿Vendés tu velero? Te lo compramos con pago inmediato. ¿Querés comprar? Tenemos stock verificado listo para visitar y navegar. Y si tenés carnet náutico, podés alquilar por hora, por día, por semana o por mes.",
     images: [{ src: yachtBroker, position: "center" }],
-    features: ["Compra directa — pago inmediato", "Stock propio verificado", "Alquiler por hora, día o semana", "Inspección y check completo"],
+    features: ["Tasación gratuita en menos de 24hs", "Transferencia y documentación incluidas", "Seguro incluido en todos los alquileres", "Garantía extendida en veleros vendidos"],
   },
   {
     id: "servicios",
