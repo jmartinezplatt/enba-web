@@ -20,7 +20,7 @@ const services = [
     icon: Compass,
     title: "Travesías & Paseos",
     description:
-      "Partiendo desde Buenos Aires navegá a tu destino soñado dentro de Argentina, Uruguay o Brasil. Planes de todo el dia, aventuras de una o varias noches. Confort, diversion y seguridad siempre a bordo.",
+      "Navegá desde Buenos Aires a puertos de Uruguay y Brasil, Mar del Plata o los arroyos del Delta. Salidas diarias. Experiencia náutica completa a bordo.",
     images: [
       { src: travesiaVelero, position: "center" },
       { src: travesiaCrew, position: "center" },
@@ -31,7 +31,7 @@ const services = [
       { src: travesiaPuerto, position: "center" },
       { src: travesiaNavegando, position: "center 40%" },
     ],
-    features: ["Destinos nacionales e internacionales (PDE, MDQ, DELTA y muchos mas..)", "Veleros modernos, con seguro y bien equipados", "Opción de pernoctar a bordo", "Precios según destino y duración"],
+    features: ["8 veleros modernos totalmente equipados", "Travesías de 1 a 10 noches según destino", "Mínimo 3 pasajeros por embarcación", "Incluye: patrón, combustible, desayunos y almuerzos en travesía, pernocte"],
   },
   {
     id: "escuela",
@@ -134,7 +134,7 @@ const ServiceCard = ({
           </div>
           <p className="font-condensed text-xs uppercase tracking-[0.2em] text-muted-foreground font-light">
             {service.id === "travesias"
-              ? "Navegación Tarifada"
+              ? "Turismo Náutico"
               : service.id === "escuela"
               ? "Formación Náutica"
               : service.id === "broker"
