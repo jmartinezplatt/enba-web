@@ -43,7 +43,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
         >
-          Navegá donde quieras, como quieras. Travesías detro de Argentina a Uruguay a Brasil y muchos destinos mas. Cursos náuticos oficiales, formamos timoneles y patrones. Compramos, vendemos y damos servicio técnico a tu velero. Flota nueva, experiencia comprobada, seguridad total.
+          Navegá donde quieras, como quieras. Travesías a destinos en Argentina, Uruguay, Brasil y mucho mas. Cursos náuticos oficiales, formamos timoneles y patrones. Compra, venta y servicio técnico de veleros. Flota nueva, experiencia comprobada, seguridad total.
         </motion.p>
 
         <motion.div
