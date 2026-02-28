@@ -160,30 +160,29 @@ const ServiceCard = ({
           ))}
         </ul>
 
-        {service.id === "broker" ? (
+           {service.id === "broker" ? (
           <Link
             to="/stock"
             className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
           >
             Ver Stock
           </Link>
+        ) : service.id === "travesias" ? (
+          <Link
+            to="/destinos"
+            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
+          >
+            Ver Destinos
+          </Link>
         ) : (
-          <a
-            {service.id === "travesias" ? (
-  <Link
-    to="/destinos"
-    className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
-  >
-    Ver Destinos
-  </Link>
-        ) : (
-  
-    href="#booking"
-    className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
-  >
-    Consultar
-  </a>
-)}
+          
+            href="#booking"
+            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
+          >
+            Consultar
+          </a>
+        )}
+```
         )}
       </div>
     </motion.div>
