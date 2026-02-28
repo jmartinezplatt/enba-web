@@ -5,16 +5,16 @@ const Footer = () => {
     <footer className="snap-section-auto bg-navy text-primary-foreground/70 py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img src={logoClaro} alt="Espacio Náutico Buenos Aires" className="h-8" />
-          </div>
+          </a>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="#travesias" className="font-body text-sm hover:text-accent transition-colors">Travesías</a>
-            <a href="#escuela" className="font-body text-sm hover:text-accent transition-colors">Escuela</a>
-            <a href="#broker" className="font-body text-sm hover:text-accent transition-colors">Broker</a>
-            <a href="#servicios" className="font-body text-sm hover:text-accent transition-colors">Servicios</a>
-            <a href="#contacto" className="font-body text-sm hover:text-accent transition-colors">Contacto</a>
+            <a href="/destinos" className="font-body text-sm hover:text-accent transition-colors">Travesías</a>
+            <a href="/#escuela" className="font-body text-sm hover:text-accent transition-colors">Escuela</a>
+            <a href="/stock" className="font-body text-sm hover:text-accent transition-colors">Broker</a>
+            <a href="/#servicios" className="font-body text-sm hover:text-accent transition-colors">Servicios</a>
+            <a href="/#contacto" className="font-body text-sm hover:text-accent transition-colors">Contacto</a>
           </div>
 
           <p className="font-body text-xs text-primary-foreground/40">
