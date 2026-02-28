@@ -15,6 +15,7 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.p
@@ -25,6 +26,7 @@ const HeroSection = () => {
         >
           Espacio Náutico Buenos Aires · Puerto Norte
         </motion.p>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,6 +36,7 @@ const HeroSection = () => {
           Navegá el<br />
           <span className="italic normal-case">Río de la Plata</span>
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,19 +45,20 @@ const HeroSection = () => {
         >
           Travesías en velero por Argentina y por Uruguay, escapate al Delta. Escuela náutica para Timonel o Patron. Comprá-vendé tu barco con nosotros. Usa nuestros Servicios náuticos integrales y asegura tu tranquilidad.
         </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          
+          <a
             href="#travesias"
             className="bg-accent text-accent-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:opacity-90"
           >
             Ver Travesías
           </a>
-          
+          <a
             href="#contacto"
             className="border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-primary-foreground/10"
           >
@@ -62,6 +66,7 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
