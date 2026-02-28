@@ -10,13 +10,13 @@ const Index = () => {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
+      // Longer delay to ensure page is fully rendered when coming from another route
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
-          const top = element.getBoundingClientRect().top + window.scrollY - 90;
-          window.scrollTo({ top, behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 100);
+      }, 300);
     }
   }, []);
   return (

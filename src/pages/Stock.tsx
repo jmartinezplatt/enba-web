@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Ruler, Calendar, Anchor, Users } from "lucide-react";
-import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
+import { Ruler, Calendar, Anchor, Users } from "lucide-react";
 import heroBroker from "@/assets/hero-broker.jpg";
 import velero1 from "@/assets/velero-1.jpg";
 import velero2 from "@/assets/velero-2.jpg";
@@ -143,7 +142,7 @@ const VeleroCard = ({ velero, index }: { velero: Velero; index: number }) => (
           {velero.precio}
         </span>
         <a
-          href={`https://wa.me/5491100000000?text=Hola! Me interesa el velero ${velero.nombre} (${velero.modelo})`}
+          href={`https://wa.me/5491149915143?text=Hola! Me interesa el velero ${velero.nombre} (${velero.modelo})`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
@@ -157,81 +156,70 @@ const VeleroCard = ({ velero, index }: { velero: Velero; index: number }) => (
 
 const Stock = () => {
   return (
-    <>
-      <main className="min-h-screen bg-background">
-        {/* Header */}
-        <header className="bg-card border-b border-border">
-          <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-            <Link to="/" className="flex items-center">
-              <img src={logoDark} alt="Espacio Náutico BsAs" className="h-10 w-auto" />
-            </Link>
-            <Link
-              to="/"
-              className="flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Volver al inicio
-            </Link>
-          </div>
-        </header>
+    <div className="min-h-screen bg-background">
+      <Navbar />
 
-        {/* Hero */}
-        <section className="relative py-24 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src={heroBroker}
-              alt="Marina con veleros"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-hero-overlay" />
-          </div>
-          <div className="relative z-10 container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="text-center max-w-3xl mx-auto"
-            >
-              <p className="font-condensed text-xs uppercase tracking-[0.3em] text-white/80 font-light drop-shadow-lg mb-6">
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroBroker}
+            alt="Marina con veleros"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-hero-overlay" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <Anchor className="w-5 h-5 text-white/80" />
+              <p className="font-condensed text-xs uppercase tracking-[0.3em] text-white/80 font-light drop-shadow-lg">
                 Broker Náutico
               </p>
-              <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
-                Veleros en Venta
-              </h1>
-              <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
-                Stock propio verificado. Todos los veleros cuentan con inspección completa y están listos para navegar.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Grid */}
-        <section className="pb-24">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {veleros.map((velero, index) => (
-                <VeleroCard key={velero.id} velero={velero} index={index} />
-              ))}
             </div>
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
+              Veleros en Venta
+            </h1>
+            <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
+              Stock propio verificado. Todos los veleros cuentan con inspección completa y están listos para navegar.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-            <div className="mt-16 text-center space-y-4">
-              <p className="font-body text-muted-foreground">
-                ¿Querés vender tu velero? Compramos directo — pago inmediato.
-              </p>
-              <a
-                href="https://wa.me/5491100000000?text=Hola! Quiero vender mi velero"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
-              >
-                Contactanos
-              </a>
-            </div>
+      {/* Grid */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {veleros.map((velero, index) => (
+              <VeleroCard key={velero.id} velero={velero} index={index} />
+            ))}
           </div>
-        </section>
-      </main>
+
+          <div className="mt-16 text-center space-y-4">
+            <p className="font-body text-muted-foreground">
+              ¿Querés vender tu velero? Compramos directo — pago inmediato.
+            </p>
+            <a
+              href="https://wa.me/5491149915143?text=Hola! Quiero vender mi velero"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
+            >
+              Contactanos
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </>
+    </div>
   );
 };
 
