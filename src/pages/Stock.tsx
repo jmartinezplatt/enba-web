@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Ruler, Calendar, Anchor, Users } from "lucide-react";
 import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
+import heroBroker from "@/assets/hero-broker.jpg";
 import velero1 from "@/assets/velero-1.jpg";
 import velero2 from "@/assets/velero-2.jpg";
 import velero3 from "@/assets/velero-3.jpg";
@@ -175,17 +176,32 @@ const Stock = () => {
         </header>
 
         {/* Hero */}
-        <section className="py-16 lg:py-20">
-          <div className="container mx-auto px-6 text-center space-y-4">
-            <p className="font-condensed text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Broker Náutico
-            </p>
-            <h1 className="font-heading text-5xl lg:text-6xl font-bold text-foreground uppercase tracking-wide">
-              Veleros en Venta
-            </h1>
-            <p className="font-body text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Stock propio verificado. Todos los veleros cuentan con inspección completa y están listos para navegar.
-            </p>
+        <section className="relative py-24 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={heroBroker}
+              alt="Marina con veleros"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-hero-overlay" />
+          </div>
+          <div className="relative z-10 container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="text-center max-w-3xl mx-auto"
+            >
+              <p className="font-condensed text-xs uppercase tracking-[0.3em] text-white/80 font-light drop-shadow-lg mb-6">
+                Broker Náutico
+              </p>
+              <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
+                Veleros en Venta
+              </h1>
+              <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+                Stock propio verificado. Todos los veleros cuentan con inspección completa y están listos para navegar.
+              </p>
+            </motion.div>
           </div>
         </section>
 
