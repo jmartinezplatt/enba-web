@@ -2,6 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Compass, Ship, GraduationCap, Wrench } from "lucide-react";
+import ServiceConsultForm from "./ServiceConsultForm";
 import travesiaSunset from "@/assets/travesia-sunset.jpg";
 import travesiaCrew from "@/assets/travesia-crew.jpg";
 import travesiaVelero from "@/assets/travesia-velero.jpg";
@@ -65,9 +66,11 @@ const services = [
 const ServiceCard = ({
   service,
   index,
+  onConsultClick,
 }: {
   service: (typeof services)[0];
   index: number;
+  onConsultClick?: () => void;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -173,6 +176,14 @@ const ServiceCard = ({
           >
             Ver Destinos
           </Link>
+        ) : service.id === "servicios" ? (
+          <button
+            type="button"
+            onClick={onConsultClick}
+            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
+          >
+            Consultar
+          </button>
         ) : (
           <a
             href="#booking"
@@ -187,15 +198,22 @@ const ServiceCard = ({
 };
 
 const ServicesSection = () => {
+  const [consultOpen, setConsultOpen] = useState(false);
+
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 space-y-24 lg:space-y-32">
         {services.map((service, index) => (
           <div key={service.id} id={service.id} className="snap-section">
-            <ServiceCard service={service} index={index} />
+            <ServiceCard
+              service={service}
+              index={index}
+              onConsultClick={service.id === "servicios" ? () => setConsultOpen(true) : undefined}
+            />
           </div>
         ))}
       </div>
+      <ServiceConsultForm open={consultOpen} onOpenChange={setConsultOpen} />
     </section>
   );
 };
