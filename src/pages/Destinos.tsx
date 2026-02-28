@@ -3,6 +3,7 @@ import { MapPin, Clock, Anchor, Check } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import coloniaImage from "../assets/colonia-sailing.jpg";
+import heroDestinos from "../assets/hero-destinos.jpg";
 
 const destinations = [
   {
@@ -241,7 +242,7 @@ const Destinos = () => {
   {/* Background image */}
   <div className="absolute inset-0">
     <img
-      src={coloniaImage}
+      src={heroDestinos}
       alt="Navegación náutica"
       className="w-full h-full object-cover"
     />
