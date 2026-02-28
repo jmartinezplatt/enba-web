@@ -8,7 +8,7 @@ import logoLight from "@/assets/ENBA-horizontal-claro.svg";
 const navItems = [
   { label: "Travesías", href: "/destinos" },
   { label: "Escuela", href: "/#escuela" },
-  { label: "Broker", href: "/#broker" },
+  { label: "Broker", href: "/stock" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Contacto", href: "/#contacto" },
 ];
