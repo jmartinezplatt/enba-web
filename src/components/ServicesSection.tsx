@@ -31,7 +31,7 @@ const services = [
       { src: travesiaPuerto, position: "center" },
       { src: travesiaNavegando, position: "center 40%" },
     ],
-    features: ["8 veleros modernos totalmente equipados", "Travesías de 1 a 10 noches según destino", "Mínimo 3 pasajeros por embarcación", "Incluye: patrón, combustible, desayunos y almuerzos en travesía, pernocte"],
+    features: ["8 veleros modernos totalmente equipados", "Travesías de 1 a 10 días según destino", "Mínimo 3 pasajeros por embarcación", "Incluye: patrón, combustible, desayunos y almuerzos en travesía, pernocte"],
   },
   {
     id: "escuela",
