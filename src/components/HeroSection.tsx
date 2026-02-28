@@ -60,7 +60,7 @@ const HeroSection = () => {
           </a>
           <a
             href="#contacto"
-            className="border border-primary-foreground/30 text-white px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-primary-foreground/10"
+            className="border border-white/50 text-white px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-white/20"
           >
             Contactanos
           </a>
