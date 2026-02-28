@@ -6,7 +6,7 @@ import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
 import logoLight from "@/assets/ENBA-horizontal-claro.svg";
 
 const navItems = [
-  { label: "Travesías", href: "/#travesias" },
+  { label: "Travesías", href: "/destinos" },
   { label: "Escuela", href: "/#escuela" },
   { label: "Broker", href: "/#broker" },
   { label: "Servicios", href: "/#servicios" },
