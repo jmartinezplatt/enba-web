@@ -74,7 +74,7 @@ section[id], div[id] {
     --gold: 38 75% 55%;
     --nautical-white: 210 29% 92%; /* #E8EDF2 Blanco Náutico */
     
-    --gradient-hero: linear-gradient(135deg, hsl(210 64% 17% / 0.9), hsl(171 47% 51% / 0.7));
+    --gradient-hero: linear-gradient(135deg, hsl(210 64% 17% / 0.4), hsl(171 47% 51% / 0.3));
     --gradient-ocean: linear-gradient(180deg, hsl(210 64% 17%), hsl(171 47% 51%));
     --gradient-sand: linear-gradient(135deg, hsl(40 35% 90%), hsl(0 0% 100%));
     
