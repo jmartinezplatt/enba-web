@@ -237,7 +237,7 @@ const Destinos = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-secondary/30 to-background">
+      <section className="relative py-24 lg:py-32 bg-gradient-ocean text-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
