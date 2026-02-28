@@ -263,11 +263,11 @@ const Destinos = () => {
                 Destinos Náuticos
               </p>
             </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-2xl">
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wide" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9)' }}>
               ¿A dónde querés navegar?
             </h1>
-            <p className="font-body text-lg text-white/90 leading-relaxed drop-shadow-lg">
-              Salimos desde Puerto Norte, Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
+            <p className="font-body text-lg text-white leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>
+              Salimos desde la Ciudad Autonoma de Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
             </p>
           </motion.div>
         </div>
