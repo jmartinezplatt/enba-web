@@ -175,7 +175,7 @@ const ServiceCard = ({
             Ver Destinos
           </Link>
         ) : (
-          
+          <a
             href="#booking"
             className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-2"
           >
