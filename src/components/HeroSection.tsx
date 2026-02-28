@@ -15,37 +15,33 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
-
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-condensed text-xs md:text-sm uppercase tracking-[0.3em] text-ocean-light mb-6 font-light drop-shadow-lg"
+          className="font-condensed text-xs md:text-sm uppercase tracking-[0.3em] text-ocean-light mb-6 font-light"
         >
           Espacio Náutico Buenos Aires · Puerto Norte
         </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl"
+          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-tight mb-6 uppercase tracking-wide"
         >
           Navegá el<br />
           <span className="italic normal-case">Río de la Plata</span>
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg"
+          className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Travesías en velero por Argentina y por Uruguay, escapate al Delta. Escuela náutica para Timonel o Patron. Comprá-vendé tu barco con nosotros. Usa nuestros Servicios náuticos integrales y asegura tu tranquilidad.
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,7 +50,7 @@ const HeroSection = () => {
         >
           
             href="#travesias"
-            className="bg-accent text-accent-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:opacity-90 shadow-lg"
+            className="bg-accent text-accent-foreground px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:opacity-90"
           >
             Ver Travesías
           </a>
@@ -66,7 +62,6 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </div>
-
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
