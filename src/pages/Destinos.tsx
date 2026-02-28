@@ -237,27 +237,19 @@ const Destinos = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-gradient-ocean text-white">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <MapPin className="w-5 h-5 text-accent" />
-              <p className="font-condensed text-xs uppercase tracking-[0.3em] text-accent font-light">
-                Destinos Náuticos
-              </p>
-            </div>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6 uppercase tracking-wide">
-              ¿A dónde querés navegar?
-            </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              Salimos desde Puerto Norte, Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
-            </p>
-          </motion.div>
+    <section className="relative py-24 lg:py-32 overflow-hidden">
+  {/* Background image */}
+  <div className="absolute inset-0">
+    <img
+      src={coloniaImage}
+      alt="Navegación náutica"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-hero-overlay" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 container mx-auto px-6">
         </div>
       </section>
 
