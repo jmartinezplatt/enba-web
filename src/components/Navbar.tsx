@@ -38,27 +38,12 @@ const Navbar = () => {
     }
 
     e.preventDefault();
-    const target = document.querySelector(href.replace('/', ''));
+    const hash = href.includes('#') ? href.substring(href.indexOf('#')) : href;
+    const target = document.querySelector(hash);
     if (!target) return;
 
-    const mainEl = document.querySelector('main');
-    const isMobileSnap = mainEl && window.innerWidth <= 768;
-
-    if (isMobileSnap) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      const doScroll = () => {
-        const top = target.getBoundingClientRect().top + window.scrollY - 90;
-        window.scrollTo({ top, behavior: "smooth" });
-      };
-      if (!scrolled) {
-        window.scrollTo({ top: 51 });
-        requestAnimationFrame(() => requestAnimationFrame(doScroll));
-      } else {
-        doScroll();
-      }
-    }
-  }, [scrolled, isHome]);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [isHome]);
 
   return (
     <nav
