@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
@@ -15,6 +16,8 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +29,12 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!isHome) {
+      return; // Let the link navigate normally
+    }
+    
     e.preventDefault();
-    const target = document.querySelector(href);
+    const target = document.querySelector(href.replace('/', ''));
     if (!target) return;
 
     const mainEl = document.querySelector('main');
@@ -47,7 +54,7 @@ const Navbar = () => {
         doScroll();
       }
     }
-  }, [scrolled]);
+  }, [scrolled, isHome]);
 
   return (
     <nav
