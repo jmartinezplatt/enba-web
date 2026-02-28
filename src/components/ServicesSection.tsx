@@ -36,11 +36,11 @@ const services = [
   {
     id: "escuela",
     icon: GraduationCap,
-    title: "Escuela Náutica",
+    title: "Escuela Oficial",
     description:
-      "Cursos habilitados de Timonel y Patrón con examen oficial en PNA y carnet incluidos. Clínicas y entrenamientos de 1 a 8 horas para quienes ya tienen carnet habilitante y quieran mejorar habilidades o sumar horas barco.",
+      "Convertite en Timonel o Patrón con cursos habilitados por Prefectura. Examen oficial. También ofrecemos clínicas de perfeccionamiento de 1 a 8 horas para tripulantes que quieran sumar experiencia.",
     images: [{ src: nauticalSchool, position: "center" }],
-    features: ["Cursos de 3-4 meses, frecuencia semanal", "Preparación para examen oficial", "Clínicas de perfeccionamiento", "Cupos limitados"],
+    features: ["Cursos de 3-4 meses con frecuencia semanal", "Instructores con +10 años de experiencia náutica", "Clínicas de perfeccionamiento y práctica intensiva", "Cupos limitados — solo 3 cursos por año"],
   },
   {
     id: "broker",
