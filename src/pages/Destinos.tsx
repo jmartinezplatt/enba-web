@@ -250,6 +250,25 @@ const Destinos = () => {
 
   {/* Content */}
   <div className="relative z-10 container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <MapPin className="w-5 h-5 text-white/80" />
+              <p className="font-condensed text-xs uppercase tracking-[0.3em] text-white/80 font-light">
+                Destinos Náuticos
+              </p>
+            </div>
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-2xl">
+              ¿A dónde querés navegar?
+            </h1>
+            <p className="font-body text-lg text-white/90 leading-relaxed drop-shadow-lg">
+              Salimos desde Puerto Norte, Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
+            </p>
+          </motion.div>
         </div>
       </section>
 
