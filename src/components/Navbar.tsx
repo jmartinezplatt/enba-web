@@ -33,10 +33,10 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!isHome) {
+    if (!isHome || !href.includes('#')) {
       return; // Let the link navigate normally
     }
-    
+
     e.preventDefault();
     const target = document.querySelector(href.replace('/', ''));
     if (!target) return;
