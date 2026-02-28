@@ -53,10 +53,10 @@ const ContactSection = () => {
             </div>
             <h3 className="font-display text-lg font-bold text-foreground mb-2">Teléfono</h3>
             <p className="font-body text-sm text-muted-foreground mb-3">
-              +54 11 0000-0000
+              +54 11 4991-5143
             </p>
             <a
-              href="https://wa.me/5491100000000"
+              href="https://wa.me/5491149915143"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent/15 text-accent px-4 py-2 rounded-md font-body text-sm font-medium transition-colors hover:bg-accent/25"
@@ -73,7 +73,7 @@ const ContactSection = () => {
             </div>
             <h3 className="font-display text-lg font-bold text-foreground mb-2">Email & Redes</h3>
             <p className="font-body text-sm text-muted-foreground mb-3">
-              info@puertonortesailing.com
+              consultas@espacionautico.com.ar
             </p>
             <a
               href="#"
