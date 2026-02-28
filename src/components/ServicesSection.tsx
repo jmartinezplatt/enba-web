@@ -56,9 +56,9 @@ const services = [
     icon: Wrench,
     title: "Servicios Náuticos",
     description:
-      "Servicio integral para tu embarcación. Desde limpieza y mantenimiento de jarcia y cabullería hasta reparación y service de motores fuera de borda.",
+      "Mantenimiento integral para tu embarcación. Service de motores dentro y fuera de borda, jarcia, cabullería y reparaciones generales. Servicio a domicilio disponible. También gestionamos pintura, velas y winterización con talleres especializados.",
     images: [{ src: boatService, position: "center" }],
-    features: ["Limpieza y mantenimiento general", "Service de motores fuera de borda", "Jarcia y cabullería", "Reparaciones y diagnóstico"],
+    features: ["Servicio en puerto o a domicilio", "Presupuestos en 24-48hs", "Red de talleres y proveedores especializados certificados", "Seguimiento post-service incluido"],
   },
 ];
 
@@ -139,7 +139,7 @@ const ServiceCard = ({
               ? "Formación Náutica"
               : service.id === "broker"
               ? "Broker Náutico"
-              : "Mantenimiento"}
+              : "Service & Mantenimiento Náutico"}
           </p>
         </div>
 
