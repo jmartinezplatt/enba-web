@@ -222,7 +222,7 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
 
         {/* CTA */}
         <a
-          href="/#booking"
+          href="#booking"
           className="block w-full bg-primary text-primary-foreground text-center px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-4"
         >
           Reservar Travesía
