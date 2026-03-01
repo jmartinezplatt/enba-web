@@ -1,8 +1,25 @@
 import type { Velero } from "@/types/velero";
 
-import velero2 from "@/assets/velero-2.jpg";
 import velero3 from "@/assets/velero-3.jpg";
 import velero4 from "@/assets/velero-4.jpg";
+
+// PICANTE – 16 fotos ordenadas: exteriores → cubierta/cockpit → detalle → interior → navegando
+import picante01 from "@/assets/picante/IMG_0010.jpg";
+import picante02 from "@/assets/picante/IMG_0022.jpg";
+import picante03 from "@/assets/picante/IMG_9557.jpg";
+import picante04 from "@/assets/picante/5D317C22-031E-47F1-99DB-7BA2891B8A16.jpg";
+import picante05 from "@/assets/picante/00DA8424-F5A7-4880-8308-D2EF328A77E8.jpg";
+import picante06 from "@/assets/picante/6A7E9D45-6E7A-40EA-AB35-4921A8E9020D.jpg";
+import picante07 from "@/assets/picante/400F1144-3502-4C18-AF76-18260FB7DED1.jpg";
+import picante08 from "@/assets/picante/D3C54E2B-B379-4DBE-948D-AA1AEB1457A1.jpg";
+import picante09 from "@/assets/picante/IMG_9559.jpg";
+import picante10 from "@/assets/picante/IMG_9560.jpg";
+import picante11 from "@/assets/picante/99808AD6-F4A4-4DE6-8734-48304C139AA3.jpg";
+import picante12 from "@/assets/picante/669B2AED-A03F-4A59-A7D7-1CF7488FDACA.jpg";
+import picante13 from "@/assets/picante/IMG_0168.jpg";
+import picante14 from "@/assets/picante/E13B4A6A-A9E6-46B4-B4A5-BF0BEC028AFB.jpg";
+import picante15 from "@/assets/picante/2982D6E2-D8FF-4B9C-8B13-B46DD7EE8876.jpg";
+import picante16 from "@/assets/picante/IMG_4441.jpg";
 
 // BELNA – 25 fotos ordenadas: exteriores → cubierta → interior → baño → electrónica
 import belna01 from "@/assets/belna/IMG_1021.jpg";
@@ -166,7 +183,12 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
     anio: 2013,
     estado: "Muy bueno",
     precio: "USD 29.900",
-    imagenes: [velero2],
+    imagenes: [
+      picante01, picante02, picante03, picante04, picante05,
+      picante06, picante07, picante08, picante09, picante10,
+      picante11, picante12, picante13, picante14, picante15,
+      picante16,
+    ],
     descripcionLarga: `Bramador 24 modelo 2013, completamente equipado y listo para navegar. Diseñado por Gabriel Schroeder, es uno de los veleros de 24 pies más reconocidos del Río de la Plata: combina un casco marinero en PRFV con líneas modernas, excelente estabilidad y un interior sorprendentemente amplio para su eslora.
 
 Navega cómodamente a 6 nudos con vientos normales y alcanza 7 nudos con viento fuerte, manteniendo control y seguridad incluso en condiciones exigentes. Su calado de 1.40 m le otorga gran estabilidad y performance ceñida.
