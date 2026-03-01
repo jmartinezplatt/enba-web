@@ -81,8 +81,8 @@ const ServiceConsultForm = ({ open, onOpenChange }: ServiceConsultFormProps) => 
     if (!formData.nombre.trim()) newErrors.nombre = "Campo obligatorio";
     if (!formData.celular.trim()) {
       newErrors.celular = "Campo obligatorio";
-    } else if (!/^\d{3}\s9\s\d{8}$/.test(formData.celular.trim())) {
-      newErrors.celular = "Formato: xxx 9 xxxxxxxx";
+    } else if (!/^\(\d{3}\)\s9\s\d{4}-\d{4}$/.test(formData.celular.trim())) {
+      newErrors.celular = "Formato: (xxx) 9 xxxx-xxxx";
     }
     if (!formData.email.trim()) {
       newErrors.email = "Campo obligatorio";
@@ -140,7 +140,7 @@ ${formData.detalle.replace(/\n/g, '<br>')}
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
-      toast.success("Consulta enviada correctamente. En 24hs hábiles le estaremos contestando.");
+      toast.success("Consulta enviada correctamente. Dentro de las próximas 24hs hábiles le estaremos contestando.");
       resetForm();
       onOpenChange(false);
     } catch (error: unknown) {
@@ -183,7 +183,7 @@ ${formData.detalle.replace(/\n/g, '<br>')}
               id="svc-celular"
               value={formData.celular}
               onChange={(e) => setFormData({ ...formData, celular: e.target.value })}
-              placeholder="011 9 12345678"
+              placeholder="(011) 9 1234-5678"
             />
             {errors.celular && <p className="text-xs text-destructive">{errors.celular}</p>}
           </div>
@@ -268,7 +268,7 @@ ${formData.detalle.replace(/\n/g, '<br>')}
 
           {/* Mensaje obligatorio */}
           <p className="text-xs text-muted-foreground text-center leading-relaxed border-t border-border pt-4">
-            POR FAVOR COMPLETE TODOS LOS CAMPOS YA QUE SON NECESARIOS PARA DARLE LA RESPUESTA QUE CORRESPONDE Y MERECE, EN 24HS HÁBILES LES ESTAREMOS CONTESTANDO.
+            POR FAVOR COMPLETE TODOS LOS CAMPOS YA QUE SON NECESARIOS PARA DARLE LA RESPUESTA QUE CORRESPONDE Y MERECE, DENTRO DE LAS PROXIMAS 24HS HÁBILES LE ESTAREMOS CONTESTANDO.
           </p>
 
           {/* Botón enviar */}
