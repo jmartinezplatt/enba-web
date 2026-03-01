@@ -157,26 +157,137 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
   },
   {
     id: "2",
-    nombre: "Viento Sur",
-    modelo: "Flicka 20",
+    nombre: "PICANTE",
+    modelo: "BRAMADOR 24",
     descripcionCorta:
-      "Compacto y marinero. Ideal para iniciarse en la navegación a vela con cabina habitable para dos personas.",
-    tamano: "6.1 m (20 pies)",
-    tripulacion: 4,
-    anio: 1990,
+      "Velero deportivo y versátil de 24 pies diseñado por Gabriel Schroeder. Combina rendimiento bajo vela con confort a bordo, ideal para crucero y regata en el Río de la Plata.",
+    tamano: "7.10 m (24 pies)",
+    tripulacion: 6,
+    anio: 2013,
     estado: "Muy bueno",
-    precio: "USD 12.500",
+    precio: "Consultar",
     imagenes: [velero2],
-    descripcionLarga:
-      "Velero compacto y robusto, ideal para navegación costera y travesías cortas. Cabina habitable para dos personas con equipamiento básico de confort. Motor fuera de borda 6 HP.",
+    descripcionLarga: `Bramador 24 modelo 2013, completamente equipado y listo para navegar. Diseñado por Gabriel Schroeder, es uno de los veleros de 24 pies más reconocidos del Río de la Plata: combina un casco marinero en PRFV con líneas modernas, excelente estabilidad y un interior sorprendentemente amplio para su eslora.
+
+Navega cómodamente a 6 nudos con vientos normales y alcanza 7 nudos con viento fuerte, manteniendo control y seguridad incluso en condiciones exigentes. Su calado de 1.40 m le otorga gran estabilidad y performance ceñida.
+
+El aparejo es un sloop fraccionado 9/10 con arboladura de Duroal, crucetas retrasadas marca Z Spars y botavara de aluminio de la misma marca. Cuenta con vang rígido Bohn Racing, jarcia de acero inoxidable de 6 mm, dos patines de 1000 mm, stoppers Rutgerson RG750, molinetes Sea Winch Nº 23 y herrajes en acero inoxidable.
+
+El juego de velas Hood incluye mayor de dos rizos Dacron full-batten (15 m²), Génoa III al 110 % de enrollar (14 m²), asimétrico de nylon 0.75 oz (48 m²) y foque con rizos transformable en tormentín de Dacron (7 m²).
+
+Motorización: Suzuki 6 HP 4 tiempos (29 kg, arranque manual, 138 cc) con alternador acoplado de 6 A/H y hélice de tres palas de duroaluminio. Bidón de combustible de 10 litros.
+
+Sistema eléctrico de 12/220 V con batería de ciclo profundo Optima Detroit 12 V – 55 A y cargador inteligente Black & Decker de 2/9/10 A.
+
+Electrónica de navegación Raymarine: VHF RAY49, bidata digital con ecosonda y corredera ST40, piloto automático ST1000 y compás de mamparo Plastimo Contest 101. Antena de tope tipo látigo.
+
+Interior con equipo de audio X-View DA-1000 (AM/FM, MP3, USB) y dos parlantes. Garrafa de gas licuado de 5 kg.
+
+Protección y lonas: media carpa, cubre tambucho, cubre mayor tipo Lazy Bag y cubre UV de Génoa, todo en lona vinílica beige.
+
+Seguridad completa: 4 salvavidas reglamentarios, 2 autoinflables con arnés, 1 circular con baliza de posición lumínica automática, 2 andariveles, 4 líneas de vida, 4 arneses, 2 matafuegos (1 ABC 1 kg + 1 HCFC123 2.5 kg), 2 bengalas, espejo de señales, campana, bocina manual, botiquín, prismáticos 2×50, bomba de achique eléctrica Rule 500 GAL/H automática, achicador plástico y achique manual tipo inflador.
+
+Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cabo de 14 mm × 20 m; secundaria de 6 kg con cadena de 6 mm × 10 m y cabo de 14 mm × 10 m. Balón de fondeo incluido.`,
     especificaciones: [
       {
         titulo: "Datos Técnicos",
         items: [
-          "Eslora: 6.1 m (20 pies)",
-          "Año: 1990",
-          "Motor: Fuera de borda 6 HP",
-          "Capacidad: 4 personas",
+          "Eslora (LOA): 7.10 m (24 pies)",
+          "Manga: 2.72 m",
+          "Calado: 1.40 m",
+          "Puntal: 1.27 m",
+          "Desplazamiento: ~1.500 kg",
+          "Material: PRFV (Fibra de vidrio)",
+          "Año: 2013",
+          "Diseñador: Gabriel Schroeder",
+          "Capacidad: 6 personas",
+        ],
+      },
+      {
+        titulo: "Velamen (Hood)",
+        items: [
+          "Mayor de dos rizos, Dacron full-batten — 15 m²",
+          "Génoa III al 110 % de enrollar — 14 m²",
+          "Asimétrico de nylon 0.75 oz — 48 m²",
+          "Foque con rizos transformable en tormentín, Dacron — 7 m²",
+        ],
+      },
+      {
+        titulo: "Arboladura y Aparejo",
+        items: [
+          "Sloop fraccionado 9/10 de Duroal, crucetas retrasadas — Z Spars",
+          "Botavara de aluminio Z Spars",
+          "Vang rígido Bohn Racing",
+          "Jarcia de acero inoxidable 6 mm",
+          "2 patines de 1000 mm",
+          "2×3 Stoppers Rutgerson RG750",
+          "2 molinetes Sea Winch Nº 23",
+          "Motones y herrajes en acero inoxidable",
+        ],
+      },
+      {
+        titulo: "Motorización",
+        items: [
+          "Motor fuera de borda Suzuki 6 HP, 4 tiempos",
+          "Arranque manual, 1 cilindro, 138 cc, 29 kg",
+          "Alternador acoplado de 6 A/H",
+          "Hélice de tres palas de duroaluminio",
+          "Bidón de combustible 10 litros",
+        ],
+      },
+      {
+        titulo: "Electrónica de Navegación",
+        items: [
+          "VHF Raymarine RAY49",
+          "Bidata digital ecosonda y corredera Raymarine ST40",
+          "Piloto automático Raymarine ST1000",
+          "Compás de mamparo Plastimo Contest 101",
+          "Antena de tope tipo látigo",
+        ],
+      },
+      {
+        titulo: "Sistema Eléctrico",
+        items: [
+          "Circuito 12/220 V",
+          "Batería ciclo profundo Optima Detroit 12 V – 55 A",
+          "Cargador inteligente Black & Decker 2/9/10 A",
+        ],
+      },
+      {
+        titulo: "Confort y Lonas",
+        items: [
+          "Equipo de audio X-View DA-1000 (AM/FM, MP3, USB)",
+          "2 parlantes de interior",
+          "Garrafa de gas licuado de 5 kg",
+          "Media carpa de lona vinílica beige",
+          "Cubre tambucho de lona vinílica beige",
+          "Cubre mayor tipo Lazy Bag de lona vinílica beige",
+          "Cubre UV de Génoa de lona vinílica beige",
+        ],
+      },
+      {
+        titulo: "Seguridad",
+        items: [
+          "4 salvavidas reglamentarios",
+          "2 salvavidas autoinflables con arnés",
+          "1 salvavidas circular con baliza de posición lumínica automática",
+          "2 andariveles y 4 líneas de vida",
+          "4 arneses",
+          "2 matafuegos (1 ABC 1 kg + 1 HCFC123 2.5 kg)",
+          "2 bengalas reglamentarias",
+          "Espejo de señales, campana y bocina manual",
+          "Prismáticos 2×50",
+          "Botiquín reglamentario",
+          "Bomba de achique eléctrica Rule 500 GAL/H (automática)",
+          "Achicador plástico y achique manual tipo inflador",
+        ],
+      },
+      {
+        titulo: "Fondeo",
+        items: [
+          "Ancla Danforth 8 kg — cadena 8 mm × 20 m + cabo 14 mm × 20 m",
+          "Ancla Danforth 6 kg — cadena 6 mm × 10 m + cabo 14 mm × 10 m",
+          "Balón de fondeo",
         ],
       },
     ],
