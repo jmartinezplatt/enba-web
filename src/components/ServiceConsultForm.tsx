@@ -114,8 +114,10 @@ const ServiceConsultForm = ({ open, onOpenChange }: ServiceConsultFormProps) => 
     const templateParams = {
       to_email: "consultas@espacionautico.com.ar",
       subject: "CONSULTA SOBRE SERVICIOS NAUTICOS ENBA",
+      from_name: formData.nombre,
       nombre: formData.nombre,
       celular: formData.celular,
+      from_email: formData.email,
       email: formData.email,
       horario: getLabel(formData.horario, HORARIOS),
       tipo_embarcacion: getLabel(formData.tipoEmbarcacion, TIPOS_EMBARCACION),
