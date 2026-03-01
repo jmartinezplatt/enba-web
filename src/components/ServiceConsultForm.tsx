@@ -126,17 +126,15 @@ const ServiceConsultForm = ({ open, onOpenChange }: ServiceConsultFormProps) => 
       eslora: getLabel(formData.eslora, ESLORAS),
       detalle: formData.detalle,
       message: `
-CONSULTA SOBRE SERVICIOS NAUTICOS ENBA
-
-Nombre y apellidos: ${formData.nombre}
-Celular/WhatsApp: ${formData.celular}
-Email: ${formData.email}
-Horario para contactarme: ${getLabel(formData.horario, HORARIOS)}
-Tipo de embarcación: ${getLabel(formData.tipoEmbarcacion, TIPOS_EMBARCACION)}
-Eslora: ${getLabel(formData.eslora, ESLORAS)}
-
-Detalle del problema o servicio:
-${formData.detalle}
+<strong>CONSULTA SOBRE SERVICIOS NAUTICOS ENBA</strong><br><br>
+<strong>Nombre y apellidos:</strong> ${formData.nombre}<br>
+<strong>Celular/WhatsApp:</strong> ${formData.celular}<br>
+<strong>Email:</strong> ${formData.email}<br>
+<strong>Horario para contactarme:</strong> ${getLabel(formData.horario, HORARIOS)}<br>
+<strong>Tipo de embarcación:</strong> ${getLabel(formData.tipoEmbarcacion, TIPOS_EMBARCACION)}<br>
+<strong>Eslora:</strong> ${getLabel(formData.eslora, ESLORAS)}<br><br>
+<strong>Detalle del problema o servicio:</strong><br>
+${formData.detalle.replace(/\n/g, '<br>')}
       `.trim(),
     };
 
@@ -146,9 +144,8 @@ ${formData.detalle}
       resetForm();
       onOpenChange(false);
     } catch (error: unknown) {
-      const errMsg = error instanceof Error ? error.message : typeof error === 'object' && error !== null && 'text' in error ? String((error as { text: unknown }).text) : String(error);
       console.error("EmailJS error:", error);
-      toast.error(`Error al enviar: ${errMsg}. Escribinos a consultas@espacionautico.com.ar`);
+      toast.error("Error al enviar la consulta. Por favor intentá nuevamente o escribinos a consultas@espacionautico.com.ar");
     } finally {
       setSending(false);
     }
