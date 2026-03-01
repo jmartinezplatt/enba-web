@@ -1,0 +1,186 @@
+{
+  "name": "ENBA - Auto Publicar IG + FB",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "cron-hourly",
+      "name": "Cada hora",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.GOOGLE_SHEET_ID }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Calendario"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "column": "aprobado",
+              "value": "true"
+            },
+            {
+              "column": "ig_estado",
+              "value": "pendiente"
+            }
+          ]
+        }
+      },
+      "id": "sheets-read",
+      "name": "Leer Posts Aprobados",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CONFIGURAR",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.aprobado }}",
+              "value2": true
+            }
+          ],
+          "string": [
+            {
+              "value1": "={{ $json.fecha }}",
+              "value2": "={{ $now.format('yyyy-MM-dd') }}"
+            }
+          ]
+        }
+      },
+      "id": "filter-today",
+      "name": "Filtrar Posts de Hoy",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [750, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.IG_BUSINESS_ACCOUNT_ID }}/media",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "caption", "value": "={{ $json.ig_caption }}\\n\\n{{ $json.ig_hashtags }}" },
+            { "name": "image_url", "value": "={{ $json.ig_imagen_url }}" },
+            { "name": "access_token", "value": "={{ $env.META_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "ig-create-media",
+      "name": "IG - Crear Media Container",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1000, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.IG_BUSINESS_ACCOUNT_ID }}/media_publish",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "creation_id", "value": "={{ $json.id }}" },
+            { "name": "access_token", "value": "={{ $env.META_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "ig-publish",
+      "name": "IG - Publicar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.FB_PAGE_ID }}/feed",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "message", "value": "={{ $json.fb_caption }}" },
+            { "name": "link", "value": "https://www.espacionautico.com.ar" },
+            { "name": "access_token", "value": "={{ $env.META_PAGE_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "fb-publish",
+      "name": "FB - Publicar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1000, 450]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.GOOGLE_SHEET_ID }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Calendario"
+        },
+        "columns": {
+          "values": {
+            "ig_estado": "publicado",
+            "fb_estado": "publicado",
+            "publicado_at": "={{ $now.toISO() }}"
+          }
+        }
+      },
+      "id": "sheets-update",
+      "name": "Marcar como Publicado",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CONFIGURAR",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cada hora": { "main": [[{ "node": "Leer Posts Aprobados", "type": "main", "index": 0 }]] },
+    "Leer Posts Aprobados": { "main": [[{ "node": "Filtrar Posts de Hoy", "type": "main", "index": 0 }]] },
+    "Filtrar Posts de Hoy": { "main": [[{ "node": "IG - Crear Media Container", "type": "main", "index": 0 }, { "node": "FB - Publicar", "type": "main", "index": 0 }]] },
+    "IG - Crear Media Container": { "main": [[{ "node": "IG - Publicar", "type": "main", "index": 0 }]] },
+    "IG - Publicar": { "main": [[{ "node": "Marcar como Publicado", "type": "main", "index": 0 }]] },
+    "FB - Publicar": { "main": [[{ "node": "Marcar como Publicado", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "ENBA" },
+    { "name": "publicacion" }
+  ]
+}

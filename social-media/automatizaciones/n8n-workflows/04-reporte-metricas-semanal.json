@@ -1,0 +1,155 @@
+{
+  "name": "ENBA - Reporte de Métricas Semanal",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9,
+              "triggerAtDay": 1
+            }
+          ]
+        }
+      },
+      "id": "cron-lunes",
+      "name": "Lunes 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.IG_BUSINESS_ACCOUNT_ID }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "metric", "value": "impressions,reach,follower_count,profile_views" },
+            { "name": "period", "value": "day" },
+            { "name": "since", "value": "={{ $now.minus({days: 7}).toUnixInteger() }}" },
+            { "name": "until", "value": "={{ $now.toUnixInteger() }}" },
+            { "name": "access_token", "value": "={{ $env.META_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "ig-insights",
+      "name": "IG Insights (7 días)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 200]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.FB_PAGE_ID }}/insights",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "metric", "value": "page_impressions,page_engaged_users,page_fans,page_views_total" },
+            { "name": "period", "value": "week" },
+            { "name": "access_token", "value": "={{ $env.META_PAGE_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "fb-insights",
+      "name": "FB Insights (7 días)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 450]
+    },
+    {
+      "parameters": {
+        "jsCode": "const igData = $('IG Insights (7 días)').first().json;\nconst fbData = $('FB Insights (7 días)').first().json;\n\nconst metrics = {\n  periodo: `${$now.minus({days: 7}).format('yyyy-MM-dd')} al ${$now.format('yyyy-MM-dd')}`,\n  instagram: {},\n  facebook: {}\n};\n\n// Parsear métricas de IG\nif (igData.data) {\n  for (const metric of igData.data) {\n    const values = metric.values || [];\n    const total = values.reduce((sum, v) => sum + (v.value || 0), 0);\n    metrics.instagram[metric.name] = total;\n  }\n}\n\n// Parsear métricas de FB\nif (fbData.data) {\n  for (const metric of fbData.data) {\n    const values = metric.values || [];\n    const lastValue = values[values.length - 1]?.value || 0;\n    metrics.facebook[metric.name] = lastValue;\n  }\n}\n\nreturn [{ json: metrics }];"
+      },
+      "id": "consolidate-metrics",
+      "name": "Consolidar Métricas",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Analiza estas métricas semanales de redes sociales de ENBA y genera un reporte ejecutivo breve en español:\\n\\n{{ JSON.stringify($json) }}\\n\\nIncluye: resumen de performance, tendencias, top contenido, y 3 recomendaciones accionables para la próxima semana.\"\n  }]\n}"
+      },
+      "id": "claude-analyze",
+      "name": "Claude - Análisis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.GOOGLE_SHEET_ID }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Metricas"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData"
+        }
+      },
+      "id": "sheets-metrics",
+      "name": "Guardar Métricas",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1300, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CONFIGURAR",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $env.NOTIFICATION_EMAIL }}",
+        "subject": "=ENBA - Reporte Semanal de Redes ({{ $json.periodo }})",
+        "message": "={{ $('Claude - Análisis').first().json.content[0].text }}"
+      },
+      "id": "email-report",
+      "name": "Enviar Reporte",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1300, 450],
+      "credentials": {
+        "smtp": {
+          "id": "CONFIGURAR",
+          "name": "SMTP ENBA"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Lunes 9h": { "main": [[{ "node": "IG Insights (7 días)", "type": "main", "index": 0 }, { "node": "FB Insights (7 días)", "type": "main", "index": 0 }]] },
+    "IG Insights (7 días)": { "main": [[{ "node": "Consolidar Métricas", "type": "main", "index": 0 }]] },
+    "FB Insights (7 días)": { "main": [[{ "node": "Consolidar Métricas", "type": "main", "index": 0 }]] },
+    "Consolidar Métricas": { "main": [[{ "node": "Claude - Análisis", "type": "main", "index": 0 }]] },
+    "Claude - Análisis": { "main": [[{ "node": "Guardar Métricas", "type": "main", "index": 0 }, { "node": "Enviar Reporte", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "ENBA" },
+    { "name": "metricas" }
+  ]
+}
