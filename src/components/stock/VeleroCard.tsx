@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Ruler, Calendar, Anchor, Users } from "lucide-react";
 import type { Velero } from "@/types/velero";
@@ -77,13 +78,13 @@ const VeleroCard = ({ velero, index }: VeleroCardProps) => {
             </span>
 
             <div className="flex items-center gap-2">
-              {/* MÁS INFO button */}
-              <button
-                onClick={() => setDetailOpen(true)}
+              {/* MÁS INFO link — SEO-friendly anchor to detail page */}
+              <Link
+                to={`/veleros-en-venta/${velero.slug}`}
                 className="bg-primary text-primary-foreground px-4 py-2 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
               >
                 Más Info
-              </button>
+              </Link>
 
               {/* WhatsApp icon button */}
               <a

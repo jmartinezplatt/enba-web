@@ -1,153 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { MapPin, Clock, Anchor, Check } from "lucide-react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import coloniaImage from "../assets/colonia-sailing.jpg";
-import heroDestinos from "../assets/hero-destinos.jpg";
-import deltaImage from "../assets/delta-destinos.jpg";
-import mardelplataImage from "../assets/mardelplata-destinos.jpg";
-import martingarciaImage from "../assets/martingarcia-destinos.jpg";
-import riachueloImage from "../assets/riachuelo-destinos.jpg";
-import juanlacazeImage from "../assets/juanlacaze-destinos.jpg";
-import piriapolisImage from "../assets/piriapolis-destinos.jpg";
-import puntadelesteImage from "../assets/puntadeleste-destinos.jpg";
-import montevideoImage from "../assets/montevideo-destinos.jpg";
-import carmeloImage from "../assets/carmelo-destinos.jpg";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
+import heroDestinos from "@/assets/hero-destinos.jpg";
+import { destinos } from "@/data/destinos";
+import type { Destino } from "@/data/destinos";
 
-const destinations = [
-  {
-    id: "colonia",
-    name: "Colonia del Sacramento",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "1-2 noches",
-    distance: "50 km",
-    image: coloniaImage,
-    popular: true,
-    description: "Cruzá el Río de la Plata hacia el encanto colonial de Colonia. Calles de piedra, faros históricos y atardeceres inolvidables.",
-    includes: ["Navegación ida y vuelta", "Pernocte a bordo", "Desayunos y almuerzos", "Patrón certificado"],
-    highlights: ["Ciudad Patrimonio de la Humanidad UNESCO", "Perfecto para fin de semana", "Puerto seguro y bien equipado"]
-  },
-  {
-    id: "carmelo",
-    name: "Carmelo",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "2 noches",
-    distance: "180 km",
-    image: carmeloImage,
-    popular: false,
-    description: "Navega hacia el corazón vitivinícola de Uruguay. Bodegas, playas tranquilas y la desembocadura del Río Uruguay.",
-    includes: ["Navegación ida y vuelta", "2 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Zona de bodegas premium", "Playas del Río Uruguay", "Menos turístico que Colonia"]
-  },
-  {
-    id: "montevideo",
-    name: "Montevideo",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "3-4 noches",
-    distance: "200 km",
-    image: montevideoImage,
-    popular: false,
-    description: "Navegá hacia la capital uruguaya. Ciudad Vieja, Rambla, gastronomía de primer nivel y una gran marina náutica.",
-    includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Capital cosmopolita", "Excelente gastronomía", "Puerto de Buceo - marina completa"]
-  },
-  {
-    id: "punta-del-este",
-    name: "Punta del Este",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "4-5 noches",
-    distance: "280 km",
-    image: puntadelesteImage,
-    popular: false,
-    description: "El destino más glamoroso del Río de la Plata. Playas, puerto deportivo de lujo y vida nocturna de primer nivel.",
-    includes: ["Navegación ida y vuelta", "4-5 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Destino premium", "Puerto de Punta del Este", "Ideal para navegantes exigentes"]
-  },
-  {
-    id: "piriapolis",
-    name: "Piriápolis",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "3-4 noches",
-    distance: "240 km",
-    image: piriapolisImage,
-    popular: false,
-    description: "El balneario más antiguo de Uruguay. Cerros, rambla histórica y aguas tranquilas ideales para fondear.",
-    includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Perfecto para familias", "Fondeo protegido", "Menos masivo que Punta del Este"]
-  },
-  {
-    id: "juan-lacaze",
-    name: "Juan Lacaze",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "1-2 noches",
-    distance: "120 km",
-    image: juanlacazeImage,
-    popular: false,
-    description: "Pueblo tranquilo sobre el Río Uruguay. Ideal para navegantes que buscan autenticidad y calma.",
-    includes: ["Navegación ida y vuelta", "1-2 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Destino auténtico", "Menos concurrido", "Excelente para navegación relajada"]
-  },
-  {
-    id: "riachuelo",
-    name: "Riachuelo",
-    country: "Uruguay",
-    flag: "🇺🇾",
-    duration: "2 noches",
-    distance: "140 km",
-    image: riachueloImage,
-    popular: false,
-    description: "Pueblo pescador con encanto rioplatense. Aguas calmas y experiencia náutica genuina.",
-    includes: ["Navegación ida y vuelta", "2 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Pueblo pescador auténtico", "Aguas tranquilas", "Perfecto para desconectar"]
-  },
-  {
-    id: "martin-garcia",
-    name: "Isla Martín García",
-    country: "Argentina",
-    flag: "🇦🇷",
-    duration: "1 noche",
-    distance: "45 km",
-    image: martingarciaImage,
-    popular: true,
-    description: "Reserva Natural e histórica isla argentina en medio del Río de la Plata. Naturaleza y patrimonio en un solo destino.",
-    includes: ["Navegación ida y vuelta", "1 noche a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Reserva Natural protegida", "Historia argentina viva", "Navegación corta desde Buenos Aires"]
-  },
-  {
-    id: "mar-del-plata",
-    name: "Mar del Plata",
-    country: "Argentina",
-    flag: "🇦🇷",
-    duration: "3-4 noches",
-    distance: "380 km",
-    image: mardelplataImage,
-    popular: false,
-    description: "Navegá por la costa bonaerense hasta la perla del Atlántico. Desafío náutico y destino turístico de primer nivel.",
-    includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Navegación oceánica", "Puerto deportivo completo", "Destino turístico consolidado"]
-  },
-  {
-    id: "delta",
-    name: "Islas y Arroyos del Delta",
-    country: "Argentina",
-    flag: "🇦🇷",
-    duration: "1 noche",
-    distance: "30-60 km",
-    image: deltaImage,
-    popular: true,
-    description: "Explorá los canales, arroyos e islas del Delta del Paraná. Naturaleza a 30 minutos de Buenos Aires.",
-    includes: ["Navegación por canales del Delta", "1 noche a bordo", "Todas las comidas", "Patrón certificado"],
-    highlights: ["Naturaleza a minutos de la ciudad", "Navegación fluvial protegida", "Ideal para principiantes"]
-  }
-];
-
-const DestinationCard = ({ destination }: { destination: typeof destinations[0] }) => {
+const DestinationCard = ({ destination }: { destination: Destino }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -160,8 +22,9 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
       <div className="relative h-64 overflow-hidden">
         <img
           src={destination.image}
-          alt={`Navegación a ${destination.name}`}
+          alt={`Travesía en velero a ${destination.name}`}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
         />
         {destination.popular && (
           <div className="absolute top-4 right-4">
@@ -177,7 +40,6 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
 
       {/* Content */}
       <div className="p-6 space-y-4">
-        {/* Header */}
         <div>
           <h3 className="font-heading text-2xl font-bold text-foreground uppercase tracking-wide mb-1">
             {destination.name}
@@ -185,7 +47,6 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
           <p className="font-body text-sm text-muted-foreground">{destination.country}</p>
         </div>
 
-        {/* Meta info */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Clock className="w-4 h-4 text-accent" />
@@ -197,12 +58,10 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
           </div>
         </div>
 
-        {/* Description */}
         <p className="font-body text-sm text-foreground/80 leading-relaxed">
           {destination.description}
         </p>
 
-        {/* Includes */}
         <div className="space-y-2">
           <p className="font-body text-xs uppercase tracking-wider text-accent font-semibold">Incluye:</p>
           <ul className="space-y-1.5">
@@ -215,7 +74,6 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
           </ul>
         </div>
 
-        {/* Highlights */}
         <div className="pt-3 border-t border-border">
           <div className="flex flex-wrap gap-2">
             {destination.highlights.map((highlight) => (
@@ -229,13 +87,12 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
           </div>
         </div>
 
-        {/* CTA */}
-        <a
-          href="#booking"
+        <Link
+          to={`/travesias/${destination.id}`}
           className="block w-full bg-primary text-primary-foreground text-center px-6 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90 mt-4"
         >
-          Reservar Travesía
-        </a>
+          Ver Travesía
+        </Link>
       </div>
     </motion.div>
   );
@@ -244,22 +101,28 @@ const DestinationCard = ({ destination }: { destination: typeof destinations[0] 
 const Destinos = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Travesías en Velero a Uruguay y Argentina | Espacio Náutico Buenos Aires"
+        description="Navegá en velero a Colonia, Montevideo, Punta del Este, Delta del Paraná y más. Travesías con pernocte, patrón certificado y comidas incluidas. Salida desde Buenos Aires."
+        path="/travesias"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Travesías", url: "/travesias" },
+      ]} />
       <Navbar />
 
       {/* Hero Section */}
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-  {/* Background image */}
-  <div className="absolute inset-0">
-    <img
-      src={heroDestinos}
-      alt="Navegación náutica"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-hero-overlay" />
-  </div>
-
-  {/* Content */}
-  <div className="relative z-10 container mx-auto px-6">
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroDestinos}
+            alt="Travesías en velero desde Buenos Aires"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-hero-overlay" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -276,7 +139,7 @@ const Destinos = () => {
               ¿A dónde querés navegar?
             </h1>
             <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
-              Salimos desde la Ciudad Autonoma de Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
+              Salimos desde la Ciudad Autónoma de Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.
             </p>
           </motion.div>
         </div>
@@ -286,7 +149,7 @@ const Destinos = () => {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {destinations.map((destination) => (
+            {destinos.map((destination) => (
               <DestinationCard key={destination.id} destination={destination} />
             ))}
           </div>
@@ -303,7 +166,9 @@ const Destinos = () => {
             Armamos travesías personalizadas a medida. Contactanos y diseñamos la navegación perfecta para vos.
           </p>
           <a
-            href="/#booking"
+            href="https://wa.me/5491149915143?text=Hola! Quiero consultar por una travesía personalizada."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white text-primary px-8 py-4 rounded-md font-body font-semibold text-sm tracking-widest uppercase transition-all hover:bg-white/90"
           >
             Consultar Travesía Personalizada

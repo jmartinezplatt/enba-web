@@ -51,6 +51,7 @@ import belna25 from "@/assets/belna/IMG_0953.jpg";
 export const veleros: Velero[] = [
   {
     id: "1",
+    slug: "belna",
     nombre: "BELNA",
     modelo: "MASTRACCHIO 24.5",
     descripcionCorta:
@@ -174,6 +175,7 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
   },
   {
     id: "2",
+    slug: "picante",
     nombre: "PICANTE",
     modelo: "BRAMADOR 24",
     descripcionCorta:
@@ -326,6 +328,7 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
   },
   {
     id: "3",
+    slug: "marejada",
     nombre: "Marejada",
     modelo: "Hunter 33",
     descripcionCorta:
@@ -352,6 +355,7 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
   },
   {
     id: "4",
+    slug: "brisa",
     nombre: "Brisa",
     modelo: "Grampian 26",
     descripcionCorta:

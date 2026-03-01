@@ -6,11 +6,11 @@ import logoDark from "@/assets/ENBA-horizontal-oscuro.svg";
 import logoLight from "@/assets/ENBA-horizontal-claro.svg";
 
 const navItems = [
-  { label: "Travesías", href: "/destinos" },
-  { label: "Escuela", href: "/#escuela" },
-  { label: "Broker", href: "/stock" },
-  { label: "Servicios", href: "/#servicios" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Travesías", href: "/travesias" },
+  { label: "Escuela", href: "/escuela-nautica" },
+  { label: "Broker", href: "/veleros-en-venta" },
+  { label: "Servicios", href: "/servicios-nauticos" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const Navbar = () => {
@@ -18,8 +18,11 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
-  const isDestinos = location.pathname === '/destinos';
-  const isStock = location.pathname === '/stock';
+  const isDestinos = location.pathname.startsWith('/travesias');
+  const isStock = location.pathname.startsWith('/veleros-en-venta');
+  const isEscuela = location.pathname === '/escuela-nautica';
+  const isServicios = location.pathname === '/servicios-nauticos';
+  const isContacto = location.pathname === '/contacto';
 
   // On non-home pages, always show the "scrolled" navbar style for readability
   const showScrolledStyle = scrolled || !isHome;
@@ -65,7 +68,7 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
-            const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock);
+            const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock) || (item.label === "Escuela" && isEscuela) || (item.label === "Servicios" && isServicios) || (item.label === "Contacto" && isContacto);
             return (
               <a
                 key={item.label}
@@ -117,7 +120,7 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => {
-                const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock);
+                const isActive = (item.label === "Travesías" && isDestinos) || (item.label === "Broker" && isStock) || (item.label === "Escuela" && isEscuela) || (item.label === "Servicios" && isServicios) || (item.label === "Contacto" && isContacto);
                 return (
                   <a
                     key={item.label}

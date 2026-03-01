@@ -22,6 +22,9 @@ export interface VeleroSpecSection {
 export interface Velero {
   id: string;
 
+  /** URL slug para la ficha individual */
+  slug: string;
+
   /** 1. FOTOS - Galería de imágenes (paths o URLs) */
   imagenes: string[];
 

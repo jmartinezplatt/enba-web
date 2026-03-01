@@ -1,1 +1,7 @@
+# Redirects de URLs antiguas a las nuevas (SEO 301)
+/stock              /veleros-en-venta     301
+/stock/*            /veleros-en-venta/:splat  301
+/destinos           /travesias            301
+
+# SPA fallback — must be last
 /*    /index.html   200
