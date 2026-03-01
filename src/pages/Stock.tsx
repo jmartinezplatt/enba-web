@@ -27,7 +27,7 @@ const Stock = () => {
         <div className="absolute inset-0">
           <img
             src={heroBroker}
-            alt="Marina con veleros"
+            alt="Veleros usados en venta en marina de Buenos Aires — broker náutico con stock verificado"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-hero-overlay" />
@@ -47,7 +47,7 @@ const Stock = () => {
               </p>
             </div>
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
-              Veleros en Venta
+              Veleros en Venta en Buenos Aires
             </h1>
             <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
               Stock propio verificado. Todos los veleros cuentan con inspección
@@ -60,6 +60,9 @@ const Stock = () => {
       {/* Grid */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-6">
+          <h2 className="font-heading text-3xl font-bold text-foreground uppercase tracking-wide mb-8">
+            Stock de veleros usados verificados
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {veleros.map((velero, index) => (
               <VeleroCard key={velero.id} velero={velero} index={index} />
@@ -67,8 +70,11 @@ const Stock = () => {
           </div>
 
           <div className="mt-16 text-center space-y-4">
+            <h2 className="font-heading text-2xl font-bold text-foreground uppercase tracking-wide">
+              ¿Querés vender tu velero?
+            </h2>
             <p className="font-body text-muted-foreground">
-              ¿Querés vender tu velero? Compramos directo — pago inmediato.
+              Compramos directo — pago inmediato. Tasación gratuita en 24hs.
             </p>
             <a
               href="https://wa.me/5491149915143?text=Hola! Quiero vender mi velero"

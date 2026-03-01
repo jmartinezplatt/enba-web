@@ -141,4 +141,67 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- === BLOG === -->
+
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/como-obtener-carnet-timonel-buenos-aires</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/mejores-destinos-navegar-velero-rio-de-la-plata</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/guia-comprar-velero-usado-argentina</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/que-llevar-travesia-velero</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/diferencia-timonel-patron-yate-argentina</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/mantenimiento-velero-rio-de-la-plata</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/navegar-en-velero-por-primera-vez</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/marinas-clubes-nauticos-buenos-aires</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/blog/seguridad-nautica-elementos-obligatorios-prefectura</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

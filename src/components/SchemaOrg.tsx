@@ -124,3 +124,73 @@ export const TouristTripSchema = ({ name, description, duration, url }: {
     })}</script>
   </Helmet>
 );
+
+export const FAQPageSchema = ({ faqs }: { faqs: { question: string; answer: string }[] }) => (
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })}</script>
+  </Helmet>
+);
+
+export const ServiceSchema = ({ name, description, url }: {
+  name: string; description: string; url: string;
+}) => (
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": name,
+      "description": description,
+      "url": `${BASE_URL}${url}`,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Espacio Náutico Buenos Aires",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Puerto Norte Marina",
+          "addressLocality": "Palermo",
+          "addressRegion": "CABA",
+          "addressCountry": "AR"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Buenos Aires"
+      }
+    })}</script>
+  </Helmet>
+);
+
+export const BlogPostSchema = ({ title, description, slug, datePublished }: {
+  title: string; description: string; slug: string; datePublished: string;
+}) => (
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "url": `${BASE_URL}/blog/${slug}`,
+      "datePublished": datePublished,
+      "author": {
+        "@type": "Organization",
+        "name": "Espacio Náutico Buenos Aires"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Espacio Náutico Buenos Aires",
+        "logo": { "@type": "ImageObject", "url": `${BASE_URL}/ENBA-favicon-192x192.png` }
+      }
+    })}</script>
+  </Helmet>
+);
