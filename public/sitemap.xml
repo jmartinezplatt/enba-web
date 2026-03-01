@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ======================================================
-       Sitemap XML — espacionautico.com.ar
-       Generado: 2026-03-01
-       Estándar: sitemaps.org/protocol
-       ====================================================== -->
+  <!-- Sitemap XML — espacionautico.com.ar | Generado: 2026-03-01 -->
 
-  <!-- HOME — Página principal. Máxima prioridad. Puerta de entrada
-       del sitio, concentra autoridad y linkea a todas las secciones. -->
+  <!-- HOME -->
   <url>
     <loc>https://www.espacionautico.com.ar/</loc>
     <lastmod>2026-03-01</lastmod>
@@ -16,76 +11,23 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- DESTINOS / TRAVESÍAS — Listado de todos los destinos náuticos.
-       Alta prioridad: página transaccional con keywords de alto valor
-       ("travesías en velero Buenos Aires", "navegar a Uruguay"). -->
+  <!-- TRAVESÍAS — Listado de destinos -->
   <url>
-    <loc>https://www.espacionautico.com.ar/destinos</loc>
+    <loc>https://www.espacionautico.com.ar/travesias</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- STOCK / BROKER — Listado de veleros en venta. Alta prioridad:
-       contenido dinámico que cambia con cada embarcación nueva.
-       Keywords: "veleros en venta Argentina", "broker náutico". -->
+  <!-- VELEROS EN VENTA — Catálogo broker -->
   <url>
-    <loc>https://www.espacionautico.com.ar/stock</loc>
+    <loc>https://www.espacionautico.com.ar/veleros-en-venta</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- =====================================================
-       FICHAS INDIVIDUALES DE EMBARCACIONES
-       Cada velero tiene ficha propia con especificaciones
-       completas. Estas URLs permiten posicionar por modelo
-       específico ("Bramador 24 en venta", "Mastracchio 24.5").
-       ===================================================== -->
-
-  <!-- BELNA — Mastracchio 24.5 (2014). Embarcación destacada,
-       ficha completa con 25 fotos y especificaciones detalladas. -->
-  <url>
-    <loc>https://www.espacionautico.com.ar/stock/belna</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- PICANTE — Bramador 24 (2013). Ficha completa con 16 fotos,
-       especificaciones técnicas exhaustivas y descripción larga. -->
-  <url>
-    <loc>https://www.espacionautico.com.ar/stock/picante</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- MAREJADA — Hunter 33 (2002). Crucero de 33 pies. -->
-  <url>
-    <loc>https://www.espacionautico.com.ar/stock/marejada</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- BRISA — Grampian 26 (1978). Velero económico. -->
-  <url>
-    <loc>https://www.espacionautico.com.ar/stock/brisa</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- =====================================================
-       SECCIONES DE SERVICIOS
-       Páginas dedicadas a cada vertical del negocio.
-       Permiten atacar keywords específicas por servicio.
-       ===================================================== -->
-
-  <!-- ESCUELA NÁUTICA — Cursos de Timonel y Patrón.
-       Keywords de alto valor: "escuela náutica Buenos Aires",
-       "curso de timonel", "curso patrón de yate". -->
+  <!-- ESCUELA NÁUTICA -->
   <url>
     <loc>https://www.espacionautico.com.ar/escuela-nautica</loc>
     <lastmod>2026-03-01</lastmod>
@@ -93,11 +35,107 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- SERVICIOS NÁUTICOS — Mantenimiento, reparaciones, service
-       de motores. Keywords: "servicio técnico náutico Buenos Aires",
-       "mantenimiento de veleros". -->
+  <!-- SERVICIOS NÁUTICOS -->
   <url>
     <loc>https://www.espacionautico.com.ar/servicios-nauticos</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CONTACTO -->
+  <url>
+    <loc>https://www.espacionautico.com.ar/contacto</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- === FICHAS INDIVIDUALES DE VELEROS === -->
+
+  <url>
+    <loc>https://www.espacionautico.com.ar/veleros-en-venta/belna</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/veleros-en-venta/picante</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/veleros-en-venta/marejada</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/veleros-en-venta/brisa</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- === FICHAS INDIVIDUALES DE TRAVESÍAS === -->
+
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/colonia</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/carmelo</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/montevideo</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/punta-del-este</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/piriapolis</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/juan-lacaze</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/riachuelo</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/martin-garcia</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/mar-del-plata</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.espacionautico.com.ar/travesias/delta</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

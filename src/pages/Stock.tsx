@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { Anchor } from "lucide-react";
 import heroBroker from "@/assets/hero-broker.jpg";
 import { veleros } from "@/data/veleros";
@@ -9,6 +11,15 @@ import VeleroCard from "@/components/stock/VeleroCard";
 const Stock = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Veleros en Venta Buenos Aires | Broker Náutico — Espacio Náutico"
+        description="Veleros usados en venta con inspección completa. BELNA, PICANTE y más. Stock propio verificado y listo para navegar. Compra-venta de veleros en Buenos Aires."
+        path="/veleros-en-venta"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Veleros en Venta", url: "/veleros-en-venta" },
+      ]} />
       <Navbar />
 
       {/* Hero Section */}

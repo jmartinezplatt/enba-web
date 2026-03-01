@@ -10,13 +10,13 @@ const Footer = () => {
             <img src={logoClaro} alt="Espacio Náutico Buenos Aires" className="h-8" />
           </Link>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            <a href="/destinos" className="font-body text-sm hover:text-accent transition-colors">Travesías</a>
-            <a href="/#escuela" className="font-body text-sm hover:text-accent transition-colors">Escuela</a>
-            <a href="/stock" className="font-body text-sm hover:text-accent transition-colors">Broker</a>
-            <a href="/#servicios" className="font-body text-sm hover:text-accent transition-colors">Servicios</a>
-            <a href="/#contacto" className="font-body text-sm hover:text-accent transition-colors">Contacto</a>
-          </div>
+          <nav className="flex flex-wrap justify-center gap-6">
+            <Link to="/travesias" className="font-body text-sm hover:text-accent transition-colors">Travesías</Link>
+            <Link to="/escuela-nautica" className="font-body text-sm hover:text-accent transition-colors">Escuela</Link>
+            <Link to="/veleros-en-venta" className="font-body text-sm hover:text-accent transition-colors">Broker</Link>
+            <Link to="/servicios-nauticos" className="font-body text-sm hover:text-accent transition-colors">Servicios</Link>
+            <Link to="/contacto" className="font-body text-sm hover:text-accent transition-colors">Contacto</Link>
+          </nav>
 
           <p className="font-body text-xs text-primary-foreground/40">
             © 2025 Espacio Náutico Buenos Aires. Palermo, Buenos Aires.
