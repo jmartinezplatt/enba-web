@@ -19,7 +19,8 @@ const services = [
   {
     id: "travesias",
     icon: Compass,
-    title: "Travesías & Paseos",
+    title: "Travesías & Paseos en Velero",
+    altText: "Travesía en velero por el Río de la Plata desde Buenos Aires",
     description:
       "Navegá desde Buenos Aires a puertos de Uruguay y Brasil, Mar del Plata o los arroyos del Delta. Salidas diarias. Experiencia náutica completa a bordo.",
     images: [
@@ -37,7 +38,8 @@ const services = [
   {
     id: "escuela",
     icon: GraduationCap,
-    title: "Escuela Oficial",
+    title: "Escuela Náutica Oficial",
+    altText: "Alumnos en clase práctica de navegación en velero — escuela náutica Buenos Aires",
     description:
       "Convertite en Timonel o Patrón con cursos habilitados por Prefectura. Examen oficial. También ofrecemos clínicas de perfeccionamiento de 1 a 8 horas para tripulantes que quieran sumar experiencia.",
     images: [{ src: nauticalSchool, position: "center" }],
@@ -47,6 +49,7 @@ const services = [
     id: "broker",
     icon: Ship,
     title: "Compra, Venta & Alquiler de Veleros",
+    altText: "Veleros usados en venta en marina de Buenos Aires — broker náutico",
     description:
       "¿Vendés tu velero? Te lo compramos con pago inmediato. ¿Querés comprar? Tenemos stock verificado listo para visitar y navegar. Y si tenés carnet náutico, podés alquilar por hora, por día, por semana o por mes.",
     images: [{ src: yachtBroker, position: "center" }],
@@ -55,7 +58,8 @@ const services = [
   {
     id: "servicios",
     icon: Wrench,
-    title: "Servicios Náuticos",
+    title: "Servicios Náuticos y Mantenimiento",
+    altText: "Servicio técnico y mantenimiento de motor de velero en Buenos Aires",
     description:
       "Mantenimiento integral para tu embarcación. Service de motores dentro y fuera de borda, jarcia, cabullería y reparaciones generales. Servicio a domicilio disponible. También gestionamos pintura, velas y winterización con talleres especializados.",
     images: [{ src: boatService, position: "center" }],
@@ -102,7 +106,7 @@ const ServiceCard = ({
           <motion.img
             key={currentImage}
             src={service.images[currentImage].src}
-            alt={`${service.title} - ${currentImage + 1}`}
+            alt={`${service.altText} — foto ${currentImage + 1}`}
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: service.images[currentImage].position }}
             initial={{ opacity: 0, scale: 1.1 }}

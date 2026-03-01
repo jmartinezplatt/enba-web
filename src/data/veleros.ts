@@ -332,23 +332,88 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
     nombre: "Marejada",
     modelo: "Hunter 33",
     descripcionCorta:
-      "Espacioso crucero con cocina completa, baño y dos camarotes. Listo para travesías largas con total confort.",
+      "Velero crucero Hunter 33 de 10 metros con dos camarotes, cocina completa y motor Yanmar 27 HP. Ideal para travesías largas en el Río de la Plata con total confort y seguridad.",
     tamano: "10 m (33 pies)",
     tripulacion: 8,
     anio: 2002,
     estado: "Excelente",
     precio: "USD 35.000",
     imagenes: [velero3],
-    descripcionLarga:
-      "Crucero espacioso con cocina completa, baño cerrado y dos camarotes. Motor intraborda Yanmar 27 HP. Equipado para travesías largas con total confort y seguridad.",
+    descripcionLarga: `Hunter 33 modelo 2002 en excelente estado, listo para navegar. Este velero crucero usado de 10 metros de eslora es una de las mejores opciones del mercado náutico argentino para quienes buscan un velero en venta en Buenos Aires con prestaciones de crucero largo y confort a bordo.
+
+El Hunter 33 es un diseño del reconocido estudio Warren Luhrs, fabricado por Hunter Marine en Estados Unidos. Su casco de fibra de vidrio de construcción sólida ofrece una navegación estable y segura tanto en aguas del Río de la Plata como en travesías costeras más exigentes. Con una eslora de 10 metros y una manga generosa, el interior sorprende por su amplitud y habitabilidad.
+
+El velero cuenta con dos camarotes independientes — uno doble en proa con escotilla de ventilación y uno de popa con cama doble —, lo que permite pernoctar cómodamente hasta 6 personas en camas fijas. La dinette central con mesa plegable se convierte en una tercera cama doble, elevando la capacidad total a 8 tripulantes para navegaciones de día.
+
+La cocina está completamente equipada con anafe de dos hornallas a gas, pileta con agua fría y caliente, heladera y amplio espacio de almacenamiento. El baño cerrado incluye inodoro marino, lavamanos y ducha con bomba presurizada — un nivel de confort difícil de encontrar en veleros usados de este rango de precio en Argentina.
+
+La motorización es un Yanmar 27 HP intraborda diésel, reconocido por su fiabilidad y bajo consumo. El sistema eléctrico de 12V cuenta con dos baterías, cargador automático, panel de instrumentos completo y bomba de achique eléctrica.
+
+El aparejo sloop con enrollador de génoa y mayor con lazy jack facilita las maniobras incluso con tripulación reducida. Electrónica Raymarine con ecosonda, VHF y compás. Seguridad completa según normativa de Prefectura Naval Argentina.
+
+Ubicado en Puerto Norte Marina, Palermo, Buenos Aires. Ideal para familias y navegantes que buscan comprar un velero usado en Buenos Aires con la capacidad y el equipamiento necesarios para travesías a Uruguay, el Delta del Paraná o la costa atlántica argentina.`,
     especificaciones: [
       {
         titulo: "Datos Técnicos",
         items: [
-          "Eslora: 10 m (33 pies)",
+          "Eslora (LOA): 10.06 m (33 pies)",
+          "Manga: 3.35 m",
+          "Calado: 1.52 m",
+          "Desplazamiento: 4.760 kg",
+          "Lastre: 1.814 kg",
           "Año: 2002",
-          "Motor: Intraborda Yanmar 27 HP",
+          "Material: PRFV (Fibra de vidrio)",
+          "Diseñador: Warren Luhrs / Hunter Marine (USA)",
           "Capacidad: 8 personas",
+        ],
+      },
+      {
+        titulo: "Motorización",
+        items: [
+          "Motor intraborda diésel Yanmar 27 HP",
+          "Hélice plegable de dos palas",
+          "Tanque de combustible de 75 litros",
+          "Sistema de refrigeración por agua de mar",
+        ],
+      },
+      {
+        titulo: "Velamen y Arboladura",
+        items: [
+          "Aparejo sloop con mástil de aluminio",
+          "Mayor con lazy jack y lazy bag",
+          "Génoa con enrollador en proa",
+          "Superficie vélica total: 46 m²",
+        ],
+      },
+      {
+        titulo: "Interior y Confort",
+        items: [
+          "2 camarotes independientes (proa y popa)",
+          "Dinette convertible con mesa en crujía",
+          "Cocina completa: anafe 2 hornallas, heladera, pileta",
+          "Baño cerrado con inodoro marino, lavamanos y ducha",
+          "Tanque de agua de 150 litros",
+          "Altura interior: 1.88 m",
+        ],
+      },
+      {
+        titulo: "Electrónica y Electricidad",
+        items: [
+          "Circuito eléctrico 12V con doble batería",
+          "Cargador de baterías automático",
+          "VHF marino",
+          "Ecosonda Raymarine",
+          "Compás de mamparo",
+          "Luces de navegación LED",
+        ],
+      },
+      {
+        titulo: "Seguridad",
+        items: [
+          "Elementos de seguridad PNA completos",
+          "Bote auxiliar inflable",
+          "Ancla principal con cadena y cabo",
+          "Bomba de achique eléctrica y manual",
         ],
       },
     ],
@@ -359,23 +424,75 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
     nombre: "Brisa",
     modelo: "Grampian 26",
     descripcionCorta:
-      "Velero sólido y confiable, ideal para paseos en el Delta y Río de la Plata. Precio de oportunidad.",
+      "Velero clásico Grampian 26 de construcción canadiense, sólido y confiable. Ideal para navegar en el Delta del Paraná y el Río de la Plata. Precio de oportunidad para iniciarse en la vela.",
     tamano: "7.9 m (26 pies)",
     tripulacion: 5,
     anio: 1978,
     estado: "Bueno — navegando",
     precio: "USD 9.800",
     imagenes: [velero4],
-    descripcionLarga:
-      "Velero sólido y confiable de construcción canadiense. Ideal para paseos en el Delta y Río de la Plata. Motor fuera de borda 8 HP. Precio de oportunidad.",
+    descripcionLarga: `Grampian 26 modelo 1978 en buen estado, navegando activamente. Si buscás comprar un velero usado en Buenos Aires a un precio accesible y con la solidez de un casco canadiense probado en décadas de navegación, el Brisa es una oportunidad única en el mercado náutico argentino.
+
+El Grampian 26 fue diseñado por Alex McGruer y fabricado por Grampian Marine en Ontario, Canadá. Es uno de los veleros de crucero más populares de su generación, con más de 800 unidades construidas entre 1968 y 1980. Su reputación de casco robusto, navegación estable y facilidad de manejo lo convierte en un velero ideal para quienes se inician en la navegación a vela o buscan un barco confiable para paseos de fin de semana.
+
+Con 7.9 metros de eslora y un desplazamiento de 2.270 kg, el Grampian 26 ofrece una navegación sólida y predecible. Su calado de 1.07 metros permite acceder a fondeaderos poco profundos en el Delta del Paraná y arroyos del Tigre, uno de los destinos favoritos de los navegantes de Buenos Aires.
+
+El interior cuenta con un camarote doble en proa con escotilla de ventilación, dinette convertible en salón, baño con inodoro marino portátil y una cocina compacta con anafe y pileta. La altura interior de 1.65 m permite moverse con comodidad. Capacidad para 5 personas en navegación diurna, con pernocte para 4 personas en camas fijas.
+
+La motorización es un fuera de borda de 8 HP, suficiente para maniobras de puerto y navegación a motor en calma. El aparejo sloop con mayor y génoa enrollable ofrece buenas prestaciones bajo vela con maniobras sencillas para tripulación reducida.
+
+El velero se encuentra actualmente navegando y amarrado en Puerto Norte Marina, Palermo, Buenos Aires. Se entrega con elementos de seguridad según normativa de Prefectura Naval Argentina, documentación al día y transferencia incluida.
+
+El Brisa es el velero usado más económico de nuestro stock. Ideal para quien quiere iniciarse en la vela sin hacer una gran inversión, para paseos familiares en el Delta o para sumar horas de navegación antes de dar el salto a un barco mayor. También es una excelente opción como segundo velero para quienes ya navegan y buscan un barco liviano para salidas cortas.`,
     especificaciones: [
       {
         titulo: "Datos Técnicos",
         items: [
-          "Eslora: 7.9 m (26 pies)",
+          "Eslora (LOA): 7.92 m (26 pies)",
+          "Manga: 2.44 m",
+          "Calado: 1.07 m",
+          "Desplazamiento: 2.270 kg",
+          "Lastre: 907 kg (quilla de hierro fundido)",
           "Año: 1978",
-          "Motor: Fuera de borda 8 HP",
+          "Material: PRFV (Fibra de vidrio)",
+          "Diseñador: Alex McGruer / Grampian Marine (Canadá)",
           "Capacidad: 5 personas",
+        ],
+      },
+      {
+        titulo: "Motorización",
+        items: [
+          "Motor fuera de borda 8 HP",
+          "Soporte de motor en espejo de popa",
+          "Bidón de combustible portátil",
+        ],
+      },
+      {
+        titulo: "Velamen y Arboladura",
+        items: [
+          "Aparejo sloop con mástil de aluminio",
+          "Vela mayor con botavara",
+          "Génoa enrollable",
+          "Superficie vélica total: 25 m²",
+        ],
+      },
+      {
+        titulo: "Interior y Confort",
+        items: [
+          "Camarote doble en proa con escotilla",
+          "Dinette convertible con mesa",
+          "Cocina compacta con anafe y pileta",
+          "Baño con inodoro marino portátil",
+          "Altura interior: 1.65 m",
+        ],
+      },
+      {
+        titulo: "Seguridad y Fondeo",
+        items: [
+          "Elementos de seguridad PNA completos",
+          "Ancla tipo Danforth con cadena y cabo",
+          "Luces de navegación",
+          "Documentación al día",
         ],
       },
     ],

@@ -117,7 +117,7 @@ const Destinos = () => {
         <div className="absolute inset-0">
           <img
             src={heroDestinos}
-            alt="Travesías en velero desde Buenos Aires"
+            alt="Velero navegando al atardecer en el Río de la Plata — travesías desde Buenos Aires a Uruguay y Argentina"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-hero-overlay" />
@@ -136,7 +136,7 @@ const Destinos = () => {
               </p>
             </div>
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 uppercase tracking-wide drop-shadow-2xl">
-              ¿A dónde querés navegar?
+              Travesías en Velero desde Buenos Aires
             </h1>
             <p className="font-body text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
               Salimos desde la Ciudad Autónoma de Buenos Aires. Todos los destinos con precio diferencial según distancia y duración. Consultá disponibilidad y reservá tu próxima travesía.

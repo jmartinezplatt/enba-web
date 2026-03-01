@@ -31,7 +31,7 @@ const VeleroCard = ({ velero, index }: VeleroCardProps) => {
         {/* Carousel / Image section */}
         <VeleroCarousel
           images={velero.imagenes}
-          alt={`${velero.nombre} - ${velero.modelo}`}
+          alt={`Velero ${velero.nombre} ${velero.modelo} en venta — ${velero.tamano}, año ${velero.anio}`}
           destacado={velero.destacado}
         />
 

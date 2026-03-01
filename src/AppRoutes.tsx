@@ -7,6 +7,8 @@ import DestinoDetalle from "./pages/DestinoDetalle";
 import EscuelaNautica from "./pages/EscuelaNautica";
 import ServiciosNauticos from "./pages/ServiciosNauticos";
 import Contacto from "./pages/Contacto";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
@@ -27,6 +29,10 @@ const AppRoutes = () => (
     <Route path="/escuela-nautica" element={<EscuelaNautica />} />
     <Route path="/servicios-nauticos" element={<ServiciosNauticos />} />
     <Route path="/contacto" element={<Contacto />} />
+
+    {/* Blog */}
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:slug" element={<BlogPost />} />
 
     <Route path="*" element={<NotFound />} />
   </Routes>

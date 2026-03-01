@@ -15,6 +15,7 @@ const Footer = () => {
             <Link to="/escuela-nautica" className="font-body text-sm hover:text-accent transition-colors">Escuela</Link>
             <Link to="/veleros-en-venta" className="font-body text-sm hover:text-accent transition-colors">Broker</Link>
             <Link to="/servicios-nauticos" className="font-body text-sm hover:text-accent transition-colors">Servicios</Link>
+            <Link to="/blog" className="font-body text-sm hover:text-accent transition-colors">Blog</Link>
             <Link to="/contacto" className="font-body text-sm hover:text-accent transition-colors">Contacto</Link>
           </nav>
 

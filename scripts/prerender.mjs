@@ -38,6 +38,16 @@ const routes = [
   "/escuela-nautica",
   "/servicios-nauticos",
   "/contacto",
+  "/blog",
+  "/blog/como-obtener-carnet-timonel-buenos-aires",
+  "/blog/mejores-destinos-navegar-velero-rio-de-la-plata",
+  "/blog/guia-comprar-velero-usado-argentina",
+  "/blog/que-llevar-travesia-velero",
+  "/blog/diferencia-timonel-patron-yate-argentina",
+  "/blog/mantenimiento-velero-rio-de-la-plata",
+  "/blog/navegar-en-velero-por-primera-vez",
+  "/blog/marinas-clubes-nauticos-buenos-aires",
+  "/blog/seguridad-nautica-elementos-obligatorios-prefectura",
 ];
 
 async function prerender() {
