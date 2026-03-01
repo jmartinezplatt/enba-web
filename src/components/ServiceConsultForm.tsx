@@ -144,8 +144,10 @@ ${formData.detalle}
       toast.success("Consulta enviada correctamente. En 24hs hábiles le estaremos contestando.");
       resetForm();
       onOpenChange(false);
-    } catch {
-      toast.error("Error al enviar la consulta. Por favor intentá nuevamente o escribinos a consultas@espacionautico.com.ar");
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : typeof error === 'object' && error !== null && 'text' in error ? String((error as { text: unknown }).text) : String(error);
+      console.error("EmailJS error:", error);
+      toast.error(`Error al enviar: ${errMsg}. Escribinos a consultas@espacionautico.com.ar`);
     } finally {
       setSending(false);
     }
