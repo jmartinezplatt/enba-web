@@ -160,16 +160,18 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
     nombre: "PICANTE",
     modelo: "BRAMADOR 24",
     descripcionCorta:
-      "Velero deportivo y versátil de 24 pies diseñado por Gabriel Schroeder. Combina rendimiento bajo vela con confort a bordo, ideal para crucero y regata en el Río de la Plata.",
+      "Velero deportivo y versátil de 24 pies diseñado por Gabriel Schroeder. Combina rendimiento bajo vela con confort a bordo, ideal para crucero en el Río de la Plata.",
     tamano: "7.10 m (24 pies)",
     tripulacion: 6,
     anio: 2013,
     estado: "Muy bueno",
-    precio: "Consultar",
+    precio: "USD 29.900",
     imagenes: [velero2],
     descripcionLarga: `Bramador 24 modelo 2013, completamente equipado y listo para navegar. Diseñado por Gabriel Schroeder, es uno de los veleros de 24 pies más reconocidos del Río de la Plata: combina un casco marinero en PRFV con líneas modernas, excelente estabilidad y un interior sorprendentemente amplio para su eslora.
 
 Navega cómodamente a 6 nudos con vientos normales y alcanza 7 nudos con viento fuerte, manteniendo control y seguridad incluso en condiciones exigentes. Su calado de 1.40 m le otorga gran estabilidad y performance ceñida.
+
+El interior aprovecha al máximo cada centímetro gracias al diseño "facetado" característico de Schroeder: camarote doble en popa, dinette convertible con mesa en crujía, baño compartimentado con inodoro marino, bacha con monocomando y sistema de agua presurizado con tanque de 75 litros. Cocina equipada con garrafa de gas licuado de 5 kg. Altura interior de 1.63 m, iluminación y equipo de audio X-View DA-1000 (AM/FM, MP3, USB) con dos parlantes.
 
 El aparejo es un sloop fraccionado 9/10 con arboladura de Duroal, crucetas retrasadas marca Z Spars y botavara de aluminio de la misma marca. Cuenta con vang rígido Bohn Racing, jarcia de acero inoxidable de 6 mm, dos patines de 1000 mm, stoppers Rutgerson RG750, molinetes Sea Winch Nº 23 y herrajes en acero inoxidable.
 
@@ -180,8 +182,6 @@ Motorización: Suzuki 6 HP 4 tiempos (29 kg, arranque manual, 138 cc) con altern
 Sistema eléctrico de 12/220 V con batería de ciclo profundo Optima Detroit 12 V – 55 A y cargador inteligente Black & Decker de 2/9/10 A.
 
 Electrónica de navegación Raymarine: VHF RAY49, bidata digital con ecosonda y corredera ST40, piloto automático ST1000 y compás de mamparo Plastimo Contest 101. Antena de tope tipo látigo.
-
-Interior con equipo de audio X-View DA-1000 (AM/FM, MP3, USB) y dos parlantes. Garrafa de gas licuado de 5 kg.
 
 Protección y lonas: media carpa, cubre tambucho, cubre mayor tipo Lazy Bag y cubre UV de Génoa, todo en lona vinílica beige.
 
@@ -196,7 +196,7 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
           "Manga: 2.72 m",
           "Calado: 1.40 m",
           "Puntal: 1.27 m",
-          "Desplazamiento: ~1.500 kg",
+          "Desplazamiento: 1.600 kg",
           "Material: PRFV (Fibra de vidrio)",
           "Año: 2013",
           "Diseñador: Gabriel Schroeder",
@@ -254,11 +254,22 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
         ],
       },
       {
-        titulo: "Confort y Lonas",
+        titulo: "Interior y Confort",
         items: [
+          "Camarote doble en popa",
+          "Dinette convertible con mesa en crujía",
+          "Baño compartimentado con inodoro marino",
+          "Bacha con monocomando y bomba de agua presurizada",
+          "Tanque de agua de 75 litros",
+          "Cocina con garrafa de gas licuado de 5 kg",
+          "Altura interior: 1.63 m",
           "Equipo de audio X-View DA-1000 (AM/FM, MP3, USB)",
           "2 parlantes de interior",
-          "Garrafa de gas licuado de 5 kg",
+        ],
+      },
+      {
+        titulo: "Lonas y Protección",
+        items: [
           "Media carpa de lona vinílica beige",
           "Cubre tambucho de lona vinílica beige",
           "Cubre mayor tipo Lazy Bag de lona vinílica beige",
