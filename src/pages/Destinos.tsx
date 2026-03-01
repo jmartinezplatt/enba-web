@@ -4,6 +4,15 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import coloniaImage from "../assets/colonia-sailing.jpg";
 import heroDestinos from "../assets/hero-destinos.jpg";
+import deltaImage from "../assets/delta-destinos.jpg";
+import mardelplataImage from "../assets/mardelplata-destinos.jpg";
+import martingarciaImage from "../assets/martingarcia-destinos.jpg";
+import riachueloImage from "../assets/riachuelo-destinos.jpg";
+import juanlacazeImage from "../assets/juanlacaze-destinos.jpg";
+import piriapolisImage from "../assets/piriapolis-destinos.jpg";
+import puntadelesteImage from "../assets/puntadeleste-destinos.jpg";
+import montevideoImage from "../assets/montevideo-destinos.jpg";
+import carmeloImage from "../assets/carmelo-destinos.jpg";
 
 const destinations = [
   {
@@ -26,7 +35,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "2 noches",
     distance: "180 km",
-    image: coloniaImage,
+    image: carmeloImage,
     popular: false,
     description: "Navega hacia el corazón vitivinícola de Uruguay. Bodegas, playas tranquilas y la desembocadura del Río Uruguay.",
     includes: ["Navegación ida y vuelta", "2 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -39,7 +48,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "3-4 noches",
     distance: "200 km",
-    image: coloniaImage,
+    image: montevideoImage,
     popular: false,
     description: "Navegá hacia la capital uruguaya. Ciudad Vieja, Rambla, gastronomía de primer nivel y una gran marina náutica.",
     includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -52,7 +61,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "4-5 noches",
     distance: "280 km",
-    image: coloniaImage,
+    image: puntadelesteImage,
     popular: false,
     description: "El destino más glamoroso del Río de la Plata. Playas, puerto deportivo de lujo y vida nocturna de primer nivel.",
     includes: ["Navegación ida y vuelta", "4-5 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -65,7 +74,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "3-4 noches",
     distance: "240 km",
-    image: coloniaImage,
+    image: piriapolisImage,
     popular: false,
     description: "El balneario más antiguo de Uruguay. Cerros, rambla histórica y aguas tranquilas ideales para fondear.",
     includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -78,7 +87,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "1-2 noches",
     distance: "120 km",
-    image: coloniaImage,
+    image: juanlacazeImage,
     popular: false,
     description: "Pueblo tranquilo sobre el Río Uruguay. Ideal para navegantes que buscan autenticidad y calma.",
     includes: ["Navegación ida y vuelta", "1-2 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -91,7 +100,7 @@ const destinations = [
     flag: "🇺🇾",
     duration: "2 noches",
     distance: "140 km",
-    image: coloniaImage,
+    image: riachueloImage,
     popular: false,
     description: "Pueblo pescador con encanto rioplatense. Aguas calmas y experiencia náutica genuina.",
     includes: ["Navegación ida y vuelta", "2 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -104,7 +113,7 @@ const destinations = [
     flag: "🇦🇷",
     duration: "1 noche",
     distance: "45 km",
-    image: coloniaImage,
+    image: martingarciaImage,
     popular: true,
     description: "Reserva Natural e histórica isla argentina en medio del Río de la Plata. Naturaleza y patrimonio en un solo destino.",
     includes: ["Navegación ida y vuelta", "1 noche a bordo", "Todas las comidas", "Patrón certificado"],
@@ -117,7 +126,7 @@ const destinations = [
     flag: "🇦🇷",
     duration: "3-4 noches",
     distance: "380 km",
-    image: coloniaImage,
+    image: mardelplataImage,
     popular: false,
     description: "Navegá por la costa bonaerense hasta la perla del Atlántico. Desafío náutico y destino turístico de primer nivel.",
     includes: ["Navegación ida y vuelta", "3-4 noches a bordo", "Todas las comidas", "Patrón certificado"],
@@ -130,7 +139,7 @@ const destinations = [
     flag: "🇦🇷",
     duration: "1 noche",
     distance: "30-60 km",
-    image: coloniaImage,
+    image: deltaImage,
     popular: true,
     description: "Explorá los canales, arroyos e islas del Delta del Paraná. Naturaleza a 30 minutos de Buenos Aires.",
     includes: ["Navegación por canales del Delta", "1 noche a bordo", "Todas las comidas", "Patrón certificado"],
