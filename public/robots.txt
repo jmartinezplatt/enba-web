@@ -1,14 +1,21 @@
+# ==== Robots.txt SEO optimizado para EspacioNautico ====
+
+# 1) Reglas generales para todos los rastreadores
+User-agent: *
+Allow: /
+
+# 2) Bots de motores de búsqueda principales
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# 3) Opcional: permitir también estos agentes relacionados con búsqueda y redes
 User-agent: Twitterbot
 Allow: /
-
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# 4) Sitemap para indexación eficiente
+Sitemap: https://www.espacionautico.com.ar/sitemap.xml
