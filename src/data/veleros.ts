@@ -4,8 +4,32 @@ import velero2 from "@/assets/velero-2.jpg";
 import velero3 from "@/assets/velero-3.jpg";
 import velero4 from "@/assets/velero-4.jpg";
 
-// Placeholder: las 24 fotos del BELNA se importarán aquí cuando estén disponibles
-import velero1 from "@/assets/velero-1.jpg";
+// BELNA – 25 fotos ordenadas: exteriores → cubierta → interior → baño → electrónica
+import belna01 from "@/assets/belna/IMG_1021.jpg";
+import belna02 from "@/assets/belna/IMG_0979.jpg";
+import belna03 from "@/assets/belna/IMG_0982.jpg";
+import belna04 from "@/assets/belna/IMG_0985.jpg";
+import belna05 from "@/assets/belna/IMG_1037.jpg";
+import belna06 from "@/assets/belna/IMG_0991.jpg";
+import belna07 from "@/assets/belna/IMG_0976.jpg";
+import belna08 from "@/assets/belna/IMG_0943.jpg";
+import belna09 from "@/assets/belna/IMG_1033.jpg";
+import belna10 from "@/assets/belna/IMG_0956.jpg";
+import belna11 from "@/assets/belna/IMG_1046.jpg";
+import belna12 from "@/assets/belna/IMG_1040.jpg";
+import belna13 from "@/assets/belna/IMG_1041.jpg";
+import belna14 from "@/assets/belna/IMG_0949.jpg";
+import belna15 from "@/assets/belna/IMG_1038.jpg";
+import belna16 from "@/assets/belna/IMG_1043.jpg";
+import belna17 from "@/assets/belna/IMG_0968.jpg";
+import belna18 from "@/assets/belna/IMG_1047.jpg";
+import belna19 from "@/assets/belna/IMG_0903.jpg";
+import belna20 from "@/assets/belna/IMG_1024.jpg";
+import belna21 from "@/assets/belna/IMG_1054.jpg";
+import belna22 from "@/assets/belna/IMG_0959.jpg";
+import belna23 from "@/assets/belna/IMG_1052.jpg";
+import belna24 from "@/assets/belna/IMG_0950.jpg";
+import belna25 from "@/assets/belna/IMG_0953.jpg";
 
 export const veleros: Velero[] = [
   {
@@ -19,7 +43,13 @@ export const veleros: Velero[] = [
     anio: 2014,
     estado: "Muy bueno",
     precio: "USD 23.500",
-    imagenes: [velero1],
+    imagenes: [
+      belna01, belna02, belna03, belna04, belna05,
+      belna06, belna07, belna08, belna09, belna10,
+      belna11, belna12, belna13, belna14, belna15,
+      belna16, belna17, belna18, belna19, belna20,
+      belna21, belna22, belna23, belna24, belna25,
+    ],
     destacado: true,
     descripcionLarga: `Velero Mastracchio 24.5 modelo 2014 con orza izable y motor, listo para navegar. Diseñado por Pablo Mastracchio (más de 200 barcos navegando en Chile, Brasil, Argentina, Europa y EEUU), es el resultado de muchos años de experiencia combinando lo mejor de la navegación de crucero sin dejar atrás las prestaciones de un barco de regata.
 
