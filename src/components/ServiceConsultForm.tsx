@@ -117,6 +117,7 @@ const ServiceConsultForm = ({ open, onOpenChange }: ServiceConsultFormProps) => 
       from_name: formData.nombre,
       nombre: formData.nombre,
       celular: formData.celular,
+      from_phone: formData.celular,
       from_email: formData.email,
       email: formData.email,
       horario: getLabel(formData.horario, HORARIOS),
