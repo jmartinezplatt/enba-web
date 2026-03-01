@@ -21,23 +21,40 @@ export const veleros: Velero[] = [
     precio: "USD 23.500",
     imagenes: [velero1],
     destacado: true,
-    descripcionLarga: `Velero Mastracchio 24.5 modelo 2014 con orza izable y motor, listo para navegar. Es el resultado de muchos años de experiencia del diseñador Pablo Mastracchio, combinando lo mejor de la navegación de crucero sin dejar atrás las prestaciones de un barco de regata.
+    descripcionLarga: `Velero Mastracchio 24.5 modelo 2014 con orza izable y motor, listo para navegar. Diseñado por Pablo Mastracchio (más de 200 barcos navegando en Chile, Brasil, Argentina, Europa y EEUU), es el resultado de muchos años de experiencia combinando lo mejor de la navegación de crucero sin dejar atrás las prestaciones de un barco de regata.
 
-Cuenta con un interior de finas terminaciones y un gran espacio en donde su volumen se destaca frente a otros barcos del mismo tamaño. La quilla es izable: 1.40 m de calado en posición inferior y 0.50 m en posición superior, permitiendo llegar con el bote hasta la playa u orilla y subirlo a un tráiler.
+Velero de 7,20 m de eslora y modernas líneas tanto en cubierta como en el agua, concebido como un daysailer trailerable. Cuenta con quillote izable de 1,40 m de calado en posición inferior y 0,50 m en posición superior, permitiendo junto con el izado del timón, llegar con el bote hasta la orilla y subirlo a un tráiler. Se arbola y desarbola en 20 minutos y se bota en 1 metro de agua.
 
-Se arbola y desarbola en 20 minutos y se bota en 1 m de agua. Pernoctan cómodamente hasta 5 personas.`,
+Interior de finas terminaciones con gran espacio donde su volumen se destaca frente a otros barcos del mismo tamaño. Pernoctan cómodamente 5 personas. Baño compartimentado, cama doble en proa, dinette con mesa en crujía.
+
+Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y comodidad, con apéndices de excelente performance adaptados a fórmulas de medición ORC Int, IRC, PHRF y One Design.`,
     especificaciones: [
       {
         titulo: "Datos Técnicos",
         items: [
-          "Eslora: 7.25 m (24.5 pies)",
+          "Eslora (LOA): 7.20 m (24.5 pies)",
+          "Eslora de flotación (LWL): 6.68 m",
           "Manga: 2.66 m",
-          "Calado máximo: 1.40 m (orza abajo)",
-          "Calado mínimo: 0.50 m (orza arriba)",
+          "Calado máximo (orza abajo): 1.40 m",
+          "Calado mínimo (orza arriba): 0.50 m",
+          "Desplazamiento: 1.400 kg",
+          "Lastre: 500 kg",
+          "Superficie vélica: 28 m²",
+          "Altura interior: 1.50 m",
           "Año: 2014",
-          "Material: Fibra de vidrio (PRFV)",
+          "Material: PRFV (Fibra de vidrio)",
           "Diseñador: Pablo Mastracchio",
           "Astillero: Astilleros del Sur",
+        ],
+      },
+      {
+        titulo: "Quilla y Timón",
+        items: [
+          "Quilla izable con pala y bulbo de hierro (lastre 500 kg)",
+          "Malacate manual para izado de quilla",
+          "Accesorio levanta-orza en cabina de acero inoxidable",
+          "Timón de PRFV con sistema de izado en acero inoxidable 316",
+          "Caña de carbono con extensión Spinlock",
         ],
       },
       {
@@ -51,50 +68,59 @@ Se arbola y desarbola en 20 minutos y se bota en 1 m de agua. Pernoctan cómodam
       {
         titulo: "Velamen y Arboladura",
         items: [
-          "Aparejo sloop 7/8",
+          "Aparejo sloop 7/8 a tope, crucetas retrasadas 20°",
+          "Mástil de aluminio pintado, rebatible",
           "Vela Mayor con dos manos de rizos",
-          "Génoa con protección UV",
-          "Enrollador de proa",
+          "Génoa con protección UV y enrollador",
           "2 molinetes Antal",
+          "Vang rígido",
+          "Lazy bag",
         ],
       },
       {
-        titulo: "Equipamiento de Cubierta",
+        titulo: "Cubierta y Estructura",
         items: [
+          "Pulpito, candeleros y balcón en acero inoxidable 316",
+          "Guardamancebos de acero inoxidable 4 mm",
+          "Tres cornamusas de acero inoxidable",
           "Media carpa",
           "Funda de timón",
-          "Accesorio levanta orza en cabina (inox)",
           "Luces de navegación LED",
+          "Escotilla de pañol (PRFV) y acceso al salón",
         ],
       },
       {
         titulo: "Interior y Confort",
         items: [
-          "Capacidad para pernoctar: 5 personas",
-          "Baño compartimentado con WC",
-          "Bacha con monocomando",
+          "Cama doble en proa + dinette convertible (5 personas)",
+          "Colchones de goma espuma de alta densidad",
+          "Baño compartimentado con WC, ventana de abrir",
+          "Bacha con monocomando y bomba eléctrica presurizada",
           "Anafe",
-          "Tanque de agua 60 litros",
-          "Sistema de agua eléctrico",
-          "Ventana de abrir en baño",
+          "Tanque de agua 60 litros con sistema eléctrico",
+          "Mesa en crujía",
+          "Iluminación LED interior",
+          "Tambucho de ventilación en proa Lewmar",
         ],
       },
       {
         titulo: "Electrónica e Instalación Eléctrica",
         items: [
-          "Instalación eléctrica 12V",
-          "Batería 12V",
+          "Instalación eléctrica 12V con batería",
           "Panel solar",
+          "Cargador de baterías",
           "Radio VHF marina",
           "Compás de mamparo",
+          "Bomba de achique automática en sentina",
         ],
       },
       {
         titulo: "Seguridad y Fondeo",
         items: [
-          "Elementos de seguridad exigidos por PNA (Río de la Plata Interior)",
-          "Fondeo tipo Danforth",
-          "Cadena y cabo de fondeo",
+          "Elementos de seguridad exigidos por PNA (Río de la Plata Interior y Lacustre)",
+          "Ancla tipo Danforth 10 kg",
+          "5 m de cadena + 21 m de cabo (mena 10 mm)",
+          "Orinque de fondeo 20 m",
         ],
       },
     ],
