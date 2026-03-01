@@ -2,17 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Index from "./pages/Index";
-import Stock from "./pages/Stock";
-import Destinos from "./pages/Destinos";
-import VeleroDetalle from "./pages/VeleroDetalle";
-import DestinoDetalle from "./pages/DestinoDetalle";
-import EscuelaNautica from "./pages/EscuelaNautica";
-import ServiciosNauticos from "./pages/ServiciosNauticos";
-import Contacto from "./pages/Contacto";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import AppRoutes from "./AppRoutes";
 
 const queryClient = new QueryClient();
 
@@ -23,26 +15,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-
-          {/* Veleros / Broker */}
-          <Route path="/veleros-en-venta" element={<Stock />} />
-          <Route path="/veleros-en-venta/:slug" element={<VeleroDetalle />} />
-          <Route path="/stock" element={<Navigate to="/veleros-en-venta" replace />} />
-
-          {/* Travesías / Destinos */}
-          <Route path="/travesias" element={<Destinos />} />
-          <Route path="/travesias/:slug" element={<DestinoDetalle />} />
-          <Route path="/destinos" element={<Navigate to="/travesias" replace />} />
-
-          {/* Secciones */}
-          <Route path="/escuela-nautica" element={<EscuelaNautica />} />
-          <Route path="/servicios-nauticos" element={<ServiciosNauticos />} />
-          <Route path="/contacto" element={<Contacto />} />
-
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
