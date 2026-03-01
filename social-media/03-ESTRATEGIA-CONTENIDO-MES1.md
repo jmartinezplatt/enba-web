@@ -27,12 +27,12 @@
 
 | Pilar | % | Que incluye |
 |-------|---|-------------|
-| **Travesias** | 30% | Salidas, destinos, experiencias a bordo, fotos/videos de navegacion |
-| **Educativo/Tips** | 25% | Tips nauticos, vocabulario, seguridad, meteorologia, nudos |
-| **Escuela** | 15% | Clases, alumnos, certificados, proceso de formacion |
-| **Broker/Veleros** | 15% | Veleros en venta, fichas, tours de veleros |
-| **Comunidad/Behind the scenes** | 10% | Equipo, puerto, preparacion, vida nautica |
-| **Entretenimiento/Trending** | 5% | Memes nauticos, trends adaptados, challenges |
+| **Turismo y Travesias** | 30% | Salidas nacionales e internacionales, destinos, experiencias a bordo |
+| **Educativo/Tips** | 20% | Tips nauticos, vocabulario, seguridad, meteorologia, nudos |
+| **Escuela de navegacion** | 15% | Clases, alumnos, certificados, proceso de formacion |
+| **Compra/Venta/Alquiler** | 15% | Embarcaciones disponibles, fichas, tours de embarcaciones |
+| **Servicio tecnico** | 10% | Mantenimiento, reparaciones, antes/despues, tips de cuidado |
+| **Comunidad/Behind the scenes** | 10% | Equipo, Puerto Norte, preparacion, vida nautica |
 
 ---
 
@@ -53,10 +53,11 @@ Caption:
 Arrancamos a navegar las redes.
 
 Somos Espacio Nautico Buenos Aires y hace [X] anos
-llevamos gente al agua. Travesias en velero, escuela
-nautica oficial y compra-venta de veleros.
+llevamos gente al agua. Compra, venta y alquiler de
+embarcaciones. Escuela de navegacion. Travesias nacionales
+e internacionales. Servicio tecnico profesional.
 
-Puerto Norte, Palermo. El Rio de la Plata es nuestro patio.
+Puerto Norte, frente al Aeroparque. El Rio de la Plata es nuestro patio.
 
 Dale follow para enterarte de las proximas salidas,
 tips nauticos y todo lo que pasa en el rio.
@@ -240,7 +241,7 @@ Buena semana para todos.
 | Dia | Instagram Feed | Instagram Reel | Stories | Facebook | TikTok |
 |-----|---------------|----------------|---------|----------|--------|
 | Lun 24 | -- | Tip: "Meteorologia basica para navegar" | Encuesta: viento fav | Compartir | Reel meteo |
-| Mar 25 | Destino: Montevideo | -- | Fotos Montevideo | Post Montevideo | "Buenos Aires a Montevideo en velero" |
+| Mar 25 | Destino: Juan Lacaze | -- | Fotos Juan Lacaze | Post Juan Lacaze | "Buenos Aires a Juan Lacaze en velero" |
 | Mie 26 | -- | "Mitos sobre navegar en velero" | Verdadero/Falso quiz | -- | Reel mitos |
 | Jue 27 | Velero: Marejada | -- | Tour stories | Post Marejada | Tour rapido |
 | Vie 28 | -- | Recap del mes en 30 seg | Agradecimiento seguidores | -- | Recap mensual |

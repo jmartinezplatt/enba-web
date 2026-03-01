@@ -14,18 +14,29 @@
 
 ## 2. Personalidad de Marca
 
-ENBA es como un **amigo experimentado que navega**: conoce el rio, sabe lo que hace, te transmite seguridad y pasion, pero nunca es snob ni exclusivo. Invita a todos a descubrir la navegacion.
+La voz narradora de ENBA es **profesional, apasionada y con caracter femenino**: segura, calida, directa. Habla con la autoridad de quien conoce el agua de adentro. Su entusiasmo por la nautica es genuino y se nota, pero siempre dentro de un marco de elegancia y confianza. El negocio es para todo publico; la voz es el estilo de comunicacion de ENBA, no una segmentacion de audiencia.
+
+ENBA es un espacio abierto a cualquier persona que quiera conectar con el agua.
 
 ### Atributos de personalidad
 
 | Somos | No somos |
 |-------|----------|
 | Apasionados por navegar | Vendedores agresivos |
-| Profesionales y seguros | Rígidos o corporativos |
+| Profesionales y seguros | Rigidos o corporativos |
 | Cercanos y accesibles | Exclusivistas o elitistas |
 | Aventureros con criterio | Temerarios o irresponsables |
 | Conocedores del rio | Pedantes o tecnicos en exceso |
 | Argentinos, rioplatenses | Genericos o sin identidad local |
+
+### 4 Lineas de Servicio
+
+| Linea | Emocion clave |
+|-------|---------------|
+| Compra/Venta/Alquiler de embarcaciones | Libertad, experiencia inmediata, accesibilidad, inversion inteligente |
+| Escuela de navegacion y vela | Aprendizaje, logro, comunidad, transformacion |
+| Turismo y excursiones nauticas | Emocion, descubrimiento, aventura nautica |
+| Servicio tecnico a embarcaciones | Confianza, cuidado, mantenimiento profesional, respaldo tecnico |
 
 ---
 
@@ -37,15 +48,18 @@ ENBA es como un **amigo experimentado que navega**: conoce el rio, sabe lo que h
 - **Informativo** sin ser aburrido
 - **Inspirador** sin ser cursi
 - **Argentino** sin ser lunfardo extremo
+- **Maximo 2-3 emojis** por post, siempre con intencion
+- **CTA claro y elegante** al final de cada post
+- **Nunca** prometes disponibilidad sin confirmacion del equipo
 
 ### Por plataforma
 
 | Plataforma | Tono | Ejemplo |
 |------------|------|---------|
-| **Instagram** | Visual, aspiracional, dinamico | "Esto es salir de Puerto Norte un viernes. Te animas?" |
-| **Facebook** | Informativo, comunitario, confiable | "Nueva fecha de travesia a Colonia: 15 de abril. Salimos a las 6AM desde Puerto Norte. 4 lugares disponibles." |
-| **TikTok** | Divertido, educativo, trending | "POV: estas a 3 horas de Buenos Aires pero parece otro mundo (navega a Colonia con nosotros)" |
-| **WhatsApp** | Directo, servicial, rapido | "Hola! Gracias por escribirnos. Te paso info de las proximas travesias..." |
+| **Instagram** | Aspiracional, estetico. Captions 80-150 palabras. | "Esto es salir de Puerto Norte un viernes. Te animas?" |
+| **Facebook** | Informativo, calido, orientado a comunidad. Hasta 200 palabras. Unico formato donde se listan formas de pago. | "Tu embarcacion merece el mejor cuidado. Servicio tecnico profesional en Puerto Norte." |
+| **TikTok** | Dinamico, gancho en las primeras 2 lineas. Max 80 palabras. Subtitulos en pantalla siempre. | "POV: estas a 3 horas de Buenos Aires pero parece otro mundo" |
+| **WhatsApp** | Directo, servicial, rapido | "Hola! Gracias por escribirnos. Te paso info..." |
 
 ### Voseo
 Usamos **voseo rioplatense** siempre:
@@ -63,7 +77,8 @@ Usamos **voseo rioplatense** siempre:
 | Categoria | Palabras clave |
 |-----------|---------------|
 | Navegacion | velero, navegar, travesia, salida, fondeo, virada, proa, popa, babor, estribor |
-| Destinos | Rio de la Plata, Delta, Colonia, Carmelo, Montevideo, Punta del Este |
+| Destinos nacionales | Delta, Isla Martin Garcia, Mar del Plata |
+| Destinos internacionales | Colonia del Sacramento, Carmelo, Riachuelo, Juan Lacaze |
 | Experiencia | aventura, escapada, libertad, horizonte, atardecer, viento |
 | Educacion | timonel, patron, curso, certificado, Prefectura, maniobra |
 | Comunidad | tripulacion, a bordo, zarpar, camaraderia |
@@ -76,10 +91,26 @@ Usamos **voseo rioplatense** siempre:
 | "Lujo" | Somos accesibles, no elitistas | "Experiencia unica" |
 | "Barato" | Desvaloriza el servicio | "Accesible", "al alcance" |
 | "Crucero" | No somos cruceros | "Travesia", "navegacion" |
-| "Yate" | Excepto en "patron de yate" | "Velero" |
+| "Yate" | Excepto en "patron de yate" | "Embarcacion", "velero" |
 | "Paseo" | Minimiza la experiencia | "Travesia", "navegacion" |
 | "Tour" | Muy turistico generico | "Travesia", "escapada nautica" |
 | "Cliente" (en posts) | Muy comercial | "Tripulante", "navegante" |
+| "Puerto Madero" | PROHIBIDO - ubicacion incorrecta | "Puerto Norte, frente al Aeroparque" |
+| "Equipos nauticos" | Ya no vendemos equipos | "Servicio tecnico a embarcaciones" |
+| Precios exactos | Nunca sin aprobacion del equipo | "Consulta por DM o WhatsApp" |
+
+### REGLAS CRITICAS (del Prompt Maestro v1.3)
+
+Lo que el agente/community manager NUNCA hace:
+- Publicar precios exactos sin aprobacion del equipo de ENBA
+- Confirmar fechas o disponibilidad sin verificacion previa
+- Mencionar condiciones financieras de las cuotas
+- Usar un tono sensacionalista o hacer promesas exageradas
+- Ignorar comentarios negativos (se derivan al equipo)
+- Segmentar el contenido por genero
+- Decir "Puerto Madero" como punto de salida (es Puerto Norte)
+
+Si preguntan por precio: "Podemos brindarte la informacion por mensaje directo o WhatsApp" y derivar.
 
 ---
 
@@ -300,11 +331,12 @@ llamarnos/escribirnos al +54 9 11 4991-5143.
 
 ## 9. Pautas Visuales para Redes
 
-### Paleta de colores
-- **Navy/Azul oscuro**: Color principal (fondos, textos)
-- **Dorado/Accent**: Destacados, CTAs, detalles premium
-- **Blanco**: Textos sobre fondos oscuros, limpieza
-- **Azul claro**: Acentos agua/cielo
+### Paleta de colores (segun conceptos de logo)
+- **Navy/Azul oscuro** `#0A1520` / `#0D2D4A`: Color principal (fondos, textos)
+- **Verde agua/Teal** `#4DB8A0` / `#3DCFB0`: Acento principal, velas, energia
+- **Azul medio** `#3A9FD4` / `#1A6FA0`: Acento secundario, olas, profundidad
+- **Dorado** `#D4A843`: Destacados, labels, detalles premium
+- **Crema/Blanco** `#E8EDF2`: Textos sobre fondos oscuros, limpieza
 
 ### Tipografias en imagenes
 - Titulos: **Teko** o **Bebas Neue** (uppercase, bold)

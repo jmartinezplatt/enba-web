@@ -7,8 +7,8 @@
 | Razon social | Espacio Nautico Buenos Aires |
 | Nombre comercial | Espacio Nautico |
 | Sigla | ENBA |
-| Rubro | Servicios nauticos / Turismo aventura / Educacion nautica |
-| Direccion | Puerto Norte Marina, Palermo, CABA, Argentina |
+| Rubro | Nautica integral: compra/venta/alquiler embarcaciones, escuela de navegacion, turismo nautico, servicio tecnico |
+| Direccion | Puerto Norte, frente al Aeroparque Jorge Newbery, Ciudad de Buenos Aires, Argentina |
 | Telefono | +54 9 11 4991-5143 |
 | Email | consultas@espacionautico.com.ar |
 | Web | https://www.espacionautico.com.ar |
@@ -27,21 +27,26 @@
    - Categorias secundarias: `Agencia de viajes`, `Escuela`, `Servicio nautico`
 4. **Bio / Descripcion corta** (155 caracteres max):
    ```
-   Travesias en velero por el Rio de la Plata y Uruguay. Escuela nautica oficial. Broker de veleros. Puerto Norte, Palermo, Buenos Aires.
+   Compra, venta y alquiler de embarcaciones. Escuela nautica. Travesias nacionales e internacionales. Servicio tecnico. Puerto Norte, Buenos Aires.
    ```
 5. **Descripcion larga** (seccion "Informacion"):
    ```
    Espacio Nautico Buenos Aires (ENBA) es tu puerta al Rio de la Plata.
 
-   Navegamos a Colonia, Carmelo, Montevideo, Punta del Este, Delta del Parana
-   y mucho mas. Ofrecemos travesias en velero para todos los niveles, cursos
-   nauticos oficiales (timonel y patron de yate habilitados por Prefectura Naval),
-   compra-venta de veleros y servicio tecnico integral.
+   Cuatro lineas de servicio:
+   — Compra, venta y alquiler de embarcaciones
+   — Escuela de navegacion y vela
+   — Turismo y excursiones nauticas
+   — Servicio tecnico a embarcaciones
 
-   Salimos desde Puerto Norte Marina, Palermo. Flota nueva, instructores
-   certificados, seguridad total.
+   Travesias nacionales: Delta, Isla Martin Garcia, Mar del Plata.
+   Travesias internacionales: Colonia del Sacramento, Carmelo, Riachuelo, Juan Lacaze.
+   Salidas todos los dias · Minimo 3 pasajeros por embarcacion.
 
-   Reserva tu lugar: consultas@espacionautico.com.ar | +54 9 11 4991-5143
+   Salimos desde Puerto Norte, frente al Aeroparque Jorge Newbery.
+
+   Consultas: consultas@espacionautico.com.ar | +54 9 11 4991-5143
+   Aceptamos transferencia, efectivo y tarjeta. Valores + IVA.
    ```
 6. **Foto de perfil**: Logo ENBA circular (usar `ENBA-favicon-192x192.png` o version de alta resolucion)
    - Tamano: 170x170 px (se muestra en 176x176)
@@ -53,7 +58,7 @@
    - Sitio web: https://www.espacionautico.com.ar
    - Telefono: +54 9 11 4991-5143
    - Email: consultas@espacionautico.com.ar
-   - Direccion: Puerto Norte Marina, Palermo, Buenos Aires
+   - Direccion: Puerto Norte, frente al Aeroparque, Buenos Aires
    - Horario: Lunes a Domingo, 09:00 - 18:00
    - Rango de precios: $$
 10. **Username**: `@espacionauticoba` (consistente con Instagram)
@@ -79,7 +84,7 @@
 5. **Informacion de contacto**:
    - Email: consultas@espacionautico.com.ar
    - Telefono: +54 9 11 4991-5143
-   - Direccion: Puerto Norte Marina, Palermo, Buenos Aires
+   - Direccion: Puerto Norte, frente al Aeroparque, Buenos Aires
 6. **Vincular con Facebook Page** creada en el paso anterior (Meta Business Suite)
 
 ### Perfil
@@ -94,10 +99,10 @@
 
 **Bio de Instagram** (150 caracteres max):
 ```
-Navega el Rio de la Plata
-Travesias | Escuela Nautica | Broker
-Puerto Norte, Palermo, Bs As
-Reserva tu travesia:
+Navega el Rio de la Plata ⛵
+Embarcaciones · Escuela · Travesias · Servicio tecnico
+Puerto Norte, Buenos Aires
+Consulta disponibilidad:
 ```
 Link: espacionautico.com.ar
 
@@ -105,12 +110,12 @@ Link: espacionautico.com.ar
 
 | Highlight | Contenido |
 |-----------|-----------|
-| TRAVESIAS | Fotos/videos de travesias a destinos |
-| ESCUELA | Cursadas, alumnos, certificados |
-| VELEROS | Flota y veleros en venta |
-| DESTINOS | Colonia, Carmelo, Montevideo, etc |
+| TRAVESIAS | Fotos/videos de travesias nacionales e internacionales |
+| ESCUELA | Cursadas, alumnos, certificados, clases practicas |
+| EMBARCACIONES | Compra, venta y alquiler de embarcaciones |
+| DESTINOS | Colonia, Carmelo, Delta, Martin Garcia, Juan Lacaze |
+| SERV TECNICO | Mantenimiento, reparaciones, puesta a punto |
 | TIPS | Tips nauticos, seguridad |
-| REVIEWS | Testimonios de clientes |
 
 ---
 
@@ -133,9 +138,9 @@ Link: espacionautico.com.ar
 
 **Bio de TikTok** (80 caracteres max):
 ```
-Navega el Rio de la Plata en velero
-Travesias | Escuela | Broker
-Buenos Aires
+Navega el Rio de la Plata ⛵
+Embarcaciones · Escuela · Travesias
+Puerto Norte, Buenos Aires
 ```
 
 5. **Foto de perfil**: Logo ENBA
