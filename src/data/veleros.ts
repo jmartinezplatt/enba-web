@@ -179,7 +179,7 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
     descripcionCorta:
       "Velero deportivo y versátil de 24 pies diseñado por Gabriel Schroeder. Combina rendimiento bajo vela con confort a bordo, ideal para crucero en el Río de la Plata.",
     tamano: "7.10 m (24 pies)",
-    tripulacion: 6,
+    tripulacion: 4,
     anio: 2013,
     estado: "Muy bueno",
     precio: "USD 29.900",
@@ -191,7 +191,7 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
     ],
     descripcionLarga: `Bramador 24 modelo 2013, completamente equipado y listo para navegar. Diseñado por Gabriel Schroeder, es uno de los veleros de 24 pies más reconocidos del Río de la Plata: combina un casco marinero en PRFV con líneas modernas, excelente estabilidad y un interior sorprendentemente amplio para su eslora.
 
-Navega cómodamente a 6 nudos con vientos normales y alcanza 7 nudos con viento fuerte, manteniendo control y seguridad incluso en condiciones exigentes. Su calado de 1.40 m le otorga gran estabilidad y performance ceñida.
+Navega cómodamente a 6 nudos con vientos normales y alcanza más de 9 nudos con viento fuerte, manteniendo control y seguridad incluso en condiciones exigentes. Su calado de 1.40 m le otorga gran estabilidad y performance ceñida.
 
 El interior aprovecha al máximo cada centímetro gracias al diseño "facetado" característico de Schroeder: camarote doble en popa, dinette convertible con mesa en crujía, baño compartimentado con inodoro marino, bacha con monocomando y sistema de agua presurizado con tanque de 75 litros. Cocina equipada con garrafa de gas licuado de 5 kg. Altura interior de 1.63 m, iluminación y equipo de audio X-View DA-1000 (AM/FM, MP3, USB) con dos parlantes.
 
@@ -199,15 +199,15 @@ El aparejo es un sloop fraccionado 9/10 con arboladura de Duroal, crucetas retra
 
 El juego de velas Hood incluye mayor de dos rizos Dacron full-batten (15 m²), Génoa III al 110 % de enrollar (14 m²), asimétrico de nylon 0.75 oz (48 m²) y foque con rizos transformable en tormentín de Dacron (7 m²).
 
-Motorización: Suzuki 6 HP 4 tiempos (29 kg, arranque manual, 138 cc) con alternador acoplado de 6 A/H y hélice de tres palas de duroaluminio. Bidón de combustible de 10 litros.
+Motorización: Suzuki 6 HP 4 tiempos (29 kg, arranque manual, 138 cc) con hélice de tres palas de duroaluminio. Bidón de combustible.
 
-Sistema eléctrico de 12/220 V con batería de ciclo profundo Optima Detroit 12 V – 55 A y cargador inteligente Black & Decker de 2/9/10 A.
+Sistema eléctrico de 12 V con batería de ciclo profundo y cargador inteligente.
 
 Electrónica de navegación Raymarine: VHF RAY49, bidata digital con ecosonda y corredera ST40, piloto automático ST1000 y compás de mamparo Plastimo Contest 101. Antena de tope tipo látigo.
 
-Protección y lonas: media carpa, cubre tambucho, cubre mayor tipo Lazy Bag y cubre UV de Génoa, todo en lona vinílica beige.
+Protección y lonas: media carpa, cubre tambucho, cubre mayor y cubre UV de Génoa, todo de primera.
 
-Seguridad completa: 4 salvavidas reglamentarios, 2 autoinflables con arnés, 1 circular con baliza de posición lumínica automática, 2 andariveles, 4 líneas de vida, 4 arneses, 2 matafuegos (1 ABC 1 kg + 1 HCFC123 2.5 kg), 2 bengalas, espejo de señales, campana, bocina manual, botiquín, prismáticos 2×50, bomba de achique eléctrica Rule 500 GAL/H automática, achicador plástico y achique manual tipo inflador.
+Seguridad completa: 2 salvavidas reglamentarios, 2 autoinflables con arnés, 1 circular con baliza de posición lumínica automática, 2 andariveles, 4 líneas de vida, 4 arneses, 2 matafuegos (1 ABC 1 kg + 1 HCFC123 2.5 kg), 2 bengalas, espejo de señales, campana, bocina manual, botiquín, prismáticos 2×50, bomba de achique eléctrica Rule 500 GAL/H automática, achicador plástico y achique manual tipo inflador.
 
 Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cabo de 14 mm × 20 m; secundaria de 6 kg con cadena de 6 mm × 10 m y cabo de 14 mm × 10 m. Balón de fondeo incluido.`,
     especificaciones: [
@@ -222,7 +222,7 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
           "Material: PRFV (Fibra de vidrio)",
           "Año: 2013",
           "Diseñador: Gabriel Schroeder",
-          "Capacidad: 6 personas",
+          "Capacidad: 4 personas",
         ],
       },
       {
@@ -252,9 +252,8 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
         items: [
           "Motor fuera de borda Suzuki 6 HP, 4 tiempos",
           "Arranque manual, 1 cilindro, 138 cc, 29 kg",
-          "Alternador acoplado de 6 A/H",
           "Hélice de tres palas de duroaluminio",
-          "Bidón de combustible 10 litros",
+          "Bidón de combustible",
         ],
       },
       {
@@ -270,9 +269,9 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
       {
         titulo: "Sistema Eléctrico",
         items: [
-          "Circuito 12/220 V",
-          "Batería ciclo profundo Optima Detroit 12 V – 55 A",
-          "Cargador inteligente Black & Decker 2/9/10 A",
+          "Circuito 12 V",
+          "Batería de ciclo profundo",
+          "Cargador inteligente",
         ],
       },
       {
@@ -292,16 +291,16 @@ Fondeo: 2 anclas Danforth — principal de 8 kg con cadena de 8 mm × 20 m y cab
       {
         titulo: "Lonas y Protección",
         items: [
-          "Media carpa de lona vinílica beige",
-          "Cubre tambucho de lona vinílica beige",
-          "Cubre mayor tipo Lazy Bag de lona vinílica beige",
-          "Cubre UV de Génoa de lona vinílica beige",
+          "Media carpa",
+          "Cubre tambucho",
+          "Cubre mayor",
+          "Cubre UV de Génoa",
         ],
       },
       {
         titulo: "Seguridad",
         items: [
-          "4 salvavidas reglamentarios",
+          "2 salvavidas reglamentarios",
           "2 salvavidas autoinflables con arnés",
           "1 salvavidas circular con baliza de posición lumínica automática",
           "2 andariveles y 4 líneas de vida",
