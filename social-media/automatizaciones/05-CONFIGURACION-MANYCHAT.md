@@ -55,10 +55,10 @@ Somos un espacio náutico integral en Puerto Norte, frente al Aeroparque.
 | Boton | Accion |
 |-------|--------|
 | ⛵ Travesías | → Flujo Travesias |
-| 🎓 Escuela Náutica | → Flujo Escuela |
-| 🚤 Compra/Venta/Alquiler | → Flujo Embarcaciones |
-| 🔧 Servicio Técnico | → Flujo Servicio Tecnico |
-| 💬 Hablar con alguien | → Derivar a humano |
+| 🎓 Escuela | → Flujo Escuela |
+| 🚤 Embarcaciones | → Flujo Embarcaciones |
+| 🔧 Servicio | → Flujo Servicio Tecnico |
+| 💬 Consultar | → Derivar a humano |
 
 ---
 
@@ -99,7 +99,7 @@ desde Puerto Norte, con estadías de una o más noches.
 
 | Boton | Accion |
 |-------|--------|
-| 📲 Consultar por WhatsApp | → Link wa.me/5491149915143 |
+| 📲 WhatsApp | → Link wa.me/5491149915143 |
 | 🌐 Ver en la web | → Link espacionautico.com.ar/travesias |
 | ← Volver al menú | → Flujo Welcome |
 
@@ -140,7 +140,7 @@ escribinos por WhatsApp o visitá nuestra web.
 ## Flujo 4: Compra/Venta/Alquiler de Embarcaciones
 
 ### Trigger
-- Boton "Compra/Venta/Alquiler" del menu
+- Boton "Embarcaciones" del menu
 - Keywords: "comprar", "vender", "alquilar", "velero", "embarcacion", "barco", "broker"
 
 ### Mensaje
@@ -164,7 +164,7 @@ escribinos por WhatsApp.
 | Boton | Accion |
 |-------|--------|
 | 📲 WhatsApp | → wa.me/5491149915143 |
-| 🌐 Ver embarcaciones | → espacionautico.com.ar/veleros-en-venta |
+| 🌐 Ver veleros | → espacionautico.com.ar/veleros-en-venta |
 | ← Volver | → Welcome |
 
 ---
@@ -223,7 +223,7 @@ Valores + IVA · Factura A y B.
 ### Accion
 - **Etiquetar** conversacion como "consulta_precio"
 - **Notificar** al equipo humano via email
-- Quick Reply: "📲 Escribir por WhatsApp" → wa.me/5491149915143
+- Quick Reply: "📲 WhatsApp" → wa.me/5491149915143
 
 ---
 
