@@ -1,0 +1,114 @@
+{
+  "name": "ENBA - Generación Contenido Semanal",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20,
+              "triggerAtDay": 7
+            }
+          ]
+        }
+      },
+      "id": "cron-semanal",
+      "name": "Domingo 20h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-6\",\n  \"max_tokens\": 4096,\n  \"system\": \"Sos el agente de redes sociales de Espacio Nautico Buenos Aires (ENBA), un negocio nautico integral con base en Puerto Norte, frente al Aeroparque Jorge Newbery, Ciudad de Buenos Aires, Argentina.\\n\\nTu voz narradora es profesional, apasionada y con caracter femenino: segura, calida, directa. Escribis en espanol rioplatense (vos, sos, tenes). Maximo 2-3 emojis por post. CTA claro y elegante al final.\\n\\nREGLAS CRITICAS:\\n- Nunca publicas precios exactos\\n- Nunca confirmas fechas o disponibilidad\\n- Nunca decis Puerto Madero (es Puerto Norte)\\n- Nunca usas tono sensacionalista\\n\\nLas 4 lineas de servicio son:\\n1. Compra, venta y alquiler de embarcaciones\\n2. Escuela de navegacion y vela\\n3. Turismo y excursiones nauticas (travesias nacionales e internacionales)\\n4. Servicio tecnico a embarcaciones\\n\\nDestinos nacionales: Arroyos del Delta, Isla Martin Garcia, Mar del Plata.\\nDestinos internacionales: Colonia del Sacramento, Carmelo, Riachuelo, Juan Lacaze.\\n\\nSalidas todos los dias. Minimo 3 pasajeros por embarcacion.\\nFormas de pago: transferencia, efectivo, tarjeta (1 pago y cuotas consultar). Valores + IVA. Factura A y B.\",\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Genera el calendario de contenido para la proxima semana (lunes a domingo). Para cada dia genera:\\n\\n1. Un post de Instagram (caption 80-150 palabras + hashtags)\\n2. Un post de Facebook (hasta 200 palabras, informativo)\\n3. Una idea de TikTok/Reel (caption max 80 palabras + idea de video)\\n\\nDistribuye los pilares de contenido:\\n- 30% Turismo y Travesias\\n- 20% Educativo/Tips\\n- 15% Escuela de navegacion\\n- 15% Compra/Venta/Alquiler\\n- 10% Servicio tecnico\\n- 10% Comunidad/Behind the scenes\\n\\nResponde en formato JSON con esta estructura:\\n{\\\"semana\\\": \\\"YYYY-MM-DD al YYYY-MM-DD\\\", \\\"dias\\\": [{\\\"dia\\\": \\\"Lunes\\\", \\\"fecha\\\": \\\"YYYY-MM-DD\\\", \\\"instagram\\\": {\\\"caption\\\": \\\"...\\\", \\\"hashtags\\\": \\\"...\\\", \\\"tipo\\\": \\\"feed|reel|carrusel\\\"}, \\\"facebook\\\": {\\\"caption\\\": \\\"...\\\"}, \\\"tiktok\\\": {\\\"caption\\\": \\\"...\\\", \\\"video_idea\\\": \\\"...\\\"}}]}\"\n  }]\n}"
+      },
+      "id": "claude-api",
+      "name": "Claude API - Generar Contenido",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst text = response.content[0].text;\n\n// Extraer JSON del response\nconst jsonMatch = text.match(/\\{[\\s\\S]*\\}/);\nif (!jsonMatch) {\n  throw new Error('No se encontró JSON en la respuesta de Claude');\n}\n\nconst calendario = JSON.parse(jsonMatch[0]);\nconst rows = [];\n\nfor (const dia of calendario.dias) {\n  rows.push({\n    semana: calendario.semana,\n    dia: dia.dia,\n    fecha: dia.fecha,\n    // Instagram\n    ig_caption: dia.instagram?.caption || '',\n    ig_hashtags: dia.instagram?.hashtags || '',\n    ig_tipo: dia.instagram?.tipo || 'feed',\n    ig_estado: 'pendiente',\n    // Facebook\n    fb_caption: dia.facebook?.caption || '',\n    fb_estado: 'pendiente',\n    // TikTok\n    tk_caption: dia.tiktok?.caption || '',\n    tk_video_idea: dia.tiktok?.video_idea || '',\n    tk_estado: 'pendiente',\n    // Meta\n    generado_at: new Date().toISOString(),\n    aprobado: false\n  });\n}\n\nreturn rows.map(r => ({ json: r }));"
+      },
+      "id": "parse-response",
+      "name": "Parsear Respuesta Claude",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [750, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.GOOGLE_SHEET_ID }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Calendario"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData"
+        }
+      },
+      "id": "sheets-append",
+      "name": "Guardar en Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1000, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CONFIGURAR",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $env.NOTIFICATION_EMAIL }}",
+        "subject": "=ENBA - Contenido semanal generado ({{ $json.semana }})",
+        "message": "=Se generaron {{ $input.all().length }} posts para la semana {{ $json.semana }}.\n\nRevisa y aprobá en Google Sheets:\nhttps://docs.google.com/spreadsheets/d/{{ $env.GOOGLE_SHEET_ID }}\n\nUna vez aprobados, se publicarán automáticamente."
+      },
+      "id": "email-notif",
+      "name": "Notificar por Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1250, 300],
+      "credentials": {
+        "smtp": {
+          "id": "CONFIGURAR",
+          "name": "SMTP ENBA"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Domingo 20h": { "main": [[{ "node": "Claude API - Generar Contenido", "type": "main", "index": 0 }]] },
+    "Claude API - Generar Contenido": { "main": [[{ "node": "Parsear Respuesta Claude", "type": "main", "index": 0 }]] },
+    "Parsear Respuesta Claude": { "main": [[{ "node": "Guardar en Google Sheets", "type": "main", "index": 0 }]] },
+    "Guardar en Google Sheets": { "main": [[{ "node": "Notificar por Email", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "ENBA" },
+    { "name": "contenido" }
+  ]
+}

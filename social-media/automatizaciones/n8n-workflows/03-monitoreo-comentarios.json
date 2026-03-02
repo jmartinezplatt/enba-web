@@ -1,0 +1,176 @@
+{
+  "name": "ENBA - Monitoreo de Comentarios IG + FB",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 30
+            }
+          ]
+        }
+      },
+      "id": "cron-30min",
+      "name": "Cada 30 min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.IG_BUSINESS_ACCOUNT_ID }}/media",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "fields", "value": "id,comments{id,text,username,timestamp,replies}" },
+            { "name": "limit", "value": "10" },
+            { "name": "access_token", "value": "={{ $env.META_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "ig-get-comments",
+      "name": "Obtener Comentarios IG",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 200]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v19.0/{{ $env.FB_PAGE_ID }}/feed",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "fields", "value": "id,comments{id,message,from,created_time}" },
+            { "name": "limit", "value": "10" },
+            { "name": "access_token", "value": "={{ $env.META_PAGE_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "fb-get-comments",
+      "name": "Obtener Comentarios FB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 450]
+    },
+    {
+      "parameters": {
+        "jsCode": "const igData = $('Obtener Comentarios IG').first().json;\nconst fbData = $('Obtener Comentarios FB').first().json;\nconst comments = [];\n\n// Procesar comentarios de IG\nif (igData.data) {\n  for (const post of igData.data) {\n    if (post.comments?.data) {\n      for (const comment of post.comments.data) {\n        // Solo comentarios de las últimas 2 horas sin respuesta\n        const commentTime = new Date(comment.timestamp);\n        const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);\n        if (commentTime > twoHoursAgo && (!comment.replies || comment.replies.data.length === 0)) {\n          comments.push({\n            platform: 'instagram',\n            post_id: post.id,\n            comment_id: comment.id,\n            text: comment.text,\n            username: comment.username,\n            timestamp: comment.timestamp\n          });\n        }\n      }\n    }\n  }\n}\n\n// Procesar comentarios de FB\nif (fbData.data) {\n  for (const post of fbData.data) {\n    if (post.comments?.data) {\n      for (const comment of post.comments.data) {\n        const commentTime = new Date(comment.created_time);\n        const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);\n        if (commentTime > twoHoursAgo) {\n          comments.push({\n            platform: 'facebook',\n            post_id: post.id,\n            comment_id: comment.id,\n            text: comment.message,\n            username: comment.from?.name || 'unknown',\n            timestamp: comment.created_time\n          });\n        }\n      }\n    }\n  }\n}\n\nreturn comments.map(c => ({ json: c }));"
+      },
+      "id": "parse-comments",
+      "name": "Filtrar Comentarios Nuevos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"max_tokens\": 256,\n  \"system\": \"Sos el community manager de ENBA (Espacio Nautico Buenos Aires). Clasifica este comentario y genera una respuesta apropiada. Responde en JSON: {\\\"categoria\\\": \\\"positivo|pregunta_simple|consulta_precio|queja|spam|otro\\\", \\\"requiere_humano\\\": true/false, \\\"respuesta_sugerida\\\": \\\"...\\\"}\\n\\nReglas:\\n- Si preguntan precio: requiere_humano=true, responde derivando a DM/WhatsApp\\n- Si es queja: requiere_humano=true\\n- Si es positivo: genera respuesta calida y breve\\n- Si es pregunta simple (horarios, ubicacion, etc): responde directamente\\n- Nunca confirmes fechas o disponibilidad\\n- Voz femenina, profesional, rioplatense\",\n  \"messages\": [{\"role\": \"user\", \"content\": \"Comentario de @{{ $json.username }} en {{ $json.platform }}: {{ $json.text }}\"}]\n}"
+      },
+      "id": "claude-classify",
+      "name": "Claude - Clasificar Comentario",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst text = response.content[0].text;\nconst jsonMatch = text.match(/\\{[\\s\\S]*\\}/);\nconst classification = JSON.parse(jsonMatch[0]);\nconst original = $('Filtrar Comentarios Nuevos').first().json;\n\nreturn [{\n  json: {\n    ...original,\n    ...classification\n  }\n}];"
+      },
+      "id": "parse-classification",
+      "name": "Parsear Clasificación",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.requiere_humano }}",
+              "value2": false
+            }
+          ]
+        }
+      },
+      "id": "filter-auto",
+      "name": "¿Auto-responder?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1550, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.comment_id }}/replies",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "message", "value": "={{ $json.respuesta_sugerida }}" },
+            { "name": "access_token", "value": "={{ $env.META_ACCESS_TOKEN }}" }
+          ]
+        }
+      },
+      "id": "auto-reply",
+      "name": "Auto-Responder",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1800, 200]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $env.NOTIFICATION_EMAIL }}",
+        "subject": "=ENBA ALERTA - Comentario requiere atención ({{ $json.categoria }})",
+        "message": "=Plataforma: {{ $json.platform }}\nUsuario: @{{ $json.username }}\nComentario: {{ $json.text }}\n\nCategoría: {{ $json.categoria }}\nRespuesta sugerida: {{ $json.respuesta_sugerida }}\n\nResponder directamente en la plataforma."
+      },
+      "id": "escalate-email",
+      "name": "Escalar a Humano",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1800, 450],
+      "credentials": {
+        "smtp": {
+          "id": "CONFIGURAR",
+          "name": "SMTP ENBA"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cada 30 min": { "main": [[{ "node": "Obtener Comentarios IG", "type": "main", "index": 0 }, { "node": "Obtener Comentarios FB", "type": "main", "index": 0 }]] },
+    "Obtener Comentarios IG": { "main": [[{ "node": "Filtrar Comentarios Nuevos", "type": "main", "index": 0 }]] },
+    "Obtener Comentarios FB": { "main": [[{ "node": "Filtrar Comentarios Nuevos", "type": "main", "index": 0 }]] },
+    "Filtrar Comentarios Nuevos": { "main": [[{ "node": "Claude - Clasificar Comentario", "type": "main", "index": 0 }]] },
+    "Claude - Clasificar Comentario": { "main": [[{ "node": "Parsear Clasificación", "type": "main", "index": 0 }]] },
+    "Parsear Clasificación": { "main": [[{ "node": "¿Auto-responder?", "type": "main", "index": 0 }]] },
+    "¿Auto-responder?": {
+      "main": [
+        [{ "node": "Auto-Responder", "type": "main", "index": 0 }],
+        [{ "node": "Escalar a Humano", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    { "name": "ENBA" },
+    { "name": "comentarios" }
+  ]
+}
