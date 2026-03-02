@@ -26,10 +26,11 @@ Gestiona consultas basicas y deriva a humano las complejas.
   Menu     Info +     Info +
  Opciones  CTA DM    CTA Web
     │
-    ├─→ Embarcaciones → Info + CTA WhatsApp
-    ├─→ Services → Info + CTA WhatsApp
-    ├─→ Precio → Derivar a humano
-    └─→ Hablemos → Derivar a humano
+    ├─→ Más opciones ──┐
+    │                   ├─→ Embarcaciones → Info + CTA WhatsApp
+    │                   ├─→ Services → Info + CTA WhatsApp
+    │                   └─→ Hablemos → Derivar a humano
+    └─→ Precio → Derivar a humano
 ```
 
 ---
@@ -50,15 +51,34 @@ Somos un espacio náutico integral en Puerto Norte, frente al Aeroparque.
 ¿En qué te podemos ayudar?
 ```
 
-### Quick Replies (botones)
+### Quick Replies (botones) — Máximo 3 en Instagram DM
 
 | Boton | Accion |
 |-------|--------|
 | ⛵ Travesías | → Flujo Travesias |
 | 🎓 Academia | → Flujo Academia |
+| ➕ Más opciones | → Flujo Más Opciones |
+
+---
+
+## Flujo 1b: Más Opciones (Segundo Menú)
+
+### Trigger
+- Boton "Más opciones" del menu principal
+
+### Mensaje
+
+```
+¿Sobre qué querés saber más?
+```
+
+### Quick Replies (botones)
+
+| Boton | Accion |
+|-------|--------|
 | 🌐 Embarcaciones | → Flujo Embarcaciones |
 | 🔧 Services | → Flujo Services |
-| 💬 Hablemos | → Derivar a humano |
+| 💬 Hablemos | → Flujo Hablemos |
 
 ---
 
