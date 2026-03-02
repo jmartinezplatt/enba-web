@@ -20,16 +20,16 @@ Gestiona consultas basicas y deriva a humano las complejas.
     ┌─────────┼─────────┐
     │         │         │
     ▼         ▼         ▼
- Saludo   Travesia   Escuela
+ Saludo   Travesia   Academia
     │         │         │
     ▼         ▼         ▼
   Menu     Info +     Info +
  Opciones  CTA DM    CTA Web
     │
     ├─→ Embarcaciones → Info + CTA WhatsApp
-    ├─→ Serv. Tecnico → Info + CTA WhatsApp
+    ├─→ Services → Info + CTA WhatsApp
     ├─→ Precio → Derivar a humano
-    └─→ Otro → Derivar a humano
+    └─→ Hablemos → Derivar a humano
 ```
 
 ---
@@ -55,10 +55,10 @@ Somos un espacio náutico integral en Puerto Norte, frente al Aeroparque.
 | Boton | Accion |
 |-------|--------|
 | ⛵ Travesías | → Flujo Travesias |
-| 🎓 Escuela | → Flujo Escuela |
-| 🚤 Embarcaciones | → Flujo Embarcaciones |
-| 🔧 Servicio | → Flujo Servicio Tecnico |
-| 💬 Consultar | → Derivar a humano |
+| 🎓 Academia | → Flujo Academia |
+| 🌐 Embarcaciones | → Flujo Embarcaciones |
+| 🔧 Services | → Flujo Services |
+| 💬 Hablemos | → Derivar a humano |
 
 ---
 
@@ -105,11 +105,11 @@ desde Puerto Norte, con estadías de una o más noches.
 
 ---
 
-## Flujo 3: Escuela Nautica
+## Flujo 3: Academia
 
 ### Trigger
-- Boton "Escuela" del menu
-- Keywords: "curso", "timonel", "patron", "aprender", "escuela", "clase"
+- Boton "Academia" del menu
+- Keywords: "curso", "timonel", "patron", "aprender", "escuela", "clase", "academia"
 
 ### Mensaje
 
@@ -169,11 +169,11 @@ escribinos por WhatsApp.
 
 ---
 
-## Flujo 5: Servicio Tecnico
+## Flujo 5: Services
 
 ### Trigger
-- Boton "Servicio Tecnico" del menu
-- Keywords: "servicio tecnico", "reparacion", "mantenimiento", "motor", "arreglo"
+- Boton "Services" del menu
+- Keywords: "servicio", "servicio tecnico", "reparacion", "mantenimiento", "motor", "arreglo", "services"
 
 ### Mensaje
 
@@ -201,29 +201,39 @@ Coordiná una revisión por WhatsApp.
 
 ---
 
-## Flujo 6: Consulta de Precio (Derivacion)
+## Flujo 6: Hablemos (Derivacion a Humano)
 
 ### Trigger
-- Keywords: "precio", "cuanto", "cuesta", "tarifa", "valor", "cuotas"
+- Boton "Hablemos" del menu
+- Keywords: "hablar", "hablemos", "consulta", "precio", "cuanto", "cuesta", "tarifa", "valor", "cuotas", "persona", "humano"
 
 ### Mensaje
 
 ```
-¡Gracias por tu interés!
+¡Buenísimo, hablemos! 💬
 
-Los valores y condiciones los manejamos de forma personalizada.
-Te los pasamos por mensaje directo o WhatsApp para darte
-la información más actualizada.
+Te vamos a poner en contacto con alguien del equipo
+para darte la mejor atención.
+
+Si querés respuesta más rápida, escribinos
+directo por WhatsApp.
 
 📋 Dato: aceptamos transferencia, efectivo y tarjeta de crédito.
 Cuotas fijas con tarjeta · consultar condiciones.
 Valores + IVA · Factura A y B.
 ```
 
-### Accion
-- **Etiquetar** conversacion como "consulta_precio"
+### Quick Replies
+
+| Boton | Accion |
+|-------|--------|
+| 📲 WhatsApp | → wa.me/5491149915143 |
+| ← Volver al menú | → Welcome |
+
+### Accion adicional
+- **Etiquetar** conversacion como "consulta_humano"
 - **Notificar** al equipo humano via email
-- Quick Reply: "📲 WhatsApp" → wa.me/5491149915143
+- **Asignar** a Live Chat para seguimiento
 
 ---
 
