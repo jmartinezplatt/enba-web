@@ -52,7 +52,7 @@ export const veleros: Velero[] = [
   {
     id: "1",
     slug: "belna",
-    nombre: "BELNA",
+    nombre: "MASTI",
     modelo: "MASTRACCHIO 24.5",
     descripcionCorta:
       "Velero moderno apto crucero pero ideal para quienes gustan de las regatas o le interese navegar en uno de los veleros más rápidos del Río de la Plata. Confortable y estilizado.",
@@ -176,7 +176,7 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
   {
     id: "2",
     slug: "picante",
-    nombre: "PICANTE",
+    nombre: "BRAMA",
     modelo: "BRAMADOR 24",
     descripcionCorta:
       "Velero deportivo y versátil de 24 pies diseñado por Gabriel Schroeder. Combina rendimiento bajo vela con confort a bordo, ideal para crucero en el Río de la Plata.",
