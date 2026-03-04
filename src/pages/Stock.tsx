@@ -13,7 +13,7 @@ const Stock = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Veleros en Venta Buenos Aires | Broker Náutico — Espacio Náutico"
-        description="Veleros usados en venta con inspección completa. BELNA, PICANTE y más. Stock propio verificado y listo para navegar. Compra-venta de veleros en Buenos Aires."
+        description="Veleros usados en venta con inspección completa. MASTI, BRAMA y más. Stock propio verificado y listo para navegar. Compra-venta de veleros en Buenos Aires."
         path="/veleros-en-venta"
       />
       <BreadcrumbSchema items={[

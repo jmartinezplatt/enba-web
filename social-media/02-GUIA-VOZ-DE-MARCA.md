@@ -156,12 +156,12 @@ Inscripciones abiertas. Link en bio.
 
 **Velero en venta (comercial)**:
 ```
-BELNA - Listing nuevo
+MASTI - Listing nuevo
 
 Velero X pies, ano Y. Ideal para crucero costero y travesias.
 Motor nuevo, velas en excelente estado, electronica actualizada.
 
-Todos los detalles en espacionautico.com.ar/veleros-en-venta/belna
+Todos los detalles en espacionautico.com.ar/veleros-en-venta/masti
 
 #VeleroEnVenta #Broker #VelerosBuenosAires #Sailing
 ```
@@ -270,8 +270,8 @@ WhatsApp: wa.me/5491149915143
 Estas buscando velero? Te ayudamos!
 
 En este momento tenemos estas unidades disponibles:
-- Belna: espacionautico.com.ar/veleros-en-venta/belna
-- Picante: espacionautico.com.ar/veleros-en-venta/picante
+- Masti: espacionautico.com.ar/veleros-en-venta/masti
+- Brama: espacionautico.com.ar/veleros-en-venta/brama
 - Marejada: espacionautico.com.ar/veleros-en-venta/marejada
 - Brisa: espacionautico.com.ar/veleros-en-venta/brisa
 

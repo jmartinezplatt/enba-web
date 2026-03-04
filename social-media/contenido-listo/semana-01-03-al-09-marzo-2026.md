@@ -208,20 +208,20 @@ Valores + IVA. Factura A y B.
 
 ## VIERNES 7 DE MARZO
 
-### Instagram Feed - Velero Destacado: BELNA
+### Instagram Feed - Velero Destacado: MASTI
 **Formato**: Carrusel 4-6 fotos del velero (exterior, interior, motor, velas, equipamiento)
 
 **Caption** (copiar tal cual):
 ```
-BELNA - Disponible.
+MASTI - Disponible.
 
 Un velero para disfrutar el rio sin preocupaciones. Ideal para crucero costero y travesias de fin de semana.
 
-Todos los detalles y fotos en espacionautico.com.ar/veleros-en-venta/belna
+Todos los detalles y fotos en espacionautico.com.ar/veleros-en-venta/masti
 
 Consultas por DM o WhatsApp.
 
-#VeleroEnVenta #Belna #BrokerNautico #VelerosBuenosAires #Sailing #ENBA #NavegaElRioDeLaPlata #ComprarVelero
+#VeleroEnVenta #Masti #BrokerNautico #VelerosBuenosAires #Sailing #ENBA #NavegaElRioDeLaPlata #ComprarVelero
 ```
 
 ---
