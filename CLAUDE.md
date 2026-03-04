@@ -1,7 +1,7 @@
 # Rio Abrazo Náutica (ENBA)
 
 ## Proyecto
-Sitio web de Escuela Náutica Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
+Sitio web de Espacio Náutico Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
 
 ## Stack
 - **Framework**: Vite + React + TypeScript
