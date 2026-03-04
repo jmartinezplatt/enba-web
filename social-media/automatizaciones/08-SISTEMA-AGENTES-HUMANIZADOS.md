@@ -100,7 +100,7 @@ El nuevo agente reconoce al anterior como compañero/a:
 
 > **Alberto** (después de Marina): "¡Hola! Soy Alberto, de ENBA. Marina, mi compañera, me pasó el contexto. ¿Seguimos?"
 
-#### Escenario C: Mucho tiempo sin contacto (>30 días)
+#### Escenario C: Mucho tiempo sin contacto (>7 días)
 
 El agente saluda como si fuera nuevo pero con un toque de "bienvenido de vuelta":
 
