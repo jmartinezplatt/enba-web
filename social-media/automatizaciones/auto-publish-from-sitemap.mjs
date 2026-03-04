@@ -27,8 +27,8 @@ const SITEMAP_URLS = {
     { url: '/blog/meteorologia-basica-navegantes', title: 'Meteorologia basica para navegantes', type: 'educativo' },
   ],
   veleros: [
-    { url: '/veleros-en-venta/belna', title: 'Belna - Velero en venta', type: 'embarcaciones' },
-    { url: '/veleros-en-venta/picante', title: 'Picante - Velero en venta', type: 'embarcaciones' },
+    { url: '/veleros-en-venta/masti', title: 'Masti - Velero en venta', type: 'embarcaciones' },
+    { url: '/veleros-en-venta/brama', title: 'Brama - Velero en venta', type: 'embarcaciones' },
     { url: '/veleros-en-venta/marejada', title: 'Marejada - Velero en venta', type: 'embarcaciones' },
     { url: '/veleros-en-venta/brisa', title: 'Brisa - Velero en venta', type: 'embarcaciones' },
   ],

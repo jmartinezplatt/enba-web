@@ -217,8 +217,8 @@ Opcion B - Self-hosted (si hay VPS disponible):
 ### 4.5 Crear Flujo de Veleros
 - [ ] Trigger: Boton "Veleros en venta"
 - [ ] Mensaje con galeria de veleros actuales (actualizar periodicamente):
-  - Belna: espacionautico.com.ar/veleros-en-venta/belna
-  - Picante: espacionautico.com.ar/veleros-en-venta/picante
+  - Masti: espacionautico.com.ar/veleros-en-venta/masti
+  - Brama: espacionautico.com.ar/veleros-en-venta/brama
   - Marejada: espacionautico.com.ar/veleros-en-venta/marejada
   - Brisa: espacionautico.com.ar/veleros-en-venta/brisa
 - [ ] Mensaje final: "Si necesitas mas detalles o queres coordinar una visita, escribinos por WhatsApp: wa.me/5491149915143"

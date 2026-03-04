@@ -153,16 +153,16 @@ Toda la info: espacionautico.com.ar/escuela-nautica
 
 **Instagram Feed** - Velero destacado
 ```
-Tipo: Carrusel (fotos del velero Belna)
+Tipo: Carrusel (fotos del velero Masti)
 Caption:
-BELNA - Disponible
+MASTI - Disponible
 
 [Descripcion breve del velero, eslora, ano, motor, etc.]
 
 Un velero para disfrutar el rio sin preocupaciones.
-Consultas: DM o espacionautico.com.ar/veleros-en-venta/belna
+Consultas: DM o espacionautico.com.ar/veleros-en-venta/masti
 
-#VeleroEnVenta #Belna #BrokerNautico #VelerosBuenosAires #Sailing
+#VeleroEnVenta #Masti #BrokerNautico #VelerosBuenosAires #Sailing
 ```
 
 **TikTok** - "Lo que ves vs lo que no ves de navegar en velero"
@@ -215,7 +215,7 @@ Buena semana para todos.
 | Lun 10 | -- | Tip: "Que llevar a tu primera travesia" | Encuesta: destino favorito | Compartir reel | Mismo reel |
 | Mar 11 | Destino: Delta | -- | Fotos Delta | Post Delta extendido | "Delta del Parana en 60 segundos" |
 | Mie 12 | -- | Escuela: "Como es una clase practica" | Behind the scenes clase | -- | Mismo reel adaptado |
-| Jue 13 | Velero: Picante | -- | Tour del velero en stories | Post Picante | "Tour de velero en 30 seg" |
+| Jue 13 | Velero: Brama | -- | Tour del velero en stories | Post Brama | "Tour de velero en 30 seg" |
 | Vie 14 | -- | "5 cosas que no sabias del Rio de la Plata" | Q&A | Compartir reel | Mismo contenido |
 | Sab 15 | Cobertura travesia | -- | Live/Stories de navegacion | Update de travesia | Clips de la salida |
 | Dom 16 | Foto inspiracional | -- | Recap semanal | -- | Best of de la semana |

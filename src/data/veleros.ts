@@ -51,7 +51,7 @@ import belna25 from "@/assets/belna/IMG_0953.jpg";
 export const veleros: Velero[] = [
   {
     id: "1",
-    slug: "belna",
+    slug: "masti",
     nombre: "MASTI",
     modelo: "MASTRACCHIO 24.5",
     descripcionCorta:
@@ -175,7 +175,7 @@ Se ha buscado dar buena estabilidad, maniobrabilidad, facilidad de navegación y
   },
   {
     id: "2",
-    slug: "picante",
+    slug: "brama",
     nombre: "BRAMA",
     modelo: "BRAMADOR 24",
     descripcionCorta:

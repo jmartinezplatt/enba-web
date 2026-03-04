@@ -172,8 +172,8 @@ En ENBA te asesoramos en todo el proceso.
 Trabajamos con embarcaciones en Puerto Norte, Buenos Aires.
 
 Algunas unidades disponibles:
-— Belna: espacionautico.com.ar/veleros-en-venta/belna
-— Picante: espacionautico.com.ar/veleros-en-venta/picante
+— Masti: espacionautico.com.ar/veleros-en-venta/masti
+— Brama: espacionautico.com.ar/veleros-en-venta/brama
 
 Para ver todas las opciones o consultarnos,
 escribinos por WhatsApp.

@@ -20,8 +20,8 @@ const resolve = (p) => path.resolve(__dirname, "..", p);
 const routes = [
   "/",
   "/veleros-en-venta",
-  "/veleros-en-venta/belna",
-  "/veleros-en-venta/picante",
+  "/veleros-en-venta/masti",
+  "/veleros-en-venta/brama",
   "/veleros-en-venta/marejada",
   "/veleros-en-venta/brisa",
   "/travesias",
