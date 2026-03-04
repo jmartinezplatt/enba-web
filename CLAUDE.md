@@ -1,0 +1,108 @@
+# Rio Abrazo Náutica (ENBA)
+
+## Proyecto
+Sitio web de Escuela Náutica Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
+
+## Stack
+- **Framework**: Vite + React + TypeScript
+- **Estilos**: Tailwind CSS + shadcn/ui (Radix UI)
+- **Routing**: react-router-dom (SPA con pre-rendering SSG para SEO)
+- **Email**: EmailJS (formulario de consulta de servicios)
+- **Deploy**: Cloudflare Pages
+- **Repo**: github.com/jmartinezplatt/rio-abrazo-nautica
+
+## Estructura principal
+```
+src/
+├── pages/          # Index, Stock, VeleroDetalle, Destinos, Blog, Contacto, etc.
+├── components/     # Navbar, Footer, Hero, secciones, UI (shadcn)
+├── data/veleros.ts # Catálogo de veleros con fotos, specs, descripciones
+├── types/velero.ts # TypeScript types para veleros
+├── assets/
+│   ├── belna/      # 25 fotos MASTI (Mastracchio 24.5)
+│   ├── picante/    # 16 fotos BRAMA (Bramador 24)
+│   └── *.jpg/svg   # Hero images, destinos, servicios, logos
+```
+
+## Veleros en stock (src/data/veleros.ts)
+| ID | Nombre | Modelo | Slug | Carpeta fotos | Precio |
+|----|--------|--------|------|---------------|--------|
+| 1 | MASTI | Mastracchio 24.5 | /veleros/masti | /assets/belna/ (25 fotos) | USD 23.500 |
+| 2 | BRAMA | Bramador 24 | /veleros/brama | /assets/picante/ (16 fotos) | USD 29.900 |
+| 3 | Marejada | Hunter 33 | /veleros/marejada | velero-3.jpg (1 foto) | USD 35.000 |
+| 4 | Brisa | Grampian 26 | /veleros/brisa | velero-4.jpg (1 foto) | USD 9.800 |
+
+### Nombres internos vs. display
+- Carpeta `belna/` = velero MASTI (renombrado en sesión actual)
+- Carpeta `picante/` = velero BRAMA (renombrado en sesión actual)
+- Los nombres de carpeta se mantuvieron para no romper imports
+
+## Historial de trabajo (sesión completa)
+
+### Fase 1 — Fundación del sitio
+- Setup inicial Vite + React + Tailwind
+- Páginas: Home, Destinos, Stock, Contacto, Escuela Náutica, Servicios
+- Hero sections con imágenes de fondo y navegación
+- Navbar con scroll detection y links funcionales desde cualquier página
+- Footer con navegación y logo
+
+### Fase 2 — Destinos y travesías
+- Página /destinos con cards para cada destino (Delta, Colonia, Carmelo, Juan Lacaze, Mar del Plata, etc.)
+- Imágenes únicas por destino
+- Fix scroll overshoot al navegar a secciones con IDs
+
+### Fase 3 — Stock / Broker
+- Página /stock con catálogo de veleros
+- Carrusel de fotos con lightbox
+- Modal "MÁS INFO" con especificaciones completas
+- Botón WhatsApp para consulta directa
+- Página /veleros/:slug para detalle individual
+
+### Fase 4 — Velero BELNA (ahora MASTI)
+- Carga de 25 fotos (HEIC → JPG optimizado)
+- Ficha completa: Mastracchio 24.5, specs detalladas, descripción larga
+- Datos enriquecidos con research del modelo
+
+### Fase 5 — Velero PICANTE (ahora BRAMA)
+- Carga de 16 fotos del Bramador 24
+- Ficha completa con specs, velamen Hood, electrónica Raymarine, seguridad
+- Correcciones de datos: tripulación, velocidad, motor Suzuki 6HP, lonas
+
+### Fase 6 — Formulario de contacto (EmailJS)
+- Formulario en servicios náuticos
+- Integración EmailJS con template HTML
+- Fix sender rejected, formato de teléfono, body HTML
+
+### Fase 7 — SEO
+- robots.txt y sitemap.xml
+- Meta tags y schema.org (JSON-LD) por página
+- SSG pre-rendering para las 20 rutas
+- Blog con contenido SEO (destinos, mantenimiento, consejos)
+- FAQs con schema
+
+### Fase 8 — Social media y automatización
+- Guía de cuentas sociales y brand voice
+- Calendario de contenido (mes 1)
+- Suite de automatización: n8n workflows, ManyChat bot, AI agents
+- Archivos de ejecución: JSONs, CSV, contenido semana 1
+
+### Fase 9 — ManyChat
+- Botones renombrados: Academia, Services, Hablemos, Embarcaciones (límite 20 chars)
+- Menú reestructurado: 3 botones principales + "Más opciones"
+
+### Fase 10 — Renombramientos y optimización (sesión actual)
+- BELNA → MASTI, PICANTE → BRAMA (display names y slugs)
+- URLs actualizadas: /veleros/masti, /veleros/brama
+- Optimización de 16 imágenes BRAMA: 18MB → 2.6MB (max 1920px, ~200KB c/u)
+- PRs: #29 (ManyChat), #30 (rename), #31-32 (sync), #33 (optimización imágenes)
+
+## Contacto del proyecto
+- WhatsApp: número real configurado en el sitio
+- Email: vía EmailJS (service + template configurados)
+- ManyChat: bot configurado con menú de 3+1 botones
+
+## Convenciones
+- Imágenes web: max 1920px lado mayor, ~200KB JPEG optimizado
+- Commits en español o inglés, descriptivos
+- PRs con summary + test plan
+- Branch de trabajo: `claude/find-booking-button-cEQX5`
