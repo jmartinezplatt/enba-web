@@ -1,7 +1,7 @@
-# Rio Abrazo Náutica (ENBA)
+# ENBA Web
 
 ## Proyecto
-Sitio web de Escuela Náutica Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
+Sitio web de Espacio Náutico Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
 
 ## Stack
 - **Framework**: Vite + React + TypeScript
@@ -9,7 +9,7 @@ Sitio web de Escuela Náutica Buenos Aires (ENBA) — venta de veleros usados, e
 - **Routing**: react-router-dom (SPA con pre-rendering SSG para SEO)
 - **Email**: EmailJS (formulario de consulta de servicios)
 - **Deploy**: Cloudflare Pages
-- **Repo**: github.com/jmartinezplatt/rio-abrazo-nautica
+- **Repo**: github.com/jmartinezplatt/enba-web
 
 ## Estructura principal
 ```
