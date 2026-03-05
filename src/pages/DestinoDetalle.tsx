@@ -1,11 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Anchor, Check, ArrowLeft } from "lucide-react";
+import { MapPin, Clock, Anchor, Check, ArrowLeft, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { TouristTripSchema, BreadcrumbSchema } from "@/components/SchemaOrg";
 import { destinos } from "@/data/destinos";
+import { openCrispChat } from "@/lib/crisp";
 import NotFound from "./NotFound";
 
 const DestinoDetalle = () => {
@@ -143,14 +144,16 @@ const DestinoDetalle = () => {
                 <p className="font-body text-sm text-muted-foreground">
                   Consultá disponibilidad y precio para tu grupo. Respondemos en menos de 24hs.
                 </p>
-                <a
-                  href={`https://wa.me/5491149915143?text=${encodeURIComponent(`Hola! Me interesa la travesía a ${destino.name}. Somos [cantidad] personas para [fecha tentativa].`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => openCrispChat({
+                    page: `/travesias/${destino.id}`,
+                    destino: destino.name,
+                  })}
                   className="w-full flex items-center justify-center gap-2 bg-accent text-accent-foreground px-4 py-3 rounded-md font-body text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-90"
                 >
+                  <MessageCircle className="w-4 h-4" />
                   Consultar Disponibilidad
-                </a>
+                </button>
               </div>
             </div>
           </div>
