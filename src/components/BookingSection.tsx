@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Calendar, Users, Send } from "lucide-react";
+import { Calendar, Users, MessageCircle } from "lucide-react";
+import { openCrispChat } from "@/lib/crisp";
 
 type BookingType = "travesia" | "paseo" | "entrenamiento" | "curso";
 
@@ -66,10 +67,11 @@ const BookingSection = () => {
             className="bg-card backdrop-blur-sm rounded-lg p-8 border border-border space-y-5 shadow-sm"
             onSubmit={(e) => {
               e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const data = Object.fromEntries(formData);
-              const message = `Hola! Quiero consultar por: ${bookingTypes.find(t => t.value === selectedType)?.label}. Nombre: ${data.name}. Email: ${data.email}. Personas: ${data.people}. Fecha tentativa: ${data.date}. Mensaje: ${data.message || 'Sin mensaje adicional'}`;
-              window.open(`https://wa.me/5491149915143?text=${encodeURIComponent(message)}`, '_blank');
+              const type = bookingTypes.find(t => t.value === selectedType);
+              openCrispChat({
+                page: "/#booking",
+                destino: type?.label,
+              });
             }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -135,8 +137,8 @@ const BookingSection = () => {
               type="submit"
               className="w-full bg-primary text-primary-foreground py-4 rounded-md font-body font-semibold text-base tracking-wide uppercase flex items-center justify-center gap-2 transition-all hover:opacity-90 shadow-md hover:shadow-lg"
             >
-              <Send className="w-4 h-4" />
-              Enviar Consulta por WhatsApp
+              <MessageCircle className="w-4 h-4" />
+              Enviar Consulta
             </button>
           </form>
         </motion.div>
