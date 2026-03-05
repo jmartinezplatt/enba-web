@@ -2,7 +2,7 @@
 // Docs: https://docs.crisp.chat/guides/chatbox-sdks/web-sdk/dollar-crisp/
 
 // TODO: Replace with your real Crisp Website ID from https://app.crisp.chat/settings/websites/
-const CRISP_WEBSITE_ID = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+const CRISP_WEBSITE_ID = "b7916682-8f6a-46d5-b510-b8f4f3b87748";
 
 declare global {
   interface Window {
