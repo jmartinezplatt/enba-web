@@ -199,7 +199,13 @@ El proyecto de automatizacion de ENBA presenta un caso de negocio solido:
 4. **El modelo libera tiempo humano para lo que importa** — navegar, ensenar y cerrar ventas, no responder "donde queda Puerto Norte" 20 veces por dia.
 5. **La arquitectura escala sin friccion** — de atencion semi-manual a agentes autonomos, sin reescribir nada.
 
-El proximo paso recomendado es activar la **Fase 2** (integracion de n8n para publicacion automatica y monitoreo de comentarios), lo que lleva el sistema de "funcional" a "productivo" con una inversion adicional de USD 55/mes.
+**Proximos pasos (actualizado marzo 2026)**:
+1. **Activar agentes humanizados** — Laura (leads), Alberto (soporte), Marina (contenido) para atencion automatizada 24/7
+2. **Montar n8n** — Importar los 4 workflows de generacion, publicacion, monitoreo y reportes
+3. **Blog content** — Seguir publicando articulos SEO regularmente
+4. **Analytics** — Conectar Google Analytics / Search Console para medir trafico
+5. **Enriquecer stock** — Marejada y Brisa necesitan mas fotos y specs detalladas
+6. **Booking online** — Sistema de reserva de travesias en el sitio web
 
 ---
 

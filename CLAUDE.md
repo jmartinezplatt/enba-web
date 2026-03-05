@@ -101,6 +101,24 @@ src/
 - Email: vía EmailJS (service + template configurados)
 - ManyChat: bot configurado con menú de 3+1 botones
 
+## Prioridades (actualizado 5 marzo 2026)
+
+### Corto plazo (esta semana)
+1. **Activar agentes humanizados** — Laura (leads), Alberto (soporte), Marina (contenido) segun la spec en `08-SISTEMA-AGENTES-HUMANIZADOS.md`
+2. **Montar n8n** — Los 4 workflows JSON ya estan listos para importar (generacion, publicacion, monitoreo, reportes)
+3. **Blog content** — Hay articulos SEO creados, seguir publicando regularmente
+4. **Configurar ManyChat** — Con la spec de `05-CONFIGURACION-MANYCHAT.md` y el menu de 3+1 botones (no es prioritario por la estructura tecno que se esta armando)
+5. **Analytics** — Conectar Google Analytics / Search Console para medir trafico
+
+### Mediano plazo (semanas 2-4)
+1. **Agregar veleros al stock** — Marejada y Brisa tienen fichas basicas, faltaria enriquecerlas con mas fotos y specs detalladas
+2. **Booking de travesias online** — Sistema de reserva de travesias en el sitio
+
+### Mas adelante
+1. **Ejecutar semana 1 de contenido** — Calendario y posts listos en `social-media/contenido-listo/semana-01-03-al-09-marzo-2026.md`
+2. **Crear cuentas sociales** — IG y FB ya creadas. YouTube y TikTok quedan pendientes (ver `01-GUIA-CREACION-CUENTAS.md`)
+3. **Funcionalidades web** — Filtros en stock, comparador de veleros
+
 ## Convenciones
 - Imágenes web: max 1920px lado mayor, ~200KB JPEG optimizado
 - Commits en español o inglés, descriptivos
