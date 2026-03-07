@@ -25,3 +25,7 @@ dist-ssr
 
 # MCP config (contiene tokens)
 .mcp.json
+
+# Archivos internos / documentación privada
+*.zip
+src/assets/ENBA-REPO/

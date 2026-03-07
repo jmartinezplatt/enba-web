@@ -66,15 +66,13 @@ export function seleccionarAgenteAleatorio(): Agente {
 
 // Saludos contextuales segun la pagina de origen
 export const saludosPorPagina: Record<string, (nombre: string) => string> = {
-  "/veleros/masti": (n) =>
+  "/veleros-en-venta/masti": (n) =>
     `¡Hola! ⛵ Soy ${n} de ENBA. Vi que estás mirando el MASTI — ¿querés que te cuente más o coordinamos una visita?`,
-  "/veleros/brama": (n) =>
+  "/veleros-en-venta/brama": (n) =>
     `¡Hola! ⛵ Soy ${n} de ENBA. ¿Te interesa el BRAMA? Es un barco espectacular. ¡Preguntame lo que necesites!`,
-  "/stock": (n) =>
-    `¡Hola! ⛵ Soy ${n} de ENBA. Veo que estás mirando nuestros veleros en venta. ¿Alguno te llamó la atención?`,
   "/veleros-en-venta": (n) =>
     `¡Hola! ⛵ Soy ${n} de ENBA. Veo que estás mirando nuestros veleros en venta. ¿Alguno te llamó la atención?`,
-  "/destinos": (n) =>
+  "/travesias": (n) =>
     `¡Hola! ⛵ Soy ${n} de ENBA. ¿Te interesa hacer una travesía? ¡Contame qué destino te gusta!`,
   "/escuela-nautica": (n) =>
     `¡Hola! ⛵ Soy ${n} de ENBA. ¿Querés aprender a navegar? ¡Te cuento todo sobre los cursos!`,

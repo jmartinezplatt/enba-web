@@ -40,25 +40,25 @@
 - **Estado**: VIGENTE
 
 
-### DEC-004: Cambio de modelo LLM de Opus a Haiku
+### DEC-006: Cambio de modelo LLM de Opus a Haiku
 - **Contexto**: Se busca mejor velocidad de respuesta y menor costo operativo
 - **Decision**: Usar Claude Haiku 4.5 en lugar de Claude Opus 4.6 en el AI Agent de n8n
 - **Alternativa descartada**: Mantener Opus 4.6
 - **Estado**: APROBADA y en produccion
 
-### DEC-005: Trigger universal de ManyChat — workaround por keywords
+### DEC-007: Trigger universal de ManyChat — workaround por keywords
 - **Contexto**: ManyChat no permite trigger sin keywords; Default Reply tuvo comportamiento incorrecto
 - **Decision**: Mantener workaround con keywords (vocales + numeros) hasta encontrar solucion definitiva
 - **Alternativa descartada**: Instagram Default Reply (eliminado por comportamiento incorrecto)
 - **Estado**: WORKAROUND ACTIVO — pendiente resolucion definitiva
 
-### DEC-006: Conexion GitHub como fuente de conocimiento requiere paso intermedio
+### DEC-008: Conexion GitHub como fuente de conocimiento requiere paso intermedio
 - **Contexto**: Conectar GitHub Pages List directo al AI Agent rompe la memoria y el flujo conversacional
 - **Decision**: Agregar nodo de merge/preparacion de contexto en n8n ANTES del AI Agent
 - **Alternativa descartada**: Conexion directa GitHub → AI Agent
 - **Estado**: PENDIENTE DE IMPLEMENTAR
 
-### DEC-007: Acceso a GitHub desde Claude via PAT + Chrome extension
+### DEC-009: Acceso a GitHub desde Claude via PAT + Chrome extension
 - **Contexto**: Claude.ai no tiene acceso nativo a repos privados/publicos autenticado
 - **Decision**: Usar Personal Access Token (PAT) de GitHub + Claude in Chrome extension para leer/escribir el repo
 - **Alternativa descartada**: Claude Desktop MCP (DEC-002 reemplazado), subir archivos manualmente
