@@ -1,5 +1,19 @@
 # ENBA Web
 
+## REGLA OBLIGATORIA — LEER ANTES DE HACER CUALQUIER COSA
+**AL INICIO DE CADA SESION**, antes de responder al usuario, antes de hacer cualquier pregunta, antes de ejecutar cualquier accion:
+1. Leer `HISTORIAL-CONVERSACIONES.md` completo
+2. Leer `DECISIONES-LOG.md` completo
+3. Recien despues de leer ambos archivos, responder al usuario con contexto
+
+**NO hacer preguntas cuya respuesta ya este en estos archivos.**
+**NO repetir errores ya documentados en la seccion "Errores recurrentes".**
+**NO proponer soluciones que ya se probaron y fallaron.**
+
+Si el archivo es muy largo, leerlo por partes pero leerlo COMPLETO.
+
+---
+
 ## Proyecto
 Sitio web de Espacio Náutico Buenos Aires (ENBA) — venta de veleros usados, escuela náutica, servicios náuticos y travesías en el Río de la Plata y alrededores.
 
