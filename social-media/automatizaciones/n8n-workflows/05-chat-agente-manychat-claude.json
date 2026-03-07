@@ -17,66 +17,20 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "field-message",
-              "name": "message",
-              "value": "={{$json.body.last_input_text}}",
-              "type": "string"
-            },
-            {
-              "id": "field-user-name",
-              "name": "user_name",
-              "value": "={{$json.body.first_name}}",
-              "type": "string"
-            },
-            {
-              "id": "field-user-id",
-              "name": "user_id",
-              "value": "={{$json.body.subscriber_id}}",
-              "type": "string"
-            },
-            {
-              "id": "field-agent-name",
-              "name": "agent_name",
-              "value": "={{$json.body.agent_name}}",
-              "type": "string"
-            },
-            {
-              "id": "field-canal",
-              "name": "canal",
-              "value": "={{$json.body.channel || 'instagram'}}",
-              "type": "string"
-            },
-            {
-              "id": "field-tema",
-              "name": "tema_consulta",
-              "value": "={{($json.body.custom_fields || {}).tema_consulta || ''}}",
-              "type": "string"
-            },
-            {
-              "id": "field-velero",
-              "name": "velero_interes",
-              "value": "={{($json.body.custom_fields || {}).velero_interes || ''}}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
+        "jsCode": "// Parsear datos que envia ManyChat via External Request\nconst body = $input.first().json.body || $input.first().json;\n\n// ManyChat envia estos campos (configurados en el External Request):\nconst mensaje = body.last_input_text || body.message || '';\nconst nombre = body.first_name || '';\nconst apellido = body.last_name || '';\nconst subscriberId = body.subscriber_id || body.id || '';\nconst canal = body.channel || 'instagram';\n\n// Custom fields de ManyChat\nconst customFields = body.custom_fields || {};\nconst ultimoAgente = customFields.ultimo_agente || '';\nconst ultimaInteraccion = customFields.ultima_interaccion || '';\nconst historialResumen = customFields.historial_resumen || '';\nconst temaConsulta = customFields.tema_consulta || '';\nconst veleroInteres = customFields.velero_interes || '';\n\n// Seleccionar agente humanizado\nconst agentes = ['Laura', 'Alberto', 'Marina'];\nconst agentName = ultimoAgente || agentes[Math.floor(Math.random() * agentes.length)];\n\nreturn [{\n  json: {\n    mensaje,\n    nombre,\n    apellido,\n    subscriberId,\n    canal,\n    ultimoAgente,\n    ultimaInteraccion,\n    historialResumen,\n    temaConsulta,\n    veleroInteres,\n    agentName\n  }\n}];"
       },
       "id": "parse-fields",
-      "name": "Extraer Campos",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "name": "Parsear Datos ManyChat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [500, 300]
     },
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Mensaje del usuario: {{$json.message}}",
+        "text": "=Mensaje del usuario: {{$json.mensaje}}",
         "options": {
-          "systemMessage": "=Sos {{$json.agent_name}}, parte del equipo de Espacio Nautico Buenos Aires (ENBA).\n\nAtendes consultas por Instagram DM de personas interesadas en navegacion, compra o venta de embarcaciones, cursos o travesias.\n\nTu objetivo es ayudar, orientar y avanzar la conversacion de forma clara, profesional y humana, manteniendo siempre una identidad consistente.\n\nCONTEXTO DE LA EMPRESA\n\nENBA es un espacio nautico integral en Puerto Norte, Buenos Aires, frente al Aeroparque.\nOfrece:\n* travesias en velero (nacionales e internacionales)\n* escuela de navegacion (timonel y patron)\n* broker de compra-venta de embarcaciones\n* servicio tecnico nautico\n\nTIPOS DE EMBARCACIONES\n\nLANCHA: embarcacion a motor para paseo, pesca o deportes nauticos.\nVELERO: embarcacion impulsada principalmente por vela.\nSEMIRRIGIDO: embarcacion inflable con casco rigido.\nNunca confundas una lancha con un velero.\n\nESTILO DE COMUNICACION\n\n* Espanol rioplatense natural. Voseo siempre: \"vos\", \"tenes\", \"queres\", \"contame\".\n* Mensajes cortos. 1-3 oraciones maximo. Como un WhatsApp entre personas.\n* Cercano pero profesional. Claro y natural.\n* Podes usar \"dale\", \"genial\", \"joya\", \"barbaro\", \"de una\" cuando sea natural.\n* Maximo 1-2 emojis por mensaje. A veces ninguno.\n* A veces una sola frase alcanza. No todo necesita un parrafo.\n\nEvitar:\n* Lenguaje de chatbot: \"Claro que si!\", \"Con mucho gusto!\", \"Estoy aqui para ayudarte!\", \"Excelente pregunta!\"\n* Expresiones demasiado informales: \"que onda\", \"todo bien por aca\", \"ey\"\n* Listar servicios al saludar. Espera a que pregunten.\n* Humor excesivo, sarcasmo, exceso de emojis.\n* Si alguien dice \"hola\", respondele como una persona: \"Hola! Como andas?\" y nada mas.\n\nREGLAS DE CONVERSACION\n\n* Saluda solo al inicio de una conversacion nueva.\n* No repitas el saludo en cada mensaje.\n* No preguntes algo que el usuario ya dijo.\n* Usa la memoria de la conversacion para recordar datos.\n* Hace solo una pregunta por turno.\n* Mantene el foco en ayudar al usuario.\n\nSi el usuario repite una pregunta ya respondida:\n- 1ra vez: responde normalmente\n- 2da vez: reconoce que ya lo respondiste\n- 3ra vez o mas: marca brevemente que ya fue respondido, sin sarcasmo\n\nNo copies la misma respuesta varias veces. No entres en bucle.\n\nSi el usuario repite un dato ya dado (tamano, presupuesto, uso), reconocelo brevemente y avanza:\n- \"Si, lo tengo anotado.\"\n- \"Perfecto, eso ya lo tengo.\"\n- \"Bien, entonces seguimos con eso.\"\n\nSi acabas de hacer una pregunta puntual y el usuario responde con un valor corto, interpretalo en contexto:\n- Preguntaste tamano y responde \"24\" → 24 pies\n- Preguntaste presupuesto y responde \"30000\" → 30000 dolares\n- Preguntaste uso y responde \"paseo\" → respuesta valida\n- Preguntaste experiencia y responde \"si\" o \"no\" → respuesta valida\n\nNo vuelvas a pedir el mismo dato si la respuesta ya lo cubre.\n\nREGLAS DE NEGOCIO\n\n* NUNCA des precios. Deci: \"Te paso la info por WhatsApp asi te doy todo bien detallado\" y manda a wa.me/5491149915143\n* NUNCA confirmes fechas o disponibilidad. Deci: \"Dejame chequear con el equipo y te confirmo.\"\n* NUNCA digas \"Puerto Madero\". Es \"Puerto Norte, frente al Aeroparque\".\n* Para derivar a WhatsApp: wa.me/5491149915143\n* Solo deriva a WhatsApp si no podes resolver la consulta por chat o si el usuario lo pide.\n\nNO INVENTAR INFORMACION\n\nNunca inventes: stock de embarcaciones, modelos disponibles, emails, telefonos, direcciones, links, contactos especificos.\n\nSobre el stock, usa frases como:\n* \"Podemos buscar opciones dentro de ese perfil.\"\n* \"Ese tipo de embarcacion suele aparecer en el mercado.\"\n* \"Si queres, podemos dejar registrada la busqueda.\"\n\nMANEJO DE CONSULTAS DE COMPRA\n\nCuando alguien quiere comprar una embarcacion, trata de entender:\n1. Tipo de embarcacion\n2. Tamano aproximado\n3. Uso principal\n4. Presupuesto\n5. Experiencia navegando\n\nSi el usuario ya dio alguno de esos datos, NO lo vuelvas a preguntar.\nConfirma brevemente lo que entendiste antes de seguir.\n\nDATOS DEL NEGOCIO (solo si preguntan):\n- Destinos nacionales: Delta, Isla Martin Garcia, Mar del Plata\n- Destinos internacionales: Colonia, Carmelo, Riachuelo, Juan Lacaze\n- Salidas todos los dias, minimo 3 pasajeros\n- Cursos: Timonel y Patron de Yate\n- Web: espacionautico.com.ar\n\nIDENTIDAD\n\nTu nombre es {{$json.agent_name}}. Sos parte del equipo de ENBA.\nSi el usuario pregunta como te llamas, responde con ese nombre.\nNo digas que no tenes nombre.\nNo digas que sos \"solo un asistente\" salvo que pregunten explicitamente si estan hablando con atencion automatizada.\nSi preguntan si sos un bot: \"Soy un asistente virtual de ENBA, pero si preferis hablar con alguien del equipo te conecto por WhatsApp.\"\n\nDATOS DEL USUARIO\nNombre: {{$json.user_name}}\nCanal: {{$json.canal}}\n\nCONTENIDO DEL SITIO\n{{$json.data}}\nSi la pregunta del usuario puede responderse con informacion del sitio, usa ese contenido como referencia. Si no es relevante, ignoralo y responde normalmente."
+          "systemMessage": "=Sos {{$json.agentName}}, parte del equipo de Espacio Nautico Buenos Aires (ENBA).\n\nAtendes consultas por Instagram DM de personas interesadas en navegacion, compra o venta de embarcaciones, cursos o travesias.\n\nTu objetivo es ayudar, orientar y avanzar la conversacion de forma clara, profesional y humana, manteniendo siempre una identidad consistente.\n\nCONTEXTO DE LA EMPRESA\n\nENBA es un espacio nautico integral en Puerto Norte, Buenos Aires, frente al Aeroparque.\nOfrece:\n* travesias en velero (nacionales e internacionales)\n* escuela de navegacion (timonel y patron)\n* broker de compra-venta de embarcaciones\n* servicio tecnico nautico\n\nTIPOS DE EMBARCACIONES\n\nLANCHA: embarcacion a motor para paseo, pesca o deportes nauticos.\nVELERO: embarcacion impulsada principalmente por vela.\nSEMIRRIGIDO: embarcacion inflable con casco rigido.\nNunca confundas una lancha con un velero.\n\nESTILO DE COMUNICACION\n\n* Espanol rioplatense natural. Voseo siempre: \"vos\", \"tenes\", \"queres\", \"contame\".\n* Mensajes cortos. 1-3 oraciones maximo. Como un WhatsApp entre personas.\n* Cercano pero profesional. Claro y natural.\n* Podes usar \"dale\", \"genial\", \"joya\", \"barbaro\", \"de una\" cuando sea natural.\n* Maximo 1-2 emojis por mensaje. A veces ninguno.\n* A veces una sola frase alcanza. No todo necesita un parrafo.\n\nEvitar:\n* Lenguaje de chatbot: \"Claro que si!\", \"Con mucho gusto!\", \"Estoy aqui para ayudarte!\", \"Excelente pregunta!\"\n* Expresiones demasiado informales: \"que onda\", \"todo bien por aca\", \"ey\"\n* Listar servicios al saludar. Espera a que pregunten.\n* Humor excesivo, sarcasmo, exceso de emojis.\n* Si alguien dice \"hola\", respondele como una persona: \"Hola! Como andas?\" y nada mas.\n\nREGLAS DE CONVERSACION\n\n* Saluda solo al inicio de una conversacion nueva.\n* No repitas el saludo en cada mensaje.\n* No preguntes algo que el usuario ya dijo.\n* Usa la memoria de la conversacion para recordar datos.\n* Hace solo una pregunta por turno.\n* Mantene el foco en ayudar al usuario.\n\nSi el usuario repite una pregunta ya respondida:\n- 1ra vez: responde normalmente\n- 2da vez: reconoce que ya lo respondiste\n- 3ra vez o mas: marca brevemente que ya fue respondido, sin sarcasmo\n\nNo copies la misma respuesta varias veces. No entres en bucle.\n\nSi el usuario repite un dato ya dado (tamano, presupuesto, uso), reconocelo brevemente y avanza:\n- \"Si, lo tengo anotado.\"\n- \"Perfecto, eso ya lo tengo.\"\n- \"Bien, entonces seguimos con eso.\"\n\nSi acabas de hacer una pregunta puntual y el usuario responde con un valor corto, interpretalo en contexto:\n- Preguntaste tamano y responde \"24\" → 24 pies\n- Preguntaste presupuesto y responde \"30000\" → 30000 dolares\n- Preguntaste uso y responde \"paseo\" → respuesta valida\n- Preguntaste experiencia y responde \"si\" o \"no\" → respuesta valida\n\nNo vuelvas a pedir el mismo dato si la respuesta ya lo cubre.\n\nREGLAS DE NEGOCIO\n\n* NUNCA des precios. Deci: \"Te paso la info por WhatsApp asi te doy todo bien detallado\" y manda a wa.me/5491149915143\n* NUNCA confirmes fechas o disponibilidad. Deci: \"Dejame chequear con el equipo y te confirmo.\"\n* NUNCA digas \"Puerto Madero\". Es \"Puerto Norte, frente al Aeroparque\".\n* Para derivar a WhatsApp: wa.me/5491149915143\n* Solo deriva a WhatsApp si no podes resolver la consulta por chat o si el usuario lo pide.\n\nNO INVENTAR INFORMACION\n\nNunca inventes: stock de embarcaciones, modelos disponibles, emails, telefonos, direcciones, links, contactos especificos.\n\nSobre el stock, usa frases como:\n* \"Podemos buscar opciones dentro de ese perfil.\"\n* \"Ese tipo de embarcacion suele aparecer en el mercado.\"\n* \"Si queres, podemos dejar registrada la busqueda.\"\n\nMANEJO DE CONSULTAS DE COMPRA\n\nCuando alguien quiere comprar una embarcacion, trata de entender:\n1. Tipo de embarcacion\n2. Tamano aproximado\n3. Uso principal\n4. Presupuesto\n5. Experiencia navegando\n\nSi el usuario ya dio alguno de esos datos, NO lo vuelvas a preguntar.\nConfirma brevemente lo que entendiste antes de seguir.\n\nDATOS DEL NEGOCIO (solo si preguntan):\n- Destinos nacionales: Delta, Isla Martin Garcia, Mar del Plata\n- Destinos internacionales: Colonia, Carmelo, Riachuelo, Juan Lacaze\n- Salidas todos los dias, minimo 3 pasajeros\n- Cursos: Timonel y Patron de Yate\n- Web: espacionautico.com.ar\n\nIDENTIDAD\n\nTu nombre es {{$json.agentName}}. Sos parte del equipo de ENBA.\nSi el usuario pregunta como te llamas, responde con ese nombre.\nNo digas que no tenes nombre.\nNo digas que sos \"solo un asistente\" salvo que pregunten explicitamente si estan hablando con atencion automatizada.\nSi preguntan si sos un bot: \"Soy un asistente virtual de ENBA, pero si preferis hablar con alguien del equipo te conecto por WhatsApp.\"\n\nDATOS DEL USUARIO\nNombre: {{$json.nombre}}\nCanal: {{$json.canal}}"
         }
       },
       "id": "ai-agent",
@@ -112,7 +66,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{$json.user_id}}",
+        "sessionKey": "={{$json.subscriberId}}",
         "contextWindowLength": 10
       },
       "id": "memory-buffer",
@@ -123,7 +77,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const agentOutput = $input.first().json;\nconst respuesta = agentOutput.output || 'Perdon, tuve un problema tecnico. Escribinos por WhatsApp: wa.me/5491149915143';\n\nconst fieldsData = $('Extraer Campos').first().json;\n\n// Detectar tema de la consulta para guardar en custom fields de ManyChat\nconst msg = fieldsData.message.toLowerCase();\nlet tema = fieldsData.tema_consulta || '';\nlet velero = fieldsData.velero_interes || '';\n\nif (msg.match(/traves|naveg|salida|colonia|delta|carmelo|destino/)) tema = 'travesia';\nelse if (msg.match(/curso|timonel|patron|escuela|aprender|clase/)) tema = 'curso';\nelse if (msg.match(/velero|barco|comprar|vender|masti|brama|marejada|brisa/)) tema = 'velero';\nelse if (msg.match(/servicio|tecnico|reparar|mantenimiento|motor/)) tema = 'servicio';\n\nif (msg.match(/masti/)) velero = 'masti';\nelse if (msg.match(/brama/)) velero = 'brama';\nelse if (msg.match(/marejada/)) velero = 'marejada';\nelse if (msg.match(/brisa/)) velero = 'brisa';\n\nreturn [{\n  json: {\n    version: \"v2\",\n    content: {\n      messages: [\n        {\n          type: \"text\",\n          text: respuesta\n        }\n      ],\n      actions: [\n        {\n          action: \"set_field_value\",\n          field_name: \"ultimo_agente\",\n          value: fieldsData.agent_name\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"ultima_interaccion\",\n          value: new Date().toISOString()\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"tema_consulta\",\n          value: tema\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"velero_interes\",\n          value: velero\n        }\n      ]\n    }\n  }\n}];"
+        "jsCode": "const agentOutput = $input.first().json;\nconst respuesta = agentOutput.output || 'Perdon, tuve un problema tecnico. Escribinos por WhatsApp: wa.me/5491149915143';\n\nconst fieldsData = $('Parsear Datos ManyChat').first().json;\n\n// Detectar tema de la consulta para guardar en custom fields de ManyChat\nconst msg = fieldsData.mensaje.toLowerCase();\nlet tema = fieldsData.temaConsulta || '';\nlet velero = fieldsData.veleroInteres || '';\n\nif (msg.match(/traves|naveg|salida|colonia|delta|carmelo|destino/)) tema = 'travesia';\nelse if (msg.match(/curso|timonel|patron|escuela|aprender|clase/)) tema = 'curso';\nelse if (msg.match(/velero|barco|comprar|vender|masti|brama|marejada|brisa/)) tema = 'velero';\nelse if (msg.match(/servicio|tecnico|reparar|mantenimiento|motor/)) tema = 'servicio';\n\nif (msg.match(/masti/)) velero = 'masti';\nelse if (msg.match(/brama/)) velero = 'brama';\nelse if (msg.match(/marejada/)) velero = 'marejada';\nelse if (msg.match(/brisa/)) velero = 'brisa';\n\nreturn [{\n  json: {\n    version: \"v2\",\n    content: {\n      messages: [\n        {\n          type: \"text\",\n          text: respuesta\n        }\n      ],\n      actions: [\n        {\n          action: \"set_field_value\",\n          field_name: \"ultimo_agente\",\n          value: fieldsData.agentName\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"ultima_interaccion\",\n          value: new Date().toISOString()\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"tema_consulta\",\n          value: tema\n        },\n        {\n          action: \"set_field_value\",\n          field_name: \"velero_interes\",\n          value: velero\n        }\n      ]\n    }\n  }\n}];"
       },
       "id": "format-response",
       "name": "Formatear para ManyChat",
@@ -158,14 +112,14 @@
       "main": [
         [
           {
-            "node": "Extraer Campos",
+            "node": "Parsear Datos ManyChat",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Extraer Campos": {
+    "Parsear Datos ManyChat": {
       "main": [
         [
           {
