@@ -119,6 +119,14 @@ src/
 2. **Crear cuentas sociales** — IG y FB ya creadas. YouTube y TikTok quedan pendientes (ver `01-GUIA-CREACION-CUENTAS.md`)
 3. **Funcionalidades web** — Filtros en stock, comparador de veleros
 
+## Protocolo de backup
+Antes de cada cambio importante o al finalizar un bloque de trabajo:
+1. `git add` de los archivos modificados
+2. `git commit` con mensaje descriptivo
+3. `git push -u origin claude/find-booking-button-cEQX5`
+
+Esto asegura que no se pierda trabajo si la sesión se corta. **Seguir este protocolo siempre, sin necesidad de que el usuario lo recuerde.**
+
 ## Convenciones
 - Imágenes web: max 1920px lado mayor, ~200KB JPEG optimizado
 - Commits en español o inglés, descriptivos
