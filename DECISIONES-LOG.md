@@ -63,3 +63,36 @@
 - **Decision**: Usar Personal Access Token (PAT) de GitHub + Claude in Chrome extension para leer/escribir el repo
 - **Alternativa descartada**: Claude Desktop MCP (DEC-002 reemplazado), subir archivos manualmente
 - **Estado**: APROBADA y operativa
+
+## 7 de marzo de 2026 — Auditoria de arquitectura
+
+### DEC-010: 3 agentes chat para MVP, no 6
+- **Contexto**: Spec 06 define 6 agentes (Estratega, Creador, Community Manager, Publicador, Analista, Trend Scout). Es sobredimensionado para el volumen actual.
+- **Decision**: MVP con 3 agentes conversacionales (Laura, Alberto, Marina). Los otros roles son funciones de workflow, no personalidades.
+- **Estado**: APROBADA
+
+### DEC-011: Datos del negocio estaticos en system prompt, no RAG
+- **Contexto**: Se evaluo RAG, vector stores, scraping del sitio, GitHub como tool del AI Agent
+- **Decision**: Hardcodear datos clave (veleros, destinos, cursos) en el system prompt del workflow 05. Actualizar manualmente cuando cambie el stock (~1-2 veces/mes).
+- **Alternativas descartadas**: RAG con Supabase, scraping, GitHub API como tool (DEC-008 confirmo problemas)
+- **Estado**: APROBADA
+
+### DEC-012: HTTP Request directo a Claude API, no nodo AI Agent de n8n
+- **Contexto**: El nodo AI Agent nativo de n8n tuvo problemas con memoria y flujo conversacional (DEC-008)
+- **Decision**: Usar nodo HTTP Request con llamada directa a `api.anthropic.com/v1/messages`. Mas controlable y predecible.
+- **Estado**: APROBADA — implementado en workflow 05
+
+### DEC-013: Google Sheets como unica base de datos
+- **Contexto**: Se evaluo Supabase, Airtable, bases de datos propias
+- **Decision**: Google Sheets para calendario de contenido y metricas. Para el volumen de ENBA es suficiente y gratis.
+- **Estado**: APROBADA
+
+### DEC-014: Generacion de contenido manual en MVP
+- **Contexto**: Workflow 01 automatiza generacion de contenido semanal con Claude
+- **Decision**: En MVP, generar contenido manualmente con asistencia de Claude. Solo automatizar la publicacion (workflow 02).
+- **Estado**: APROBADA
+
+### DEC-015: Credenciales rotadas y protegidas
+- **Contexto**: `.mcp.json` con credenciales estuvo brevemente expuesto en el repo
+- **Decision**: Archivo en `.gitignore`. Credenciales de n8n, ManyChat y Cloudflare rotadas el 7/3/2026.
+- **Estado**: COMPLETADA
