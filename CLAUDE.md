@@ -127,6 +127,8 @@ Antes de cada cambio importante o al finalizar un bloque de trabajo:
 
 Esto asegura que no se pierda trabajo si la sesión se corta. **Seguir este protocolo siempre, sin necesidad de que el usuario lo recuerde.**
 
+**Branch permanente:** Todas las sesiones de Claude Code deben trabajar sobre `claude/find-booking-button-cEQX5`. Este branch se mantiene hasta el final del proyecto. No crear ni cambiar a otros branches.
+
 ## Convenciones
 - Imágenes web: max 1920px lado mayor, ~200KB JPEG optimizado
 - Commits en español o inglés, descriptivos
